@@ -24,12 +24,13 @@ Partial Class Roomies
     Private Sub InitializeComponent()
         Label1 = New Label()
         Label2 = New Label()
+        Cursor = CustomCursor.CirclePointCursor
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(77, 56)
+        Label1.Location = New Point(86, 80)
         Label1.Name = "Label1"
         Label1.Size = New Size(85, 15)
         Label1.TabIndex = 0
@@ -38,7 +39,7 @@ Partial Class Roomies
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(135, 120)
+        Label2.Location = New Point(117, 131)
         Label2.Name = "Label2"
         Label2.Size = New Size(204, 15)
         Label2.TabIndex = 1
@@ -48,7 +49,7 @@ Partial Class Roomies
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(621, 516)
+        ClientSize = New Size(497, 575)
         Controls.Add(Label2)
         Controls.Add(Label1)
         Name = "Roomies"
