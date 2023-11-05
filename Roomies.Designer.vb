@@ -23,6 +23,7 @@ Partial Class Roomies
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Label1 = New Label()
+        Label2 = New Label()
         SuspendLayout()
         ' 
         ' Label1
@@ -34,11 +35,21 @@ Partial Class Roomies
         Label1.TabIndex = 0
         Label1.Text = "Hi This is a test"
         ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(135, 120)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(204, 15)
+        Label2.TabIndex = 1
+        Label2.Text = "making changes from another laptop"
+        ' 
         ' Roomies
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(621, 516)
+        Controls.Add(Label2)
         Controls.Add(Label1)
         Name = "Roomies"
         Text = "Roomies"
@@ -47,4 +58,5 @@ Partial Class Roomies
     End Sub
 
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class
