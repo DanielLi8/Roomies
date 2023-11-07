@@ -22,42 +22,64 @@ Partial Class Roomies
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Label1 = New Label()
-        Label2 = New Label()
-        Cursor = CustomCursor.CirclePointCursor
+        DateLabel = New Label()
+        meLabel = New Label()
+        DataGridView1 = New DataGridView()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' Label1
+        ' DateLabel
         ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(86, 80)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(85, 15)
-        Label1.TabIndex = 0
-        Label1.Text = "Hi This is a test"
+        DateLabel.Text = Date.Now.ToLongDateString
+        DateLabel.BackColor = SystemColors.ControlDark
+        DateLabel.Dock = DockStyle.Top
+        DateLabel.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
+        DateLabel.ForeColor = Color.Black
+        DateLabel.Location = New Point(0, 0)
+        DateLabel.Name = "DateLabel"
+        DateLabel.Size = New Size(497, 48)
+        DateLabel.TabIndex = 0
+        DateLabel.Text = "Today: Tue, Nov 7"
+        DateLabel.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label2
+        ' meLabel
         ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(117, 131)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(204, 15)
-        Label2.TabIndex = 1
-        Label2.Text = "making changes from another laptop"
+        meLabel.AutoSize = True
+        meLabel.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
+        meLabel.Location = New Point(26, 66)
+        meLabel.Name = "meLabel"
+        meLabel.Size = New Size(39, 25)
+        meLabel.TabIndex = 1
+        meLabel.Text = "Me"
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.AllowUserToDeleteRows = False
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Location = New Point(26, 96)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.ReadOnly = True
+        DataGridView1.RowTemplate.Height = 25
+        DataGridView1.Size = New Size(389, 98)
+        DataGridView1.TabIndex = 2
         ' 
         ' Roomies
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(497, 575)
-        Controls.Add(Label2)
-        Controls.Add(Label1)
+        Controls.Add(DataGridView1)
+        Controls.Add(meLabel)
+        Controls.Add(DateLabel)
+        Cursor = Cursors.Cross
         Name = "Roomies"
         Text = "Roomies"
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents DateLabel As Label
+    Friend WithEvents meLabel As Label
+    Friend WithEvents DataGridView1 As DataGridView
 End Class
