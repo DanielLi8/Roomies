@@ -11,7 +11,6 @@
         ' Add any initialization after the InitializeComponent() call.
         Me.Show()
 
-        ' Put code here to handle the delay specified by the seconds parameter
 
     End Sub
 
@@ -40,6 +39,7 @@
         Dim number As Integer = 1
         Dim VerticalSpacing As Integer = 1
 
+        'add roommates and keep track in an array
         For i As Integer = 0 To roommatesnum - 1
             Dim addRoommate As New RoommateAddLayout
             addRoommate.nameLabel.Text = "Roommate " & number
@@ -50,6 +50,8 @@
             number += 1
             VerticalSpacing += 1
         Next
+
+        'dynamically relocate buttons
         CreateBtn.Location = New Point(90, 140 * VerticalSpacing)
         CancelBtn.Location = New Point(265, 140 * VerticalSpacing)
 
