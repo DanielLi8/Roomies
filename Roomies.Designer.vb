@@ -22,8 +22,6 @@ Partial Class Roomies
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        AddHouseholdBtn = New Button()
-        DateLabel = New Label()
         BottomToolStripPanel = New ToolStripPanel()
         TopToolStripPanel = New ToolStripPanel()
         RightToolStripPanel = New ToolStripPanel()
@@ -31,42 +29,20 @@ Partial Class Roomies
         ContentPanel = New ToolStripContentPanel()
         TabControl1 = New TabControl()
         UserA = New TabPage()
-        ExpensesAddbtn = New Button()
-        ChoreAddbtn = New Button()
+        PhoneBackground = New Panel()
+        MenuPanel = New Panel()
+        ExpenseSummaryBtn = New Button()
+        ExpensesBtn = New Button()
+        CompletedBtn = New Button()
+        TodoBtn = New Button()
+        DateLabel = New Label()
+        AddHouseholdBtn = New Button()
         UserB = New TabPage()
         TabControl1.SuspendLayout()
         UserA.SuspendLayout()
+        PhoneBackground.SuspendLayout()
+        MenuPanel.SuspendLayout()
         SuspendLayout()
-        ' 
-        ' AddHouseholdBtn
-        ' 
-        AddHouseholdBtn.BackColor = Color.FromArgb(CByte(222), CByte(213), CByte(188))
-        AddHouseholdBtn.BackgroundImage = My.Resources.Resources.House
-        AddHouseholdBtn.BackgroundImageLayout = ImageLayout.Zoom
-        AddHouseholdBtn.FlatAppearance.BorderColor = Color.Black
-        AddHouseholdBtn.FlatAppearance.BorderSize = 3
-        AddHouseholdBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(192), CByte(183), CByte(158))
-        AddHouseholdBtn.FlatStyle = FlatStyle.Flat
-        AddHouseholdBtn.Location = New Point(211, 315)
-        AddHouseholdBtn.Name = "AddHouseholdBtn"
-        AddHouseholdBtn.Size = New Size(58, 51)
-        AddHouseholdBtn.TabIndex = 1
-        AddHouseholdBtn.TextImageRelation = TextImageRelation.ImageAboveText
-        AddHouseholdBtn.UseVisualStyleBackColor = False
-        ' 
-        ' DateLabel
-        ' 
-        DateLabel.BackColor = Color.FromArgb(CByte(177), CByte(171), CByte(148))
-        DateLabel.Dock = DockStyle.Top
-        DateLabel.Font = New Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
-        DateLabel.ForeColor = Color.Black
-        DateLabel.Location = New Point(3, 3)
-        DateLabel.Margin = New Padding(0)
-        DateLabel.Name = "DateLabel"
-        DateLabel.Size = New Size(483, 48)
-        DateLabel.TabIndex = 0
-        DateLabel.Text = "Today: Tue, Nov 7"
-        DateLabel.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' BottomToolStripPanel
         ' 
@@ -115,63 +91,144 @@ Partial Class Roomies
         TabControl1.Name = "TabControl1"
         TabControl1.Padding = New Point(0, 0)
         TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(497, 575)
+        TabControl1.Size = New Size(553, 729)
         TabControl1.TabIndex = 2
         ' 
         ' UserA
         ' 
-        UserA.BackColor = Color.FromArgb(CByte(222), CByte(213), CByte(188))
-        UserA.Controls.Add(ExpensesAddbtn)
-        UserA.Controls.Add(ChoreAddbtn)
-        UserA.Controls.Add(AddHouseholdBtn)
-        UserA.Controls.Add(DateLabel)
+        UserA.BackColor = Color.Silver
+        UserA.BackgroundImage = My.Resources.Resources.phone_template
+        UserA.BackgroundImageLayout = ImageLayout.Stretch
+        UserA.Controls.Add(PhoneBackground)
         UserA.ForeColor = Color.Black
         UserA.Location = New Point(4, 27)
         UserA.Name = "UserA"
         UserA.Padding = New Padding(3)
-        UserA.Size = New Size(489, 544)
+        UserA.Size = New Size(545, 698)
         UserA.TabIndex = 0
         UserA.Text = "User A"
         ' 
-        ' ExpensesAddbtn
+        ' PhoneBackground
         ' 
-        ExpensesAddbtn.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        ExpensesAddbtn.BackColor = Color.FromArgb(CByte(222), CByte(213), CByte(188))
-        ExpensesAddbtn.FlatAppearance.BorderSize = 3
-        ExpensesAddbtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(192), CByte(183), CByte(158))
-        ExpensesAddbtn.FlatStyle = FlatStyle.Flat
-        ExpensesAddbtn.Font = New Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
-        ExpensesAddbtn.ForeColor = Color.Black
-        ExpensesAddbtn.Location = New Point(281, 443)
-        ExpensesAddbtn.Name = "ExpensesAddbtn"
-        ExpensesAddbtn.Size = New Size(118, 54)
-        ExpensesAddbtn.TabIndex = 3
-        ExpensesAddbtn.Text = "Expenses"
-        ExpensesAddbtn.UseVisualStyleBackColor = False
+        PhoneBackground.BackColor = Color.Transparent
+        PhoneBackground.Controls.Add(MenuPanel)
+        PhoneBackground.Controls.Add(DateLabel)
+        PhoneBackground.Controls.Add(AddHouseholdBtn)
+        PhoneBackground.Location = New Point(102, 42)
+        PhoneBackground.Name = "PhoneBackground"
+        PhoneBackground.Size = New Size(345, 583)
+        PhoneBackground.TabIndex = 4
         ' 
-        ' ChoreAddbtn
+        ' MenuPanel
         ' 
-        ChoreAddbtn.BackColor = Color.FromArgb(CByte(222), CByte(213), CByte(188))
-        ChoreAddbtn.FlatAppearance.BorderSize = 3
-        ChoreAddbtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(192), CByte(183), CByte(158))
-        ChoreAddbtn.FlatStyle = FlatStyle.Flat
-        ChoreAddbtn.Font = New Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
-        ChoreAddbtn.ForeColor = Color.Black
-        ChoreAddbtn.Location = New Point(93, 443)
-        ChoreAddbtn.Name = "ChoreAddbtn"
-        ChoreAddbtn.Size = New Size(118, 54)
-        ChoreAddbtn.TabIndex = 2
-        ChoreAddbtn.Text = "Chore"
-        ChoreAddbtn.UseVisualStyleBackColor = False
+        MenuPanel.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
+        MenuPanel.Controls.Add(ExpenseSummaryBtn)
+        MenuPanel.Controls.Add(ExpensesBtn)
+        MenuPanel.Controls.Add(CompletedBtn)
+        MenuPanel.Controls.Add(TodoBtn)
+        MenuPanel.Dock = DockStyle.Bottom
+        MenuPanel.Location = New Point(0, 518)
+        MenuPanel.Name = "MenuPanel"
+        MenuPanel.Size = New Size(345, 65)
+        MenuPanel.TabIndex = 4
+        ' 
+        ' ExpenseSummaryBtn
+        ' 
+        ExpenseSummaryBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
+        ExpenseSummaryBtn.BackgroundImage = My.Resources.Resources.expense_summary_icon
+        ExpenseSummaryBtn.BackgroundImageLayout = ImageLayout.Zoom
+        ExpenseSummaryBtn.FlatAppearance.BorderSize = 0
+        ExpenseSummaryBtn.FlatStyle = FlatStyle.Flat
+        ExpenseSummaryBtn.Location = New Point(261, 0)
+        ExpenseSummaryBtn.Margin = New Padding(0)
+        ExpenseSummaryBtn.Name = "ExpenseSummaryBtn"
+        ExpenseSummaryBtn.Padding = New Padding(1)
+        ExpenseSummaryBtn.Size = New Size(89, 65)
+        ExpenseSummaryBtn.TabIndex = 7
+        ExpenseSummaryBtn.UseVisualStyleBackColor = False
+        ' 
+        ' ExpensesBtn
+        ' 
+        ExpensesBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
+        ExpensesBtn.BackgroundImage = My.Resources.Resources.expenses_icon
+        ExpensesBtn.BackgroundImageLayout = ImageLayout.Zoom
+        ExpensesBtn.FlatAppearance.BorderSize = 0
+        ExpensesBtn.FlatStyle = FlatStyle.Flat
+        ExpensesBtn.Location = New Point(172, 0)
+        ExpensesBtn.Margin = New Padding(0)
+        ExpensesBtn.Name = "ExpensesBtn"
+        ExpensesBtn.Padding = New Padding(1)
+        ExpensesBtn.Size = New Size(89, 65)
+        ExpensesBtn.TabIndex = 7
+        ExpensesBtn.UseVisualStyleBackColor = False
+        ' 
+        ' CompletedBtn
+        ' 
+        CompletedBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
+        CompletedBtn.BackgroundImage = My.Resources.Resources.completed_icon
+        CompletedBtn.BackgroundImageLayout = ImageLayout.Zoom
+        CompletedBtn.FlatAppearance.BorderSize = 0
+        CompletedBtn.FlatStyle = FlatStyle.Flat
+        CompletedBtn.Location = New Point(83, 0)
+        CompletedBtn.Margin = New Padding(0)
+        CompletedBtn.Name = "CompletedBtn"
+        CompletedBtn.Padding = New Padding(1)
+        CompletedBtn.Size = New Size(89, 65)
+        CompletedBtn.TabIndex = 6
+        CompletedBtn.UseVisualStyleBackColor = False
+        ' 
+        ' TodoBtn
+        ' 
+        TodoBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
+        TodoBtn.BackgroundImage = My.Resources.Resources.to_do_icon
+        TodoBtn.BackgroundImageLayout = ImageLayout.Zoom
+        TodoBtn.FlatAppearance.BorderSize = 0
+        TodoBtn.FlatStyle = FlatStyle.Flat
+        TodoBtn.Location = New Point(-6, 0)
+        TodoBtn.Margin = New Padding(0)
+        TodoBtn.Name = "TodoBtn"
+        TodoBtn.Padding = New Padding(1)
+        TodoBtn.Size = New Size(89, 65)
+        TodoBtn.TabIndex = 5
+        TodoBtn.UseVisualStyleBackColor = False
+        ' 
+        ' DateLabel
+        ' 
+        DateLabel.BackColor = Color.DimGray
+        DateLabel.Dock = DockStyle.Top
+        DateLabel.Font = New Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
+        DateLabel.ForeColor = Color.Black
+        DateLabel.Location = New Point(0, 0)
+        DateLabel.Margin = New Padding(0)
+        DateLabel.Name = "DateLabel"
+        DateLabel.Size = New Size(345, 48)
+        DateLabel.TabIndex = 0
+        DateLabel.Text = "Today: Tue, Nov 7"
+        DateLabel.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' AddHouseholdBtn
+        ' 
+        AddHouseholdBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
+        AddHouseholdBtn.BackgroundImage = My.Resources.Resources.icons8_home_100
+        AddHouseholdBtn.BackgroundImageLayout = ImageLayout.Zoom
+        AddHouseholdBtn.FlatAppearance.BorderColor = Color.Black
+        AddHouseholdBtn.FlatAppearance.BorderSize = 0
+        AddHouseholdBtn.FlatStyle = FlatStyle.Flat
+        AddHouseholdBtn.Location = New Point(118, 273)
+        AddHouseholdBtn.Name = "AddHouseholdBtn"
+        AddHouseholdBtn.Size = New Size(103, 88)
+        AddHouseholdBtn.TabIndex = 1
+        AddHouseholdBtn.TextImageRelation = TextImageRelation.ImageAboveText
+        AddHouseholdBtn.UseVisualStyleBackColor = False
         ' 
         ' UserB
         ' 
-        UserB.BackColor = Color.FromArgb(CByte(222), CByte(213), CByte(188))
-        UserB.ForeColor = Color.FromArgb(CByte(222), CByte(213), CByte(188))
+        UserB.BackColor = Color.White
+        UserB.ForeColor = Color.Black
         UserB.Location = New Point(4, 27)
         UserB.Name = "UserB"
         UserB.Padding = New Padding(3)
-        UserB.Size = New Size(489, 544)
+        UserB.Size = New Size(545, 698)
         UserB.TabIndex = 1
         UserB.Text = "User B"
         ' 
@@ -179,18 +236,19 @@ Partial Class Roomies
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.FromArgb(CByte(222), CByte(213), CByte(188))
-        ClientSize = New Size(497, 575)
+        BackColor = Color.White
+        BackgroundImageLayout = ImageLayout.Stretch
+        ClientSize = New Size(553, 729)
         Controls.Add(TabControl1)
-        Cursor = Cursors.Cross
+        DoubleBuffered = True
         Name = "Roomies"
         Text = "Roomies"
         TabControl1.ResumeLayout(False)
         UserA.ResumeLayout(False)
+        PhoneBackground.ResumeLayout(False)
+        MenuPanel.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
-    Friend WithEvents AddHouseholdBtn As Button
-    Friend WithEvents DateLabel As Label
     Friend WithEvents BottomToolStripPanel As ToolStripPanel
     Friend WithEvents TopToolStripPanel As ToolStripPanel
     Friend WithEvents RightToolStripPanel As ToolStripPanel
@@ -198,7 +256,13 @@ Partial Class Roomies
     Friend WithEvents ContentPanel As ToolStripContentPanel
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents UserA As TabPage
+    Friend WithEvents PhoneBackground As Panel
+    Friend WithEvents DateLabel As Label
+    Friend WithEvents AddHouseholdBtn As Button
     Friend WithEvents UserB As TabPage
-    Friend WithEvents ExpensesAddbtn As Button
-    Friend WithEvents ChoreAddbtn As Button
+    Friend WithEvents MenuPanel As Panel
+    Friend WithEvents TodoBtn As Button
+    Friend WithEvents ExpenseSummaryBtn As Button
+    Friend WithEvents ExpensesBtn As Button
+    Friend WithEvents CompletedBtn As Button
 End Class
