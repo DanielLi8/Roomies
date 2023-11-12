@@ -16,7 +16,7 @@
 
 
     Dim roommateControls As New List(Of RoommateAddLayout) 'list to keep track of dynamic generation
-    Private Sub RadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.Click, RadioButton2.Click, RadioButton3.Click, RadioButton4.Click
+    Private Sub RadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.Click, RadioButton2.Click, RadioButton3.Click
         For Each control In roommateControls
             Me.Controls.Remove(control)
         Next
@@ -24,15 +24,13 @@
         Dim roommatesnum As Integer
         Dim total As Integer = 4
         If RadioButton1.Checked Then
-            RoommatesNum = 1
+            roommatesnum = 1
         ElseIf RadioButton2.Checked Then
-            RoommatesNum = 2
+            roommatesnum = 2
 
         ElseIf RadioButton3.Checked Then
-            RoommatesNum = 3
+            roommatesnum = 3
 
-        ElseIf RadioButton4.Checked Then
-            RoommatesNum = 4
 
         End If
 
@@ -43,7 +41,7 @@
         For i As Integer = 0 To roommatesnum - 1
             Dim addRoommate As New RoommateAddLayout
             addRoommate.nameLabel.Text = "Roommate " & number
-            addRoommate.Location = New Point(85, 140 * VerticalSpacing)
+            addRoommate.Location = New Point(44, 60 + (105 * VerticalSpacing))
 
             Controls.Add(addRoommate)
             roommateControls.Insert(i, addRoommate)
@@ -52,8 +50,8 @@
         Next
 
         'dynamically relocate buttons
-        CreateBtn.Location = New Point(90, 140 * VerticalSpacing)
-        CancelBtn.Location = New Point(265, 140 * VerticalSpacing)
+        'CreateBtn.Location = New Point(71, 140 * VerticalSpacing)
+        ' CancelBtn.Location = New Point(200, 140 * VerticalSpacing)
 
     End Sub
 

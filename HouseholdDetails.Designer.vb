@@ -30,7 +30,6 @@ Partial Class HouseholdDetails
         RadioButton1 = New RadioButton()
         RadioButton2 = New RadioButton()
         RadioButton3 = New RadioButton()
-        RadioButton4 = New RadioButton()
         GroupBox1 = New GroupBox()
         CancelBtn = New Button()
         GroupBox1.SuspendLayout()
@@ -39,55 +38,55 @@ Partial Class HouseholdDetails
         ' HouseholdName
         ' 
         HouseholdName.AutoSize = True
-        HouseholdName.Font = New Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
-        HouseholdName.Location = New Point(85, 26)
+        HouseholdName.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        HouseholdName.Location = New Point(39, 25)
         HouseholdName.Name = "HouseholdName"
-        HouseholdName.Size = New Size(161, 22)
+        HouseholdName.Size = New Size(128, 18)
         HouseholdName.TabIndex = 0
         HouseholdName.Text = "Household Name:"
         ' 
         ' HouseholdNameInput
         ' 
-        HouseholdNameInput.Font = New Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
-        HouseholdNameInput.Location = New Point(252, 23)
+        HouseholdNameInput.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        HouseholdNameInput.Location = New Point(169, 25)
         HouseholdNameInput.Name = "HouseholdNameInput"
-        HouseholdNameInput.Size = New Size(145, 29)
+        HouseholdNameInput.Size = New Size(128, 24)
         HouseholdNameInput.TabIndex = 1
         ' 
         ' RoomateSelectionLabel
         ' 
         RoomateSelectionLabel.AutoSize = True
-        RoomateSelectionLabel.Font = New Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
-        RoomateSelectionLabel.Location = New Point(85, 65)
+        RoomateSelectionLabel.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        RoomateSelectionLabel.Location = New Point(44, 59)
         RoomateSelectionLabel.Name = "RoomateSelectionLabel"
-        RoomateSelectionLabel.Size = New Size(300, 22)
+        RoomateSelectionLabel.Size = New Size(239, 18)
         RoomateSelectionLabel.TabIndex = 2
         RoomateSelectionLabel.Text = "How many roomates do you have?"
         ' 
         ' InviteLabel
         ' 
         InviteLabel.AutoSize = True
-        InviteLabel.Font = New Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
-        InviteLabel.Location = New Point(85, 146)
+        InviteLabel.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        InviteLabel.Location = New Point(44, 125)
         InviteLabel.Name = "InviteLabel"
-        InviteLabel.Size = New Size(326, 22)
+        InviteLabel.Size = New Size(253, 18)
         InviteLabel.TabIndex = 3
         InviteLabel.Text = "Send them an invite to the household!"
         ' 
         ' CreateBtn
         ' 
-        CreateBtn.Font = New Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
-        CreateBtn.Location = New Point(90, 582)
+        CreateBtn.Font = New Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        CreateBtn.Location = New Point(71, 500)
         CreateBtn.Name = "CreateBtn"
-        CreateBtn.Size = New Size(132, 35)
+        CreateBtn.Size = New Size(69, 30)
         CreateBtn.TabIndex = 7
         CreateBtn.Text = "Create!"
         CreateBtn.UseVisualStyleBackColor = True
         ' 
         ' RadioButton1
         ' 
-        RadioButton1.Font = New Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton1.Location = New Point(19, 1)
+        RadioButton1.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        RadioButton1.Location = New Point(6, 0)
         RadioButton1.Name = "RadioButton1"
         RadioButton1.Size = New Size(51, 24)
         RadioButton1.TabIndex = 8
@@ -97,8 +96,8 @@ Partial Class HouseholdDetails
         ' 
         ' RadioButton2
         ' 
-        RadioButton2.Font = New Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton2.Location = New Point(80, 1)
+        RadioButton2.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        RadioButton2.Location = New Point(87, 0)
         RadioButton2.Name = "RadioButton2"
         RadioButton2.Size = New Size(51, 24)
         RadioButton2.TabIndex = 9
@@ -108,8 +107,8 @@ Partial Class HouseholdDetails
         ' 
         ' RadioButton3
         ' 
-        RadioButton3.Font = New Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton3.Location = New Point(141, 1)
+        RadioButton3.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        RadioButton3.Location = New Point(172, 0)
         RadioButton3.Name = "RadioButton3"
         RadioButton3.Size = New Size(51, 24)
         RadioButton3.TabIndex = 10
@@ -117,53 +116,41 @@ Partial Class HouseholdDetails
         RadioButton3.Text = "3"
         RadioButton3.UseVisualStyleBackColor = True
         ' 
-        ' RadioButton4
-        ' 
-        RadioButton4.Font = New Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton4.Location = New Point(202, 1)
-        RadioButton4.Name = "RadioButton4"
-        RadioButton4.Size = New Size(51, 24)
-        RadioButton4.TabIndex = 11
-        RadioButton4.TabStop = True
-        RadioButton4.Text = "4"
-        RadioButton4.UseVisualStyleBackColor = True
-        ' 
         ' GroupBox1
         ' 
         GroupBox1.BackgroundImageLayout = ImageLayout.None
-        GroupBox1.Controls.Add(RadioButton4)
         GroupBox1.Controls.Add(RadioButton3)
         GroupBox1.Controls.Add(RadioButton2)
         GroupBox1.Controls.Add(RadioButton1)
         GroupBox1.FlatStyle = FlatStyle.Flat
+        GroupBox1.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         GroupBox1.ForeColor = Color.Black
-        GroupBox1.Location = New Point(90, 90)
+        GroupBox1.Location = New Point(44, 89)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(265, 33)
+        GroupBox1.Size = New Size(223, 33)
         GroupBox1.TabIndex = 14
         GroupBox1.TabStop = False
         ' 
         ' CancelBtn
         ' 
-        CancelBtn.Font = New Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
-        CancelBtn.Location = New Point(265, 582)
+        CancelBtn.Font = New Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        CancelBtn.Location = New Point(208, 500)
         CancelBtn.Name = "CancelBtn"
-        CancelBtn.Size = New Size(132, 35)
+        CancelBtn.Size = New Size(69, 30)
         CancelBtn.TabIndex = 15
         CancelBtn.Text = "Cancel"
         CancelBtn.UseVisualStyleBackColor = True
         ' 
         ' HouseholdDetails
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        AutoSize = True
         BackColor = Color.FromArgb(CByte(222), CByte(213), CByte(188))
-        ClientSize = New Size(509, 629)
+        ClientSize = New Size(349, 556)
+        Controls.Add(InviteLabel)
         Controls.Add(CancelBtn)
         Controls.Add(GroupBox1)
         Controls.Add(CreateBtn)
-        Controls.Add(InviteLabel)
         Controls.Add(RoomateSelectionLabel)
         Controls.Add(HouseholdNameInput)
         Controls.Add(HouseholdName)
@@ -184,7 +171,6 @@ Partial Class HouseholdDetails
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents RadioButton4 As RadioButton
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents CancelBtn As Button
 End Class

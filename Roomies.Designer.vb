@@ -29,6 +29,7 @@ Partial Class Roomies
         ContentPanel = New ToolStripContentPanel()
         TabControl1 = New TabControl()
         UserA = New TabPage()
+        Label1 = New Label()
         PhoneBackground = New Panel()
         MenuPanel = New Panel()
         ExpenseSummaryBtn = New Button()
@@ -85,7 +86,6 @@ Partial Class Roomies
         TabControl1.Appearance = TabAppearance.Buttons
         TabControl1.Controls.Add(UserA)
         TabControl1.Controls.Add(UserB)
-        TabControl1.Dock = DockStyle.Fill
         TabControl1.Location = New Point(0, 0)
         TabControl1.Margin = New Padding(0)
         TabControl1.Name = "TabControl1"
@@ -99,6 +99,7 @@ Partial Class Roomies
         UserA.BackColor = Color.Silver
         UserA.BackgroundImage = My.Resources.Resources.phone_template
         UserA.BackgroundImageLayout = ImageLayout.Stretch
+        UserA.Controls.Add(Label1)
         UserA.Controls.Add(PhoneBackground)
         UserA.ForeColor = Color.Black
         UserA.Location = New Point(4, 27)
@@ -108,6 +109,15 @@ Partial Class Roomies
         UserA.TabIndex = 0
         UserA.Text = "User A"
         ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(6, 19)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(41, 15)
+        Label1.TabIndex = 5
+        Label1.Text = "Label1"
+        ' 
         ' PhoneBackground
         ' 
         PhoneBackground.BackColor = Color.Transparent
@@ -115,6 +125,7 @@ Partial Class Roomies
         PhoneBackground.Controls.Add(DateLabel)
         PhoneBackground.Controls.Add(AddHouseholdBtn)
         PhoneBackground.Location = New Point(102, 42)
+        PhoneBackground.Margin = New Padding(0)
         PhoneBackground.Name = "PhoneBackground"
         PhoneBackground.Size = New Size(345, 583)
         PhoneBackground.TabIndex = 4
@@ -201,7 +212,7 @@ Partial Class Roomies
         DateLabel.Location = New Point(0, 0)
         DateLabel.Margin = New Padding(0)
         DateLabel.Name = "DateLabel"
-        DateLabel.Size = New Size(345, 48)
+        DateLabel.Size = New Size(345, 56)
         DateLabel.TabIndex = 0
         DateLabel.Text = "Today: Tue, Nov 7"
         DateLabel.TextAlign = ContentAlignment.MiddleLeft
@@ -242,9 +253,11 @@ Partial Class Roomies
         Controls.Add(TabControl1)
         DoubleBuffered = True
         Name = "Roomies"
+        StartPosition = FormStartPosition.Manual
         Text = "Roomies"
         TabControl1.ResumeLayout(False)
         UserA.ResumeLayout(False)
+        UserA.PerformLayout()
         PhoneBackground.ResumeLayout(False)
         MenuPanel.ResumeLayout(False)
         ResumeLayout(False)
@@ -265,4 +278,5 @@ Partial Class Roomies
     Friend WithEvents ExpenseSummaryBtn As Button
     Friend WithEvents ExpensesBtn As Button
     Friend WithEvents CompletedBtn As Button
+    Friend WithEvents Label1 As Label
 End Class
