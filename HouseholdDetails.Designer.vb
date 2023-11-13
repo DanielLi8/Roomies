@@ -156,7 +156,7 @@ Partial Class HouseholdDetails
         Controls.Add(HouseholdName)
         ForeColor = Color.Black
         Name = "HouseholdDetails"
-        StartPosition = FormStartPosition.Manual
+        StartPosition = FormStartPosition.CenterScreen
         Text = " "
         GroupBox1.ResumeLayout(False)
         ResumeLayout(False)

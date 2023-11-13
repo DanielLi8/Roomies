@@ -29,8 +29,8 @@ Partial Class Roomies
         ContentPanel = New ToolStripContentPanel()
         TabControl1 = New TabControl()
         UserA = New TabPage()
-        Label1 = New Label()
         PhoneBackground = New Panel()
+        Label1 = New Label()
         MenuPanel = New Panel()
         ExpenseSummaryBtn = New Button()
         ExpensesBtn = New Button()
@@ -109,15 +109,6 @@ Partial Class Roomies
         UserA.TabIndex = 0
         UserA.Text = "User A"
         ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(6, 19)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(41, 15)
-        Label1.TabIndex = 5
-        Label1.Text = "Label1"
-        ' 
         ' PhoneBackground
         ' 
         PhoneBackground.BackColor = Color.Transparent
@@ -129,6 +120,14 @@ Partial Class Roomies
         PhoneBackground.Name = "PhoneBackground"
         PhoneBackground.Size = New Size(345, 583)
         PhoneBackground.TabIndex = 4
+        ' 
+        ' Label1
+        ' 
+        Label1.Location = New Point(8, 78)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(52, 20)
+        Label1.TabIndex = 5
+        Label1.Text = "JASLLLO"
         ' 
         ' MenuPanel
         ' 
@@ -148,6 +147,7 @@ Partial Class Roomies
         ExpenseSummaryBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         ExpenseSummaryBtn.BackgroundImage = My.Resources.Resources.expense_summary_icon
         ExpenseSummaryBtn.BackgroundImageLayout = ImageLayout.Zoom
+        ExpenseSummaryBtn.Enabled = False
         ExpenseSummaryBtn.FlatAppearance.BorderSize = 0
         ExpenseSummaryBtn.FlatStyle = FlatStyle.Flat
         ExpenseSummaryBtn.Location = New Point(261, 0)
@@ -163,6 +163,7 @@ Partial Class Roomies
         ExpensesBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         ExpensesBtn.BackgroundImage = My.Resources.Resources.expenses_icon
         ExpensesBtn.BackgroundImageLayout = ImageLayout.Zoom
+        ExpensesBtn.Enabled = False
         ExpensesBtn.FlatAppearance.BorderSize = 0
         ExpensesBtn.FlatStyle = FlatStyle.Flat
         ExpensesBtn.Location = New Point(172, 0)
@@ -178,6 +179,7 @@ Partial Class Roomies
         CompletedBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         CompletedBtn.BackgroundImage = My.Resources.Resources.completed_icon
         CompletedBtn.BackgroundImageLayout = ImageLayout.Zoom
+        CompletedBtn.Enabled = False
         CompletedBtn.FlatAppearance.BorderSize = 0
         CompletedBtn.FlatStyle = FlatStyle.Flat
         CompletedBtn.Location = New Point(83, 0)
@@ -193,6 +195,7 @@ Partial Class Roomies
         TodoBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         TodoBtn.BackgroundImage = My.Resources.Resources.to_do_icon
         TodoBtn.BackgroundImageLayout = ImageLayout.Zoom
+        TodoBtn.Enabled = False
         TodoBtn.FlatAppearance.BorderSize = 0
         TodoBtn.FlatStyle = FlatStyle.Flat
         TodoBtn.Location = New Point(-6, 0)
@@ -253,11 +256,10 @@ Partial Class Roomies
         Controls.Add(TabControl1)
         DoubleBuffered = True
         Name = "Roomies"
-        StartPosition = FormStartPosition.Manual
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Roomies"
         TabControl1.ResumeLayout(False)
         UserA.ResumeLayout(False)
-        UserA.PerformLayout()
         PhoneBackground.ResumeLayout(False)
         MenuPanel.ResumeLayout(False)
         ResumeLayout(False)
