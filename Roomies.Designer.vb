@@ -176,7 +176,7 @@ Partial Class Roomies
         ' HouseholdName
         ' 
         HouseholdName.AutoSize = True
-        HouseholdName.Font = New Font("Arial", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
+        HouseholdName.Font = New Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point)
         HouseholdName.Location = New Point(21, 66)
         HouseholdName.Name = "HouseholdName"
         HouseholdName.Size = New Size(78, 15)
@@ -305,7 +305,7 @@ Partial Class Roomies
         ' 
         ' Roomies
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         BackgroundImageLayout = ImageLayout.Stretch

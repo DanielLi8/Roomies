@@ -68,5 +68,7 @@ Public Class Roomies
 
     End Sub
 
-
+    Private Sub AddChoreBtn_Click(sender As Object, e As EventArgs) Handles AddChoreBtn.Click
+        AddChore.ShowDialog()
+    End Sub
 End Class
