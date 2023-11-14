@@ -58,15 +58,15 @@ Public Class Roomies
         ExpenseSummaryBtn.BackColor = greenClicked
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles ChoreCheckbox.CheckedChanged
-        If ChoreCheckbox.Checked Then
-            ChoreCheckbox.Font = New Font("Arial", 9.75F, FontStyle.Strikeout, GraphicsUnit.Point)
-        Else
-            ChoreCheckbox.Font = New Font("Arial", 9.75F, GraphicsUnit.Point)
-        End If
-        'Label1.Text = RoommateList(1).GetName
+    'Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles ChoreCheckbox.CheckedChanged
+    'If ChoreCheckbox.Checked Then
+    '       ChoreCheckbox.Font = New Font("Arial", 9.75F, FontStyle.Strikeout, GraphicsUnit.Point)
+    'Else
+    '       ChoreCheckbox.Font = New Font("Arial", 9.75F, GraphicsUnit.Point)
+    'End If
+    'Label1.Text = RoommateList(1).GetName
 
-    End Sub
+    'End Sub
 
     Private Sub AddChoreBtn_Click(sender As Object, e As EventArgs) Handles AddChoreBtn.Click
         AddChore.ShowDialog()

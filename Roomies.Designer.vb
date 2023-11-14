@@ -31,7 +31,6 @@ Partial Class Roomies
         UserA = New TabPage()
         Label1 = New Label()
         PhoneBackground = New Panel()
-        ChoreCheckbox = New CheckBox()
         Roommate1 = New Label()
         AddChoreBtn = New Button()
         HouseholdName = New Label()
@@ -42,6 +41,7 @@ Partial Class Roomies
         TodoBtn = New Button()
         DateLabel = New Label()
         AddHouseholdBtn = New Button()
+        TodoCheckbox1 = New TodoCheckbox()
         UserB = New TabPage()
         TabControl1.SuspendLayout()
         UserA.SuspendLayout()
@@ -124,37 +124,26 @@ Partial Class Roomies
         ' PhoneBackground
         ' 
         PhoneBackground.BackColor = Color.Transparent
-        PhoneBackground.Controls.Add(ChoreCheckbox)
         PhoneBackground.Controls.Add(Roommate1)
         PhoneBackground.Controls.Add(AddChoreBtn)
         PhoneBackground.Controls.Add(HouseholdName)
         PhoneBackground.Controls.Add(MenuPanel)
         PhoneBackground.Controls.Add(DateLabel)
         PhoneBackground.Controls.Add(AddHouseholdBtn)
+        PhoneBackground.Controls.Add(TodoCheckbox1)
         PhoneBackground.Location = New Point(102, 42)
         PhoneBackground.Margin = New Padding(0)
         PhoneBackground.Name = "PhoneBackground"
         PhoneBackground.Size = New Size(345, 583)
         PhoneBackground.TabIndex = 4
         ' 
-        ' ChoreCheckbox
-        ' 
-        ChoreCheckbox.AutoSize = True
-        ChoreCheckbox.Font = New Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        ChoreCheckbox.Location = New Point(49, 154)
-        ChoreCheckbox.Name = "ChoreCheckbox"
-        ChoreCheckbox.Size = New Size(67, 20)
-        ChoreCheckbox.TabIndex = 8
-        ChoreCheckbox.Text = "Chore1"
-        ChoreCheckbox.UseVisualStyleBackColor = True
-        ' 
         ' Roommate1
         ' 
         Roommate1.AutoSize = True
-        Roommate1.Font = New Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        Roommate1.Location = New Point(30, 134)
+        Roommate1.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Roommate1.Location = New Point(21, 122)
         Roommate1.Name = "Roommate1"
-        Roommate1.Size = New Size(31, 17)
+        Roommate1.Size = New Size(34, 18)
         Roommate1.TabIndex = 7
         Roommate1.Text = "Me:"
         ' 
@@ -292,6 +281,15 @@ Partial Class Roomies
         AddHouseholdBtn.TextImageRelation = TextImageRelation.ImageAboveText
         AddHouseholdBtn.UseVisualStyleBackColor = False
         ' 
+        ' TodoCheckbox1
+        ' 
+        TodoCheckbox1.BackColor = Color.RosyBrown
+        TodoCheckbox1.Location = New Point(21, 140)
+        TodoCheckbox1.Margin = New Padding(0)
+        TodoCheckbox1.Name = "TodoCheckbox1"
+        TodoCheckbox1.Size = New Size(288, 49)
+        TodoCheckbox1.TabIndex = 8
+        ' 
         ' UserB
         ' 
         UserB.BackColor = Color.White
@@ -309,7 +307,7 @@ Partial Class Roomies
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(553, 729)
+        ClientSize = New Size(554, 645)
         Controls.Add(TabControl1)
         DoubleBuffered = True
         Name = "Roomies"
@@ -342,5 +340,5 @@ Partial Class Roomies
     Friend WithEvents AddChoreBtn As Button
     Friend WithEvents HouseholdName As Label
     Friend WithEvents Roommate1 As Label
-    Friend WithEvents ChoreCheckbox As CheckBox
+    Friend WithEvents TodoCheckbox1 As TodoCheckbox
 End Class

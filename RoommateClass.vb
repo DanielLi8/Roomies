@@ -5,8 +5,9 @@ Public Class RoommateClass
     Private Name As String
     Private Address As String
     Private ExpenseList As List(Of String)
+    'expense should be its own class with cost
     Private ChoreList As List(Of String)
-
+    'can convert into class for chorelist since it has a property for recurring, effort rating
     'Constructors
     Public Sub New()
         Name = ""
@@ -24,12 +25,15 @@ Public Class RoommateClass
     End Sub
 
 #Region "Setter and getter for name"
+
+
     Public Sub setName(ByVal n As String)
         Name = n
     End Sub
     Public Function GetName() As String
         Return Name
     End Function
+
 #End Region
 
 #Region "Setter and getter for address"
@@ -46,7 +50,7 @@ Public Class RoommateClass
         ChoreList.Add(chore)
     End Sub
 
-    Public Function FindChore(chore) As String
+    Public Function getChore(chore) As String
 
         Dim index As Integer = ChoreList.IndexOf(chore)
 
@@ -76,7 +80,7 @@ Public Class RoommateClass
         ExpenseList.Add(expense)
     End Sub
 
-    Public Function FindExpense(expense) As String
+    Public Function getExpense(expense) As String
 
         Dim index As Integer = ExpenseList.IndexOf(expense)
 
@@ -98,6 +102,8 @@ Public Class RoommateClass
             ExpenseList.RemoveAt(index)
         End If
     End Sub
+
+    'add an edit function 
 
 #End Region
 End Class
