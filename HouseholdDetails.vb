@@ -2,6 +2,8 @@
 
     Private myRoomies As Roomies
 
+
+
     Public Sub New(myRoomies As Roomies)
 
         ' This call is required by the Windows Form Designer.
@@ -49,9 +51,7 @@
             VerticalSpacing += 1
         Next
 
-        'dynamically relocate buttons
-        'CreateBtn.Location = New Point(71, 140 * VerticalSpacing)
-        ' CancelBtn.Location = New Point(200, 140 * VerticalSpacing)
+
 
     End Sub
 
@@ -60,4 +60,30 @@
         myRoomies.AddHouseholdBtn.Enabled = True
         Me.Close()
     End Sub
+
+    Private Sub CreateBtn_Click(sender As Object, e As EventArgs) Handles CreateBtn.Click
+        'Hides addhousehold button
+        myRoomies.AddHouseholdBtn.Visible = False
+
+        'Enables Menu panel
+        myRoomies.TodoBtn.Enabled = True
+        myRoomies.CompletedBtn.Enabled = True
+        myRoomies.ExpensesBtn.Enabled = True
+        myRoomies.ExpenseSummaryBtn.Enabled = True
+
+        'updates Household Name
+        myRoomies.HouseholdName.Text = HouseholdNameInput.Text
+
+        Dim num As Integer = 1
+        'Create Roommates and add it to a list
+        For Each roommate In roommateControls
+            Dim newRoommate As New RoommateClass(roommate.NameInput.Text, roommate.Emaillnput.Text)
+            myRoomies.AddRoommate(newRoommate)
+        Next
+
+        Me.Close()
+        '
+    End Sub
+
+
 End Class

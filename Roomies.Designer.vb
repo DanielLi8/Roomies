@@ -29,8 +29,12 @@ Partial Class Roomies
         ContentPanel = New ToolStripContentPanel()
         TabControl1 = New TabControl()
         UserA = New TabPage()
-        PhoneBackground = New Panel()
         Label1 = New Label()
+        PhoneBackground = New Panel()
+        ChoreCheckbox = New CheckBox()
+        Roommate1 = New Label()
+        AddChoreBtn = New Button()
+        HouseholdName = New Label()
         MenuPanel = New Panel()
         ExpenseSummaryBtn = New Button()
         ExpensesBtn = New Button()
@@ -109,9 +113,21 @@ Partial Class Roomies
         UserA.TabIndex = 0
         UserA.Text = "User A"
         ' 
+        ' Label1
+        ' 
+        Label1.Location = New Point(8, 78)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(52, 20)
+        Label1.TabIndex = 5
+        Label1.Text = "JASLLLO"
+        ' 
         ' PhoneBackground
         ' 
         PhoneBackground.BackColor = Color.Transparent
+        PhoneBackground.Controls.Add(ChoreCheckbox)
+        PhoneBackground.Controls.Add(Roommate1)
+        PhoneBackground.Controls.Add(AddChoreBtn)
+        PhoneBackground.Controls.Add(HouseholdName)
         PhoneBackground.Controls.Add(MenuPanel)
         PhoneBackground.Controls.Add(DateLabel)
         PhoneBackground.Controls.Add(AddHouseholdBtn)
@@ -121,13 +137,51 @@ Partial Class Roomies
         PhoneBackground.Size = New Size(345, 583)
         PhoneBackground.TabIndex = 4
         ' 
-        ' Label1
+        ' ChoreCheckbox
         ' 
-        Label1.Location = New Point(8, 78)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(52, 20)
-        Label1.TabIndex = 5
-        Label1.Text = "JASLLLO"
+        ChoreCheckbox.AutoSize = True
+        ChoreCheckbox.Font = New Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        ChoreCheckbox.Location = New Point(49, 154)
+        ChoreCheckbox.Name = "ChoreCheckbox"
+        ChoreCheckbox.Size = New Size(67, 20)
+        ChoreCheckbox.TabIndex = 8
+        ChoreCheckbox.Text = "Chore1"
+        ChoreCheckbox.UseVisualStyleBackColor = True
+        ' 
+        ' Roommate1
+        ' 
+        Roommate1.AutoSize = True
+        Roommate1.Font = New Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        Roommate1.Location = New Point(30, 134)
+        Roommate1.Name = "Roommate1"
+        Roommate1.Size = New Size(31, 17)
+        Roommate1.TabIndex = 7
+        Roommate1.Text = "Me:"
+        ' 
+        ' AddChoreBtn
+        ' 
+        AddChoreBtn.Anchor = AnchorStyles.None
+        AddChoreBtn.BackColor = Color.Transparent
+        AddChoreBtn.FlatAppearance.BorderSize = 0
+        AddChoreBtn.FlatStyle = FlatStyle.Flat
+        AddChoreBtn.Font = New Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
+        AddChoreBtn.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        AddChoreBtn.Location = New Point(224, 79)
+        AddChoreBtn.Name = "AddChoreBtn"
+        AddChoreBtn.Size = New Size(48, 39)
+        AddChoreBtn.TabIndex = 6
+        AddChoreBtn.Text = "+"
+        AddChoreBtn.UseVisualStyleBackColor = False
+        ' 
+        ' HouseholdName
+        ' 
+        HouseholdName.AutoSize = True
+        HouseholdName.Font = New Font("Arial", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
+        HouseholdName.Location = New Point(21, 66)
+        HouseholdName.Name = "HouseholdName"
+        HouseholdName.Size = New Size(78, 15)
+        HouseholdName.TabIndex = 5
+        HouseholdName.Text = "HouseName"
         ' 
         ' MenuPanel
         ' 
@@ -144,22 +198,24 @@ Partial Class Roomies
         ' 
         ' ExpenseSummaryBtn
         ' 
+        ExpenseSummaryBtn.Anchor = AnchorStyles.None
         ExpenseSummaryBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         ExpenseSummaryBtn.BackgroundImage = My.Resources.Resources.expense_summary_icon
         ExpenseSummaryBtn.BackgroundImageLayout = ImageLayout.Zoom
         ExpenseSummaryBtn.Enabled = False
         ExpenseSummaryBtn.FlatAppearance.BorderSize = 0
         ExpenseSummaryBtn.FlatStyle = FlatStyle.Flat
-        ExpenseSummaryBtn.Location = New Point(261, 0)
+        ExpenseSummaryBtn.Location = New Point(244, 0)
         ExpenseSummaryBtn.Margin = New Padding(0)
         ExpenseSummaryBtn.Name = "ExpenseSummaryBtn"
         ExpenseSummaryBtn.Padding = New Padding(1)
-        ExpenseSummaryBtn.Size = New Size(89, 65)
+        ExpenseSummaryBtn.Size = New Size(101, 65)
         ExpenseSummaryBtn.TabIndex = 7
         ExpenseSummaryBtn.UseVisualStyleBackColor = False
         ' 
         ' ExpensesBtn
         ' 
+        ExpensesBtn.Anchor = AnchorStyles.None
         ExpensesBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         ExpensesBtn.BackgroundImage = My.Resources.Resources.expenses_icon
         ExpensesBtn.BackgroundImageLayout = ImageLayout.Zoom
@@ -176,6 +232,7 @@ Partial Class Roomies
         ' 
         ' CompletedBtn
         ' 
+        CompletedBtn.Anchor = AnchorStyles.None
         CompletedBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         CompletedBtn.BackgroundImage = My.Resources.Resources.completed_icon
         CompletedBtn.BackgroundImageLayout = ImageLayout.Zoom
@@ -192,30 +249,30 @@ Partial Class Roomies
         ' 
         ' TodoBtn
         ' 
+        TodoBtn.Anchor = AnchorStyles.None
         TodoBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         TodoBtn.BackgroundImage = My.Resources.Resources.to_do_icon
         TodoBtn.BackgroundImageLayout = ImageLayout.Zoom
         TodoBtn.Enabled = False
         TodoBtn.FlatAppearance.BorderSize = 0
         TodoBtn.FlatStyle = FlatStyle.Flat
-        TodoBtn.Location = New Point(-6, 0)
+        TodoBtn.Location = New Point(0, 0)
         TodoBtn.Margin = New Padding(0)
         TodoBtn.Name = "TodoBtn"
         TodoBtn.Padding = New Padding(1)
-        TodoBtn.Size = New Size(89, 65)
+        TodoBtn.Size = New Size(83, 65)
         TodoBtn.TabIndex = 5
         TodoBtn.UseVisualStyleBackColor = False
         ' 
         ' DateLabel
         ' 
-        DateLabel.BackColor = Color.DimGray
-        DateLabel.Dock = DockStyle.Top
-        DateLabel.Font = New Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
+        DateLabel.BackColor = Color.Transparent
+        DateLabel.Font = New Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
         DateLabel.ForeColor = Color.Black
-        DateLabel.Location = New Point(0, 0)
+        DateLabel.Location = New Point(21, 82)
         DateLabel.Margin = New Padding(0)
         DateLabel.Name = "DateLabel"
-        DateLabel.Size = New Size(345, 56)
+        DateLabel.Size = New Size(200, 40)
         DateLabel.TabIndex = 0
         DateLabel.Text = "Today: Tue, Nov 7"
         DateLabel.TextAlign = ContentAlignment.MiddleLeft
@@ -248,7 +305,7 @@ Partial Class Roomies
         ' 
         ' Roomies
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         BackgroundImageLayout = ImageLayout.Stretch
@@ -261,6 +318,7 @@ Partial Class Roomies
         TabControl1.ResumeLayout(False)
         UserA.ResumeLayout(False)
         PhoneBackground.ResumeLayout(False)
+        PhoneBackground.PerformLayout()
         MenuPanel.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
@@ -281,4 +339,8 @@ Partial Class Roomies
     Friend WithEvents ExpensesBtn As Button
     Friend WithEvents CompletedBtn As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents AddChoreBtn As Button
+    Friend WithEvents HouseholdName As Label
+    Friend WithEvents Roommate1 As Label
+    Friend WithEvents ChoreCheckbox As CheckBox
 End Class
