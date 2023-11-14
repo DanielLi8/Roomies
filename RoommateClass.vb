@@ -25,12 +25,15 @@ Public Class RoommateClass
     End Sub
 
 #Region "Setter and getter for name"
+
+
     Public Sub setName(ByVal n As String)
         Name = n
     End Sub
     Public Function GetName() As String
         Return Name
     End Function
+
 #End Region
 
 #Region "Setter and getter for address"

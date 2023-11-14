@@ -307,7 +307,7 @@ Partial Class Roomies
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(555, 645)
+        ClientSize = New Size(554, 645)
         Controls.Add(TabControl1)
         DoubleBuffered = True
         Name = "Roomies"
