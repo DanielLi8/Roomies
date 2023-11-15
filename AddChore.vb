@@ -13,11 +13,11 @@
     Private Sub AddChore_Load(sender As Object, e As EventArgs) Handles MyBase.Activated
 
         ' Clear existing items in the ComboBox
-        ComboBox1.Items.Clear()
+        Assignee.Items.Clear()
 
         ' Add roommates to ComboBox
         For Each roommate In myRoomies.getRoommateList
-            ComboBox1.Items.Add(roommate.GetName)
+            Assignee.Items.Add(roommate.GetName)
         Next
     End Sub
 
@@ -53,8 +53,15 @@
             chore.Effort = 5
         End If
 
-        'Assign chore to specific roommate
-        chore.Roommate = ComboBox1.SelectedIndex
+        'Assign roommate associated with the chore
+        chore.Roommate = Assignee.SelectedIndex
+        ' fix the below line add chore to selected index
+
+        'Assign chore associated to roommate
+        Dim rList = Roomies.getRoommateList()
+        rList(Assignee.SelectedIndex).AddChore(chore)
+
+        ' will eventually remove this line
         myRoomies.AddChoreList(chore)
 
 

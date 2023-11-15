@@ -44,7 +44,7 @@ Partial Class AddChore
         Label4 = New Label()
         PictureBox4 = New PictureBox()
         AssignToLabel = New Label()
-        ComboBox1 = New ComboBox()
+        Assignee = New ComboBox()
         CreateButton = New Button()
         Button1 = New Button()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -278,13 +278,13 @@ Partial Class AddChore
         AssignToLabel.TabIndex = 14
         AssignToLabel.Text = "Assign to:"
         ' 
-        ' ComboBox1
+        ' Assignee
         ' 
-        ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(126, 323)
-        ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(121, 23)
-        ComboBox1.TabIndex = 15
+        Assignee.FormattingEnabled = True
+        Assignee.Location = New Point(126, 323)
+        Assignee.Name = "Assignee"
+        Assignee.Size = New Size(121, 23)
+        Assignee.TabIndex = 15
         ' 
         ' CreateButton
         ' 
@@ -312,7 +312,7 @@ Partial Class AddChore
         ClientSize = New Size(349, 556)
         Controls.Add(Button1)
         Controls.Add(CreateButton)
-        Controls.Add(ComboBox1)
+        Controls.Add(Assignee)
         Controls.Add(AssignToLabel)
         Controls.Add(Label4)
         Controls.Add(Label3)
@@ -362,7 +362,7 @@ Partial Class AddChore
     Friend WithEvents Label4 As Label
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents AssignToLabel As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Assignee As ComboBox
     Friend WithEvents CreateButton As Button
     Friend WithEvents Button1 As Button
 End Class

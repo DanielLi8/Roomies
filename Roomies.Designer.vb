@@ -31,7 +31,9 @@ Partial Class Roomies
         UserA = New TabPage()
         Label1 = New Label()
         TodoViewPanel = New Panel()
+        Panel1 = New Panel()
         ChoreCheckboxPanel = New Panel()
+        Label2 = New Label()
         Roommate1 = New Label()
         AddChoreBtn = New Button()
         HouseholdName = New Label()
@@ -127,7 +129,9 @@ Partial Class Roomies
         ' TodoViewPanel
         ' 
         TodoViewPanel.BackColor = Color.Transparent
+        TodoViewPanel.Controls.Add(Panel1)
         TodoViewPanel.Controls.Add(ChoreCheckboxPanel)
+        TodoViewPanel.Controls.Add(Label2)
         TodoViewPanel.Controls.Add(Roommate1)
         TodoViewPanel.Controls.Add(AddChoreBtn)
         TodoViewPanel.Controls.Add(HouseholdName)
@@ -138,17 +142,34 @@ Partial Class Roomies
         TodoViewPanel.Size = New Size(345, 507)
         TodoViewPanel.TabIndex = 4
         ' 
+        ' Panel1
+        ' 
+        Panel1.Location = New Point(21, 333)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(287, 152)
+        Panel1.TabIndex = 8
+        ' 
         ' ChoreCheckboxPanel
         ' 
         ChoreCheckboxPanel.Location = New Point(21, 143)
         ChoreCheckboxPanel.Name = "ChoreCheckboxPanel"
-        ChoreCheckboxPanel.Size = New Size(287, 184)
+        ChoreCheckboxPanel.Size = New Size(287, 158)
         ChoreCheckboxPanel.TabIndex = 8
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label2.Location = New Point(21, 312)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(60, 18)
+        Label2.TabIndex = 7
+        Label2.Text = "User B:"
         ' 
         ' Roommate1
         ' 
         Roommate1.AutoSize = True
-        Roommate1.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Roommate1.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
         Roommate1.Location = New Point(21, 122)
         Roommate1.Name = "Roommate1"
         Roommate1.Size = New Size(34, 18)
@@ -163,9 +184,9 @@ Partial Class Roomies
         AddChoreBtn.FlatStyle = FlatStyle.Flat
         AddChoreBtn.Font = New Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
         AddChoreBtn.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        AddChoreBtn.Location = New Point(224, 79)
+        AddChoreBtn.Location = New Point(270, 82)
         AddChoreBtn.Name = "AddChoreBtn"
-        AddChoreBtn.Size = New Size(48, 39)
+        AddChoreBtn.Size = New Size(38, 40)
         AddChoreBtn.TabIndex = 6
         AddChoreBtn.Text = "+"
         AddChoreBtn.UseVisualStyleBackColor = False
@@ -173,7 +194,7 @@ Partial Class Roomies
         ' HouseholdName
         ' 
         HouseholdName.AutoSize = True
-        HouseholdName.Font = New Font("Arial", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
+        HouseholdName.Font = New Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point)
         HouseholdName.Location = New Point(21, 66)
         HouseholdName.Name = "HouseholdName"
         HouseholdName.Size = New Size(78, 15)
@@ -311,7 +332,7 @@ Partial Class Roomies
         ' 
         ' Roomies
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         BackgroundImageLayout = ImageLayout.Stretch
@@ -352,4 +373,6 @@ Partial Class Roomies
     Friend WithEvents Roommate1 As Label
     Friend WithEvents AddHouseholdPanel As Panel
     Friend WithEvents ChoreCheckboxPanel As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Panel1 As Panel
 End Class

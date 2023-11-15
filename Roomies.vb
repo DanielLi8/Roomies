@@ -84,6 +84,7 @@ Public Class Roomies
 
 
     Private Sub AddChoreBtn_Click(sender As Object, e As EventArgs) Handles AddChoreBtn.Click
+
         Dim choreAdd As New AddChore(Me)
         choreAdd.ShowDialog()
 
@@ -92,6 +93,7 @@ Public Class Roomies
             Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort)
 
             todobox.Location = New Point(0, 58 * verticalSpacing)
+            ' fix below to add to panel depending on which user
             ChoreCheckboxPanel.Controls.Add(todobox)
             verticalSpacing += 1
         Next

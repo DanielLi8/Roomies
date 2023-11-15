@@ -29,11 +29,8 @@
             roommatesnum = 1
         ElseIf RadioButton2.Checked Then
             roommatesnum = 2
-
         ElseIf RadioButton3.Checked Then
             roommatesnum = 3
-
-
         End If
 
         Dim number As Integer = 1
@@ -75,6 +72,11 @@
         myRoomies.HouseholdName.Text = HouseholdNameInput.Text
 
         Dim num As Integer = 1
+
+        'Add current user as a roommate
+        Dim currentUser As New RoommateClass("User A", "user_a@gmail.com")
+        myRoomies.AddRoommate(currentUser)
+
         'Create Roommates and add it to a list
         For Each roommate In roommateControls
             Dim newRoommate As New RoommateClass(roommate.NameInput.Text, roommate.Emaillnput.Text)
