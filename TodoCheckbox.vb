@@ -14,6 +14,7 @@
         InitializeComponent()
         Me.ChoreCheckbox.Text = name
         Me.RecurringLabel.Text = "Recurring: " & recurring
+
         Me.EffortLabel.Text = effort
 
         ' Add any initialization after the InitializeComponent() call.

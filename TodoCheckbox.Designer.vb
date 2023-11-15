@@ -53,13 +53,14 @@ Partial Class TodoCheckbox
         ' 
         ' ChoreCheckbox
         ' 
+        ChoreCheckbox.AutoSize = True
         ChoreCheckbox.BackColor = Color.Transparent
         ChoreCheckbox.FlatAppearance.MouseOverBackColor = Color.IndianRed
         ChoreCheckbox.FlatStyle = FlatStyle.Flat
         ChoreCheckbox.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
         ChoreCheckbox.Location = New Point(17, 3)
         ChoreCheckbox.Name = "ChoreCheckbox"
-        ChoreCheckbox.Size = New Size(80, 30)
+        ChoreCheckbox.Size = New Size(76, 22)
         ChoreCheckbox.TabIndex = 12
         ChoreCheckbox.Text = "Chore1"
         ChoreCheckbox.UseVisualStyleBackColor = False

@@ -29,11 +29,10 @@ Partial Class Roomies
         ContentPanel = New ToolStripContentPanel()
         TabControl1 = New TabControl()
         UserA = New TabPage()
-        Label1 = New Label()
         TodoViewPanel = New Panel()
-        Panel1 = New Panel()
-        ChoreCheckboxPanel = New Panel()
-        Label2 = New Label()
+        User2ChoreCheckboxPanel = New Panel()
+        User1ChoreCheckboxPanel = New Panel()
+        Userb2 = New Label()
         Roommate1 = New Label()
         AddChoreBtn = New Button()
         HouseholdName = New Label()
@@ -107,7 +106,6 @@ Partial Class Roomies
         UserA.BackColor = Color.Silver
         UserA.BackgroundImage = My.Resources.Resources.phone_template
         UserA.BackgroundImageLayout = ImageLayout.Stretch
-        UserA.Controls.Add(Label1)
         UserA.Controls.Add(TodoViewPanel)
         UserA.Controls.Add(MenuPanel)
         UserA.ForeColor = Color.Black
@@ -118,20 +116,12 @@ Partial Class Roomies
         UserA.TabIndex = 0
         UserA.Text = "User A"
         ' 
-        ' Label1
-        ' 
-        Label1.Location = New Point(8, 78)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(52, 20)
-        Label1.TabIndex = 5
-        Label1.Text = "JASLLLO"
-        ' 
         ' TodoViewPanel
         ' 
         TodoViewPanel.BackColor = Color.Transparent
-        TodoViewPanel.Controls.Add(Panel1)
-        TodoViewPanel.Controls.Add(ChoreCheckboxPanel)
-        TodoViewPanel.Controls.Add(Label2)
+        TodoViewPanel.Controls.Add(User2ChoreCheckboxPanel)
+        TodoViewPanel.Controls.Add(User1ChoreCheckboxPanel)
+        TodoViewPanel.Controls.Add(Userb2)
         TodoViewPanel.Controls.Add(Roommate1)
         TodoViewPanel.Controls.Add(AddChoreBtn)
         TodoViewPanel.Controls.Add(HouseholdName)
@@ -142,29 +132,29 @@ Partial Class Roomies
         TodoViewPanel.Size = New Size(345, 507)
         TodoViewPanel.TabIndex = 4
         ' 
-        ' Panel1
+        ' User2ChoreCheckboxPanel
         ' 
-        Panel1.Location = New Point(21, 333)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(287, 152)
-        Panel1.TabIndex = 8
+        User2ChoreCheckboxPanel.Location = New Point(21, 333)
+        User2ChoreCheckboxPanel.Name = "User2ChoreCheckboxPanel"
+        User2ChoreCheckboxPanel.Size = New Size(287, 152)
+        User2ChoreCheckboxPanel.TabIndex = 8
         ' 
-        ' ChoreCheckboxPanel
+        ' User1ChoreCheckboxPanel
         ' 
-        ChoreCheckboxPanel.Location = New Point(21, 143)
-        ChoreCheckboxPanel.Name = "ChoreCheckboxPanel"
-        ChoreCheckboxPanel.Size = New Size(287, 158)
-        ChoreCheckboxPanel.TabIndex = 8
+        User1ChoreCheckboxPanel.Location = New Point(21, 143)
+        User1ChoreCheckboxPanel.Name = "User1ChoreCheckboxPanel"
+        User1ChoreCheckboxPanel.Size = New Size(287, 158)
+        User1ChoreCheckboxPanel.TabIndex = 8
         ' 
-        ' Label2
+        ' Userb2
         ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label2.Location = New Point(21, 312)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(60, 18)
-        Label2.TabIndex = 7
-        Label2.Text = "User B:"
+        Userb2.AutoSize = True
+        Userb2.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Userb2.Location = New Point(21, 312)
+        Userb2.Name = "Userb2"
+        Userb2.Size = New Size(60, 18)
+        Userb2.TabIndex = 7
+        Userb2.Text = "User B:"
         ' 
         ' Roommate1
         ' 
@@ -324,7 +314,7 @@ Partial Class Roomies
         ' 
         AddHouseholdPanel.BackColor = Color.Transparent
         AddHouseholdPanel.Controls.Add(AddHouseholdBtn)
-        AddHouseholdPanel.Location = New Point(567, 78)
+        AddHouseholdPanel.Location = New Point(584, 69)
         AddHouseholdPanel.Margin = New Padding(0)
         AddHouseholdPanel.Name = "AddHouseholdPanel"
         AddHouseholdPanel.Size = New Size(345, 507)
@@ -367,12 +357,11 @@ Partial Class Roomies
     Friend WithEvents ExpenseSummaryBtn As Button
     Friend WithEvents ExpensesBtn As Button
     Friend WithEvents CompletedBtn As Button
-    Friend WithEvents Label1 As Label
     Friend WithEvents AddChoreBtn As Button
     Friend WithEvents HouseholdName As Label
     Friend WithEvents Roommate1 As Label
     Friend WithEvents AddHouseholdPanel As Panel
-    Friend WithEvents ChoreCheckboxPanel As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents User1ChoreCheckboxPanel As Panel
+    Friend WithEvents Userb2 As Label
+    Friend WithEvents User2ChoreCheckboxPanel As Panel
 End Class

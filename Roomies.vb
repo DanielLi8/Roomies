@@ -44,6 +44,7 @@ Public Class Roomies
         householdform.Location = New Point(householdform.Location.X, householdform.Location.Y + 12)
         householdform.ShowDialog()
         AddHouseholdBtn.Enabled = False
+        Userb2.Text = RoommateList(1).GetName()
 
     End Sub
 #End Region
@@ -94,7 +95,7 @@ Public Class Roomies
 
             todobox.Location = New Point(0, 58 * verticalSpacing)
             ' fix below to add to panel depending on which user
-            ChoreCheckboxPanel.Controls.Add(todobox)
+            User1ChoreCheckboxPanel.Controls.Add(todobox)
             verticalSpacing += 1
         Next
 
