@@ -1,6 +1,15 @@
 ﻿Public Class AddChore
 
     Private myRoomies As Roomies
+
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
     Public Sub New(myRoomies As Roomies)
 
         ' This call is required by the designer.
@@ -9,6 +18,8 @@
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
+
+
 
     Private Sub AddChore_Load(sender As Object, e As EventArgs) Handles MyBase.Activated
 

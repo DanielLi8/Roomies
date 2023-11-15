@@ -90,21 +90,28 @@ Public Class Roomies
         Dim choreAdd As New AddChore(Me)
         choreAdd.ShowDialog()
 
-        Dim verticalSpacing As Integer = 0
+        Dim User1VerticalSpacing As Integer = 0
+        Dim User2VerticalSpacing As Integer = 0
+
         For Each chore In ChoreList
             Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort)
 
-            todobox.Location = New Point(0, 58 * verticalSpacing)
             ' fix below to add to panel depending on which user
-            User1ChoreCheckboxPanel.Controls.Add(todobox)
-            verticalSpacing += 1
+            If chore.Roommate = 0 Then
+                todobox.Location = New Point(0, 58 * User1VerticalSpacing)
+                User1ChoreCheckboxPanel.Controls.Add(todobox)
+                User1VerticalSpacing += 1
+
+            ElseIf chore.Roommate = 1 Then
+                todobox.Location = New Point(0, 58 * User2VerticalSpacing)
+                User2ChoreCheckboxPanel.Controls.Add(todobox)
+                User2VerticalSpacing += 1
+            End If
         Next
 
     End Sub
 
-    Private Sub ChoreCheckboxPanel_Paint(sender As Object, e As PaintEventArgs) Handles ChoreCheckboxPanel.Paint
 
-    End Sub
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -122,7 +129,5 @@ Public Class Roomies
 
 
 
-    Private Sub TodoViewPanel_Paint(sender As Object, e As PaintEventArgs) Handles TodoViewPanel.Paint
 
-    End Sub
 End Class

@@ -26,6 +26,8 @@
     End Sub
 
     Private Sub EditBtn_Click(sender As Object, e As EventArgs) Handles EditBtn.Click
+        Dim choreEdit As New AddChore
+        choreEdit.ShowDialog()
 
     End Sub
 
