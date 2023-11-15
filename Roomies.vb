@@ -1,9 +1,10 @@
-﻿Imports System.Net.Security
+﻿Imports System.Globalization
+Imports System.Net.Security
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip
 
 Public Class Roomies
 
-    Private Sub Roomies_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Roomies_Load(sender As Object, e As EventArgs)
         Me.Cursor = CustomCursor.CirclePointCursor
     End Sub
 
@@ -101,5 +102,27 @@ Public Class Roomies
 
     End Sub
 
+    Private Sub ChoreCheckboxPanel_Paint(sender As Object, e As PaintEventArgs) Handles ChoreCheckboxPanel.Paint
 
+    End Sub
+
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        UpdateDate()
+    End Sub
+
+    Private Sub UpdateDate()
+        Dim currentDate As DateTime = DateTime.Now
+        Dim formattedDate As String = currentDate.ToString("ddd, MMM d", CultureInfo.InvariantCulture)
+
+        DateLabel.Text = "Today: " & formattedDate
+    End Sub
+
+
+
+
+
+    Private Sub TodoViewPanel_Paint(sender As Object, e As PaintEventArgs) Handles TodoViewPanel.Paint
+
+    End Sub
 End Class
