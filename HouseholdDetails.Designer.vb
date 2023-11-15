@@ -30,9 +30,9 @@ Partial Class HouseholdDetails
         RadioButton1 = New RadioButton()
         RadioButton2 = New RadioButton()
         RadioButton3 = New RadioButton()
-        GroupBox1 = New GroupBox()
         CancelBtn = New Button()
-        GroupBox1.SuspendLayout()
+        Panel1 = New Panel()
+        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' HouseholdName
@@ -86,7 +86,7 @@ Partial Class HouseholdDetails
         ' RadioButton1
         ' 
         RadioButton1.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton1.Location = New Point(6, 0)
+        RadioButton1.Location = New Point(11, 3)
         RadioButton1.Name = "RadioButton1"
         RadioButton1.Size = New Size(51, 24)
         RadioButton1.TabIndex = 8
@@ -97,7 +97,7 @@ Partial Class HouseholdDetails
         ' RadioButton2
         ' 
         RadioButton2.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton2.Location = New Point(87, 0)
+        RadioButton2.Location = New Point(92, 3)
         RadioButton2.Name = "RadioButton2"
         RadioButton2.Size = New Size(51, 24)
         RadioButton2.TabIndex = 9
@@ -108,28 +108,13 @@ Partial Class HouseholdDetails
         ' RadioButton3
         ' 
         RadioButton3.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        RadioButton3.Location = New Point(172, 0)
+        RadioButton3.Location = New Point(173, 3)
         RadioButton3.Name = "RadioButton3"
         RadioButton3.Size = New Size(51, 24)
         RadioButton3.TabIndex = 10
         RadioButton3.TabStop = True
         RadioButton3.Text = "3"
         RadioButton3.UseVisualStyleBackColor = True
-        ' 
-        ' GroupBox1
-        ' 
-        GroupBox1.BackgroundImageLayout = ImageLayout.None
-        GroupBox1.Controls.Add(RadioButton3)
-        GroupBox1.Controls.Add(RadioButton2)
-        GroupBox1.Controls.Add(RadioButton1)
-        GroupBox1.FlatStyle = FlatStyle.Flat
-        GroupBox1.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        GroupBox1.ForeColor = Color.Black
-        GroupBox1.Location = New Point(44, 89)
-        GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(223, 33)
-        GroupBox1.TabIndex = 14
-        GroupBox1.TabStop = False
         ' 
         ' CancelBtn
         ' 
@@ -141,15 +126,26 @@ Partial Class HouseholdDetails
         CancelBtn.Text = "Cancel"
         CancelBtn.UseVisualStyleBackColor = True
         ' 
+        ' Panel1
+        ' 
+        Panel1.BackgroundImageLayout = ImageLayout.None
+        Panel1.Controls.Add(RadioButton2)
+        Panel1.Controls.Add(RadioButton3)
+        Panel1.Controls.Add(RadioButton1)
+        Panel1.Location = New Point(53, 88)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(229, 28)
+        Panel1.TabIndex = 16
+        ' 
         ' HouseholdDetails
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(222), CByte(213), CByte(188))
         ClientSize = New Size(349, 556)
+        Controls.Add(Panel1)
         Controls.Add(InviteLabel)
         Controls.Add(CancelBtn)
-        Controls.Add(GroupBox1)
         Controls.Add(CreateBtn)
         Controls.Add(RoomateSelectionLabel)
         Controls.Add(HouseholdNameInput)
@@ -158,7 +154,7 @@ Partial Class HouseholdDetails
         Name = "HouseholdDetails"
         StartPosition = FormStartPosition.CenterScreen
         Text = " "
-        GroupBox1.ResumeLayout(False)
+        Panel1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -171,6 +167,6 @@ Partial Class HouseholdDetails
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents CancelBtn As Button
+    Friend WithEvents Panel1 As Panel
 End Class

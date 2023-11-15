@@ -21,7 +21,7 @@
         End Set
     End Property
 
-    Public Property setEffort() As Integer
+    Public Property Effort() As Integer
         Get
             Return effortRating1
         End Get

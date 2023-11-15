@@ -24,7 +24,7 @@ Partial Class AddChore
     Private Sub InitializeComponent()
         Chore = New Label()
         PictureBox1 = New PictureBox()
-        TextBox1 = New TextBox()
+        ChoreInput = New TextBox()
         PictureBox2 = New PictureBox()
         Label1 = New Label()
         RecurringNone = New RadioButton()
@@ -74,12 +74,12 @@ Partial Class AddChore
         PictureBox1.TabIndex = 1
         PictureBox1.TabStop = False
         ' 
-        ' TextBox1
+        ' ChoreInput
         ' 
-        TextBox1.Location = New Point(106, 101)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(188, 23)
-        TextBox1.TabIndex = 2
+        ChoreInput.Location = New Point(106, 114)
+        ChoreInput.Name = "ChoreInput"
+        ChoreInput.Size = New Size(188, 23)
+        ChoreInput.TabIndex = 2
         ' 
         ' PictureBox2
         ' 
@@ -323,7 +323,7 @@ Partial Class AddChore
         Controls.Add(PictureBox4)
         Controls.Add(PictureBox3)
         Controls.Add(PictureBox2)
-        Controls.Add(TextBox1)
+        Controls.Add(ChoreInput)
         Controls.Add(PictureBox1)
         Controls.Add(Chore)
         Name = "AddChore"
@@ -342,7 +342,7 @@ Partial Class AddChore
 
     Friend WithEvents Chore As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents ChoreInput As TextBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents RecurringNone As RadioButton

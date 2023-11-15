@@ -6,14 +6,14 @@ Public Class RoommateClass
     Private Address As String
     Private ExpenseList As List(Of String)
     'expense should be its own class with cost
-    Private ChoreList As List(Of String)
+    Private ChoreList As List(Of ChoreClass)
     'can convert into class for chorelist since it has a property for recurring, effort rating
     'Constructors
     Public Sub New()
         Name = ""
         Address = ""
         ExpenseList = New List(Of String)
-        ChoreList = New List(Of String)
+        ChoreList = New List(Of ChoreClass)
 
     End Sub
 
@@ -21,7 +21,7 @@ Public Class RoommateClass
         Name = name1
         Address = address1
         ExpenseList = New List(Of String)
-        ChoreList = New List(Of String)
+        ChoreList = New List(Of ChoreClass)
     End Sub
 
 #Region "Setter and getter for name"
@@ -46,24 +46,24 @@ Public Class RoommateClass
 #End Region
 
 #Region "Add, retrieve and remove from Chore list"
-    Public Sub AddChore(ByVal chore As String)
+    Public Sub AddChore(ByVal chore As ChoreClass)
         ChoreList.Add(chore)
     End Sub
 
-    Public Function getChore(chore) As String
+    Public Function getChore(chore) As ChoreClass
 
         Dim index As Integer = ChoreList.IndexOf(chore)
 
         If index = -1 Then
             MessageBox.Show("Error, value not found")
-            Return "error"
+            Return New ChoreClass
         Else
             Return ChoreList(index)
         End If
 
     End Function
 
-    Public Sub RemoveChore(Chore As String)
+    Public Sub RemoveChore(Chore As ChoreClass)
         Dim index As Integer = ChoreList.IndexOf(Chore)
 
         If index = -1 Then

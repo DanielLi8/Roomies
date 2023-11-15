@@ -31,10 +31,10 @@ Partial Class TodoCheckbox
         ' 
         ' EditBtn
         ' 
+        EditBtn.BackgroundImage = My.Resources.Resources.EditPic
         EditBtn.BackgroundImageLayout = ImageLayout.Zoom
         EditBtn.FlatAppearance.BorderSize = 0
         EditBtn.FlatStyle = FlatStyle.Flat
-        EditBtn.Image = My.Resources.Resources.EditPic
         EditBtn.Location = New Point(246, 3)
         EditBtn.Name = "EditBtn"
         EditBtn.Size = New Size(33, 43)
@@ -56,7 +56,7 @@ Partial Class TodoCheckbox
         ChoreCheckbox.BackColor = Color.Transparent
         ChoreCheckbox.FlatAppearance.MouseOverBackColor = Color.IndianRed
         ChoreCheckbox.FlatStyle = FlatStyle.Flat
-        ChoreCheckbox.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        ChoreCheckbox.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
         ChoreCheckbox.Location = New Point(17, 3)
         ChoreCheckbox.Name = "ChoreCheckbox"
         ChoreCheckbox.Size = New Size(80, 30)

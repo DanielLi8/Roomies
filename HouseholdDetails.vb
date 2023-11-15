@@ -11,7 +11,7 @@
         Me.myRoomies = myRoomies
 
         ' Add any initialization after the InitializeComponent() call.
-        Me.Show()
+
 
 
     End Sub
