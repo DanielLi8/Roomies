@@ -203,13 +203,14 @@ Partial Class Roomies
         ' 
         ' DateLabel
         ' 
+        DateLabel.AutoSize = True
         DateLabel.BackColor = Color.Transparent
         DateLabel.Font = New Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
         DateLabel.ForeColor = Color.Black
         DateLabel.Location = New Point(21, 82)
         DateLabel.Margin = New Padding(0)
         DateLabel.Name = "DateLabel"
-        DateLabel.Size = New Size(200, 40)
+        DateLabel.Size = New Size(179, 24)
         DateLabel.TabIndex = 0
         DateLabel.Text = "Today: Tue, Nov 7"
         DateLabel.TextAlign = ContentAlignment.MiddleLeft
