@@ -64,15 +64,19 @@ Public Class Roomies
     Dim greenClicked As Color = Color.FromArgb(62, 90, 60)
     Dim greendefault As Color = Color.FromArgb(89, 121, 87)
     Private Sub MenuBtn_Click(sender As Object, e As EventArgs) Handles TodoBtn.Click
+        TodoViewPanel.Show()
+        AddChoreBtn.Show()
 
         TodoBtn.BackColor = greenClicked
         CompletedBtn.BackColor = greendefault
         ExpensesBtn.BackColor = greendefault
         ExpenseSummaryBtn.BackColor = greendefault
-
     End Sub
 
     Private Sub CompletedBtn_Click(sender As Object, e As EventArgs) Handles CompletedBtn.Click
+        TodoViewPanel.Show()
+        AddChoreBtn.Hide()
+
         TodoBtn.BackColor = greendefault
         CompletedBtn.BackColor = greenClicked
         ExpensesBtn.BackColor = greendefault
