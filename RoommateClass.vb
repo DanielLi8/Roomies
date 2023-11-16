@@ -97,7 +97,7 @@ Public Class RoommateClass
             Return matchingExpense
         Else
             MessageBox.Show("Error: Expense not found.")
-            Return New ExpenseClass("", "0.00")
+            Return New ExpenseClass("", "0.00", False)
         End If
     End Function
 

@@ -18,8 +18,4 @@
         End If
         HouseholdLabel.Text = Roomies.HouseholdName.Text
     End Sub
-
-    Private Sub MyExpenseLabel_Click(sender As Object, e As EventArgs) Handles MyExpenseLabel.Click
-
-    End Sub
 End Class
