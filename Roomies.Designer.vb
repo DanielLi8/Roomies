@@ -65,7 +65,7 @@ Partial Class Roomies
         CompletedBobLabel1 = New Label()
         CompletedAliceLabel1 = New Label()
         Label4 = New Label()
-        Label5 = New Label()
+        CompletedChoreAliceDate = New Label()
         CompletedBobPerspective = New Panel()
         Panel6 = New Panel()
         Panel7 = New Panel()
@@ -73,7 +73,7 @@ Partial Class Roomies
         CompletedBobLabel2 = New Label()
         Button7 = New Button()
         Label8 = New Label()
-        Label9 = New Label()
+        CompletedChoreBobDate = New Label()
         TabControl1.SuspendLayout()
         Bob.SuspendLayout()
         TodoViewPanel.SuspendLayout()
@@ -545,7 +545,7 @@ Partial Class Roomies
         CompletedAlicePerspective.Controls.Add(CompletedBobLabel1)
         CompletedAlicePerspective.Controls.Add(CompletedAliceLabel1)
         CompletedAlicePerspective.Controls.Add(Label4)
-        CompletedAlicePerspective.Controls.Add(Label5)
+        CompletedAlicePerspective.Controls.Add(CompletedChoreAliceDate)
         CompletedAlicePerspective.Location = New Point(1046, 105)
         CompletedAlicePerspective.Margin = New Padding(0)
         CompletedAlicePerspective.Name = "CompletedAlicePerspective"
@@ -596,19 +596,19 @@ Partial Class Roomies
         Label4.TabIndex = 5
         Label4.Text = "LeSpot"
         ' 
-        ' Label5
+        ' CompletedChoreAliceDate
         ' 
-        Label5.AutoSize = True
-        Label5.BackColor = Color.Transparent
-        Label5.Font = New Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label5.ForeColor = Color.Black
-        Label5.Location = New Point(14, 74)
-        Label5.Margin = New Padding(0)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(179, 24)
-        Label5.TabIndex = 0
-        Label5.Text = "Today: Tue, Nov 7"
-        Label5.TextAlign = ContentAlignment.MiddleLeft
+        CompletedChoreAliceDate.AutoSize = True
+        CompletedChoreAliceDate.BackColor = Color.Transparent
+        CompletedChoreAliceDate.Font = New Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
+        CompletedChoreAliceDate.ForeColor = Color.Black
+        CompletedChoreAliceDate.Location = New Point(14, 74)
+        CompletedChoreAliceDate.Margin = New Padding(0)
+        CompletedChoreAliceDate.Name = "CompletedChoreAliceDate"
+        CompletedChoreAliceDate.Size = New Size(179, 24)
+        CompletedChoreAliceDate.TabIndex = 0
+        CompletedChoreAliceDate.Text = "Today: Tue, Nov 7"
+        CompletedChoreAliceDate.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' CompletedBobPerspective
         ' 
@@ -619,7 +619,7 @@ Partial Class Roomies
         CompletedBobPerspective.Controls.Add(CompletedBobLabel2)
         CompletedBobPerspective.Controls.Add(Button7)
         CompletedBobPerspective.Controls.Add(Label8)
-        CompletedBobPerspective.Controls.Add(Label9)
+        CompletedBobPerspective.Controls.Add(CompletedChoreBobDate)
         CompletedBobPerspective.Location = New Point(1464, 105)
         CompletedBobPerspective.Margin = New Padding(0)
         CompletedBobPerspective.Name = "CompletedBobPerspective"
@@ -685,19 +685,19 @@ Partial Class Roomies
         Label8.TabIndex = 5
         Label8.Text = "LeSpot"
         ' 
-        ' Label9
+        ' CompletedChoreBobDate
         ' 
-        Label9.AutoSize = True
-        Label9.BackColor = Color.Transparent
-        Label9.Font = New Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label9.ForeColor = Color.Black
-        Label9.Location = New Point(14, 74)
-        Label9.Margin = New Padding(0)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(179, 24)
-        Label9.TabIndex = 0
-        Label9.Text = "Today: Tue, Nov 7"
-        Label9.TextAlign = ContentAlignment.MiddleLeft
+        CompletedChoreBobDate.AutoSize = True
+        CompletedChoreBobDate.BackColor = Color.Transparent
+        CompletedChoreBobDate.Font = New Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
+        CompletedChoreBobDate.ForeColor = Color.Black
+        CompletedChoreBobDate.Location = New Point(14, 74)
+        CompletedChoreBobDate.Margin = New Padding(0)
+        CompletedChoreBobDate.Name = "CompletedChoreBobDate"
+        CompletedChoreBobDate.Size = New Size(179, 24)
+        CompletedChoreBobDate.TabIndex = 0
+        CompletedChoreBobDate.Text = "Today: Tue, Nov 7"
+        CompletedChoreBobDate.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Roomies
         ' 
@@ -773,7 +773,7 @@ Partial Class Roomies
     Friend WithEvents CompletedBobLabel1 As Label
     Friend WithEvents CompletedAliceLabel1 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents CompletedChoreAliceDate As Label
     Friend WithEvents CompletedBobPerspective As Panel
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel7 As Panel
@@ -781,5 +781,5 @@ Partial Class Roomies
     Friend WithEvents CompletedBobLabel2 As Label
     Friend WithEvents Button7 As Button
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
+    Friend WithEvents CompletedChoreBobDate As Label
 End Class

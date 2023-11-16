@@ -197,6 +197,8 @@ Public Class Roomies
 
         DateLabel.Text = "Today: " & formattedDate
         AliceDateLabel.Text = "Today: " & formattedDate
+        CompletedChoreAliceDate.Text = "Today: " & formattedDate
+        CompletedChoreBobDate.Text = "Today: " & formattedDate
     End Sub
 
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles AliceHouseLabel.Click
