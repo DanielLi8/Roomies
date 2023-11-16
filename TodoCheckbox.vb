@@ -58,8 +58,17 @@
     Private Sub ChoreCheckbox_CheckedChanged(sender As Object, e As EventArgs) Handles ChoreCheckbox.CheckedChanged
         If ChoreCheckbox.Checked Then
             ChoreCheckbox.Font = New Font("Arial", 12.0F, FontStyle.Strikeout, GraphicsUnit.Point)
+            Dim copyCheckBox As New CheckBox
+            copyCheckBox.Text = Me.ChoreCheckbox.Text
+            copyCheckBox.Font = New Font("Arial", 12.0F, FontStyle.Strikeout, GraphicsUnit.Point)
+            Me.ChoreCheckbox.Enabled = False
+            Roomies.AddCompetedCheckBoxList(copyCheckBox)
+            Roomies.UpdateCompletedPanelView()
+            Roomies.AliceUpdateCompletedPanelView()
         Else
             ChoreCheckbox.Font = New Font("Arial", 12.0F, GraphicsUnit.Point)
+            Dim copyCheckBox As New CheckBox
+
         End If
 
     End Sub

@@ -63,9 +63,14 @@ Public Class Roomies
 #Region "Methods for selecting menu panel controls"
     Dim greenClicked As Color = Color.FromArgb(62, 90, 60)
     Dim greendefault As Color = Color.FromArgb(89, 121, 87)
-    Private Sub MenuBtn_Click(sender As Object, e As EventArgs) Handles TodoBtn.Click
-        TodoViewPanel.Show()
-        AddChoreBtn.Show()
+    Private Sub MenuBtn_Click(sender As Object, e As EventArgs) Handles TodoBtn.Click, ToDoBtnAlice.Click
+        'Show Panels
+        TodoViewPanel.Visible = True
+        ToDoViewPanelAlice.Visible = True
+
+        'Hide Panels
+        CompletedPerspective.Visible = False
+        CompletedPerspective2.Visible = False
 
         TodoBtn.BackColor = greenClicked
         CompletedBtn.BackColor = greendefault
@@ -73,9 +78,17 @@ Public Class Roomies
         ExpenseSummaryBtn.BackColor = greendefault
     End Sub
 
-    Private Sub CompletedBtn_Click(sender As Object, e As EventArgs) Handles CompletedBtn.Click
-        TodoViewPanel.Show()
-        AddChoreBtn.Hide()
+    Private Sub CompletedBtn_Click(sender As Object, e As EventArgs) Handles CompletedBtn.Click, CompletedBtnAlice.Click
+        'Show Panels
+        CompletedPerspective.Visible = True
+        CompletedPerspective2.Visible = True
+
+        'Hide Panels
+        TodoViewPanel.Visible = False
+        ToDoViewPanelAlice.Visible = False
+
+
+
 
         TodoBtn.BackColor = greendefault
         CompletedBtn.BackColor = greenClicked
@@ -83,14 +96,14 @@ Public Class Roomies
         ExpenseSummaryBtn.BackColor = greendefault
     End Sub
 
-    Private Sub ExpensesBtn_Click(sender As Object, e As EventArgs) Handles ExpensesBtn.Click
+    Private Sub ExpensesBtn_Click(sender As Object, e As EventArgs) Handles ExpensesBtn.Click, ExpenseBtnAlice.Click
         TodoBtn.BackColor = greendefault
         CompletedBtn.BackColor = greendefault
         ExpensesBtn.BackColor = greenClicked
         ExpenseSummaryBtn.BackColor = greendefault
     End Sub
 
-    Private Sub ExpenseSummaryBtn_Click(sender As Object, e As EventArgs) Handles ExpenseSummaryBtn.Click
+    Private Sub ExpenseSummaryBtn_Click(sender As Object, e As EventArgs) Handles ExpenseSummaryBtn.Click, SummaryBtnAlice.Click
         TodoBtn.BackColor = greendefault
         CompletedBtn.BackColor = greendefault
         ExpensesBtn.BackColor = greendefault
@@ -181,6 +194,59 @@ Public Class Roomies
     End Sub
 #End Region
 
+#Region "CompletedCheckbox panel view"
+
+    'List to keep track of todocheckbox that are dynamically created in the household
+    Private CompletedCheckBoxList As New List(Of CheckBox)()
+
+    Public Sub AddCompetedCheckBoxList(newCheckBox As CheckBox)
+        CompletedCheckBoxList.Add(newCheckBox)
+    End Sub
+    Public Sub UpdateCompetedCheckBox(newCheckBox As CheckBox, index As Integer)
+        CompletedCheckBoxList(index) = newCheckBox
+    End Sub
+    Public Function getCompetedCheckBox() As List(Of CheckBox)
+        Return CompletedCheckBoxList
+    End Function
+
+
+
+    Public Sub UpdateCompletedPanelView()
+        CompletedChoreBobPanel.Controls.Clear()
+
+        Dim VerticalSpacing As Integer = 0
+
+        For Each CompletedCheckBox In CompletedCheckBoxList
+
+            CompletedCheckBox.Font = New Font("Arial", 12.0F, FontStyle.Strikeout, GraphicsUnit.Point)
+            ' fix below to add to panel depending on which user
+            CompletedCheckBox.Location = New Point(0, 30 * VerticalSpacing)
+            CompletedChoreBobPanel.Controls.Add(CompletedCheckBox)
+
+            VerticalSpacing += 1
+
+        Next
+
+    End Sub
+
+    Public Sub AliceUpdateCompletedPanelView()
+        CompletedChoreAlicePanel.Controls.Clear()
+
+        Dim VerticalSpacing As Integer = 0
+
+        For Each CompletedCheckBox In CompletedCheckBoxList
+
+            CompletedCheckBox.Font = New Font("Arial", 12.0F, FontStyle.Strikeout, GraphicsUnit.Point)
+            ' fix below to add to panel depending on which user
+            CompletedCheckBox.Location = New Point(0, 30 * VerticalSpacing)
+            CompletedChoreAlicePanel.Controls.Add(CompletedCheckBox)
+            VerticalSpacing += 1
+
+        Next
+
+    End Sub
+#End Region
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         UpdateDate()
@@ -188,6 +254,10 @@ Public Class Roomies
         Me.AddRoommate(currentUser)
         Dim currentUser2 As New RoommateClass("Alice", "user_a@gmail.com")
         Me.AddRoommate(currentUser2)
+
+        CompletedPerspective.Parent = Bob
+        CompletedPerspective2.Parent = UserB
+
     End Sub
 
     Private Sub UpdateDate()
@@ -196,10 +266,8 @@ Public Class Roomies
 
         DateLabel.Text = "Today: " & formattedDate
         AliceDateLabel.Text = "Today: " & formattedDate
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles AliceHouseLabel.Click
-
+        CompletedDateLabelAlice.Text = "Today: " & formattedDate
+        CompletedDateLabelBob.Text = "Today: " & formattedDate
     End Sub
 
 
