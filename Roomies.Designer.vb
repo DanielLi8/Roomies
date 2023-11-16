@@ -59,6 +59,21 @@ Partial Class Roomies
         AliceDateLabel = New Label()
         AddHouseholdBtn = New Button()
         AddHouseholdPanel = New Panel()
+        CompletedAlicePerspective = New Panel()
+        Panel3 = New Panel()
+        Panel4 = New Panel()
+        CompletedBobLabel1 = New Label()
+        CompletedAliceLabel1 = New Label()
+        Label4 = New Label()
+        Label5 = New Label()
+        CompletedBobPerspective = New Panel()
+        Panel6 = New Panel()
+        Panel7 = New Panel()
+        CompletedAliceLabel2 = New Label()
+        CompletedBobLabel2 = New Label()
+        Button7 = New Button()
+        Label8 = New Label()
+        Label9 = New Label()
         TabControl1.SuspendLayout()
         Bob.SuspendLayout()
         TodoViewPanel.SuspendLayout()
@@ -67,6 +82,8 @@ Partial Class Roomies
         AliceMenuPanel.SuspendLayout()
         Panel1.SuspendLayout()
         AddHouseholdPanel.SuspendLayout()
+        CompletedAlicePerspective.SuspendLayout()
+        CompletedBobPerspective.SuspendLayout()
         SuspendLayout()
         ' 
         ' BottomToolStripPanel
@@ -166,7 +183,7 @@ Partial Class Roomies
         ' Alice
         ' 
         Alice.AutoSize = True
-        Alice.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Alice.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
         Alice.Location = New Point(14, 312)
         Alice.Name = "Alice"
         Alice.Size = New Size(43, 18)
@@ -176,7 +193,7 @@ Partial Class Roomies
         ' Roommate1
         ' 
         Roommate1.AutoSize = True
-        Roommate1.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Roommate1.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
         Roommate1.Location = New Point(14, 122)
         Roommate1.Name = "Roommate1"
         Roommate1.Size = New Size(34, 18)
@@ -201,7 +218,7 @@ Partial Class Roomies
         ' HouseholdName
         ' 
         HouseholdName.AutoSize = True
-        HouseholdName.Font = New Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        HouseholdName.Font = New Font("Arial", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
         HouseholdName.Location = New Point(14, 58)
         HouseholdName.Name = "HouseholdName"
         HouseholdName.Size = New Size(46, 15)
@@ -438,7 +455,7 @@ Partial Class Roomies
         ' AliceBobLabel
         ' 
         AliceBobLabel.AutoSize = True
-        AliceBobLabel.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        AliceBobLabel.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
         AliceBobLabel.Location = New Point(14, 312)
         AliceBobLabel.Name = "AliceBobLabel"
         AliceBobLabel.Size = New Size(37, 18)
@@ -448,7 +465,7 @@ Partial Class Roomies
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label2.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
         Label2.Location = New Point(14, 122)
         Label2.Name = "Label2"
         Label2.Size = New Size(34, 18)
@@ -473,7 +490,7 @@ Partial Class Roomies
         ' AliceHouseLabel
         ' 
         AliceHouseLabel.AutoSize = True
-        AliceHouseLabel.Font = New Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        AliceHouseLabel.Font = New Font("Arial", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
         AliceHouseLabel.Location = New Point(14, 58)
         AliceHouseLabel.Name = "AliceHouseLabel"
         AliceHouseLabel.Size = New Size(46, 15)
@@ -520,13 +537,177 @@ Partial Class Roomies
         AddHouseholdPanel.TabIndex = 5
         AddHouseholdPanel.Visible = False
         ' 
+        ' CompletedAlicePerspective
+        ' 
+        CompletedAlicePerspective.BackColor = Color.Transparent
+        CompletedAlicePerspective.Controls.Add(Panel3)
+        CompletedAlicePerspective.Controls.Add(Panel4)
+        CompletedAlicePerspective.Controls.Add(CompletedBobLabel1)
+        CompletedAlicePerspective.Controls.Add(CompletedAliceLabel1)
+        CompletedAlicePerspective.Controls.Add(Label4)
+        CompletedAlicePerspective.Controls.Add(Label5)
+        CompletedAlicePerspective.Location = New Point(1046, 105)
+        CompletedAlicePerspective.Margin = New Padding(0)
+        CompletedAlicePerspective.Name = "CompletedAlicePerspective"
+        CompletedAlicePerspective.Size = New Size(330, 526)
+        CompletedAlicePerspective.TabIndex = 6
+        ' 
+        ' Panel3
+        ' 
+        Panel3.Location = New Point(14, 333)
+        Panel3.Name = "Panel3"
+        Panel3.Size = New Size(302, 160)
+        Panel3.TabIndex = 8
+        ' 
+        ' Panel4
+        ' 
+        Panel4.Location = New Point(14, 143)
+        Panel4.Name = "Panel4"
+        Panel4.Size = New Size(302, 160)
+        Panel4.TabIndex = 8
+        ' 
+        ' CompletedBobLabel1
+        ' 
+        CompletedBobLabel1.AutoSize = True
+        CompletedBobLabel1.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        CompletedBobLabel1.Location = New Point(14, 312)
+        CompletedBobLabel1.Name = "CompletedBobLabel1"
+        CompletedBobLabel1.Size = New Size(37, 18)
+        CompletedBobLabel1.TabIndex = 7
+        CompletedBobLabel1.Text = "Bob"
+        ' 
+        ' CompletedAliceLabel1
+        ' 
+        CompletedAliceLabel1.AutoSize = True
+        CompletedAliceLabel1.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        CompletedAliceLabel1.Location = New Point(14, 122)
+        CompletedAliceLabel1.Name = "CompletedAliceLabel1"
+        CompletedAliceLabel1.Size = New Size(34, 18)
+        CompletedAliceLabel1.TabIndex = 7
+        CompletedAliceLabel1.Text = "Me:"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Arial", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Label4.Location = New Point(14, 58)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(46, 15)
+        Label4.TabIndex = 5
+        Label4.Text = "LeSpot"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.Transparent
+        Label5.Font = New Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Label5.ForeColor = Color.Black
+        Label5.Location = New Point(14, 74)
+        Label5.Margin = New Padding(0)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(179, 24)
+        Label5.TabIndex = 0
+        Label5.Text = "Today: Tue, Nov 7"
+        Label5.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' CompletedBobPerspective
+        ' 
+        CompletedBobPerspective.BackColor = Color.Transparent
+        CompletedBobPerspective.Controls.Add(Panel6)
+        CompletedBobPerspective.Controls.Add(Panel7)
+        CompletedBobPerspective.Controls.Add(CompletedAliceLabel2)
+        CompletedBobPerspective.Controls.Add(CompletedBobLabel2)
+        CompletedBobPerspective.Controls.Add(Button7)
+        CompletedBobPerspective.Controls.Add(Label8)
+        CompletedBobPerspective.Controls.Add(Label9)
+        CompletedBobPerspective.Location = New Point(1464, 105)
+        CompletedBobPerspective.Margin = New Padding(0)
+        CompletedBobPerspective.Name = "CompletedBobPerspective"
+        CompletedBobPerspective.Size = New Size(330, 526)
+        CompletedBobPerspective.TabIndex = 7
+        ' 
+        ' Panel6
+        ' 
+        Panel6.Location = New Point(14, 333)
+        Panel6.Name = "Panel6"
+        Panel6.Size = New Size(302, 160)
+        Panel6.TabIndex = 8
+        ' 
+        ' Panel7
+        ' 
+        Panel7.Location = New Point(14, 143)
+        Panel7.Name = "Panel7"
+        Panel7.Size = New Size(302, 160)
+        Panel7.TabIndex = 8
+        ' 
+        ' CompletedAliceLabel2
+        ' 
+        CompletedAliceLabel2.AutoSize = True
+        CompletedAliceLabel2.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        CompletedAliceLabel2.Location = New Point(14, 312)
+        CompletedAliceLabel2.Name = "CompletedAliceLabel2"
+        CompletedAliceLabel2.Size = New Size(43, 18)
+        CompletedAliceLabel2.TabIndex = 7
+        CompletedAliceLabel2.Text = "Alice"
+        ' 
+        ' CompletedBobLabel2
+        ' 
+        CompletedBobLabel2.AutoSize = True
+        CompletedBobLabel2.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        CompletedBobLabel2.Location = New Point(14, 122)
+        CompletedBobLabel2.Name = "CompletedBobLabel2"
+        CompletedBobLabel2.Size = New Size(34, 18)
+        CompletedBobLabel2.TabIndex = 7
+        CompletedBobLabel2.Text = "Me:"
+        ' 
+        ' Button7
+        ' 
+        Button7.Anchor = AnchorStyles.None
+        Button7.BackColor = Color.Transparent
+        Button7.FlatAppearance.BorderSize = 0
+        Button7.FlatStyle = FlatStyle.Flat
+        Button7.Font = New Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Button7.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        Button7.Location = New Point(378, 485)
+        Button7.Name = "Button7"
+        Button7.Size = New Size(41, 47)
+        Button7.TabIndex = 6
+        Button7.Text = "+"
+        Button7.UseVisualStyleBackColor = False
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Font = New Font("Arial", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Label8.Location = New Point(14, 58)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(46, 15)
+        Label8.TabIndex = 5
+        Label8.Text = "LeSpot"
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.BackColor = Color.Transparent
+        Label9.Font = New Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Label9.ForeColor = Color.Black
+        Label9.Location = New Point(14, 74)
+        Label9.Margin = New Padding(0)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(179, 24)
+        Label9.TabIndex = 0
+        Label9.Text = "Today: Tue, Nov 7"
+        Label9.TextAlign = ContentAlignment.MiddleLeft
+        ' 
         ' Roomies
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(1082, 805)
+        ClientSize = New Size(2335, 1061)
+        Controls.Add(CompletedBobPerspective)
+        Controls.Add(CompletedAlicePerspective)
         Controls.Add(AddHouseholdPanel)
         Controls.Add(TabControl1)
         DoubleBuffered = True
@@ -543,6 +724,10 @@ Partial Class Roomies
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         AddHouseholdPanel.ResumeLayout(False)
+        CompletedAlicePerspective.ResumeLayout(False)
+        CompletedAlicePerspective.PerformLayout()
+        CompletedBobPerspective.ResumeLayout(False)
+        CompletedBobPerspective.PerformLayout()
         ResumeLayout(False)
     End Sub
     Friend WithEvents BottomToolStripPanel As ToolStripPanel
@@ -582,4 +767,19 @@ Partial Class Roomies
     Friend WithEvents Button4 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents AliceAddChoreBtn As Button
+    Friend WithEvents CompletedAlicePerspective As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents CompletedBobLabel1 As Label
+    Friend WithEvents CompletedAliceLabel1 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents CompletedBobPerspective As Panel
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents CompletedAliceLabel2 As Label
+    Friend WithEvents CompletedBobLabel2 As Label
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
 End Class
