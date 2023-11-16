@@ -4,7 +4,7 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip
 
 Public Class Roomies
 
-    Private Sub Roomies_Load(sender As Object, e As EventArgs)
+    Private Sub Roomies_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Cursor = CustomCursor.CirclePointCursor
 
     End Sub
@@ -76,6 +76,11 @@ Public Class Roomies
         CompletedBtn.BackColor = greendefault
         ExpensesBtn.BackColor = greendefault
         ExpenseSummaryBtn.BackColor = greendefault
+
+        ToDoBtnAlice.BackColor = greenClicked
+        CompletedBtnAlice.BackColor = greendefault
+        ExpenseBtnAlice.BackColor = greendefault
+        SummaryBtnAlice.BackColor = greendefault
     End Sub
 
     Private Sub CompletedBtn_Click(sender As Object, e As EventArgs) Handles CompletedBtn.Click, CompletedBtnAlice.Click
@@ -94,6 +99,11 @@ Public Class Roomies
         CompletedBtn.BackColor = greenClicked
         ExpensesBtn.BackColor = greendefault
         ExpenseSummaryBtn.BackColor = greendefault
+
+        ToDoBtnAlice.BackColor = greendefault
+        CompletedBtnAlice.BackColor = greenClicked
+        ExpenseBtnAlice.BackColor = greendefault
+        SummaryBtnAlice.BackColor = greendefault
     End Sub
 
     Private Sub ExpensesBtn_Click(sender As Object, e As EventArgs) Handles ExpensesBtn.Click, ExpenseBtnAlice.Click
@@ -101,6 +111,11 @@ Public Class Roomies
         CompletedBtn.BackColor = greendefault
         ExpensesBtn.BackColor = greenClicked
         ExpenseSummaryBtn.BackColor = greendefault
+
+        ToDoBtnAlice.BackColor = greendefault
+        CompletedBtnAlice.BackColor = greendefault
+        ExpenseBtnAlice.BackColor = greenClicked
+        SummaryBtnAlice.BackColor = greendefault
     End Sub
 
     Private Sub ExpenseSummaryBtn_Click(sender As Object, e As EventArgs) Handles ExpenseSummaryBtn.Click, SummaryBtnAlice.Click
@@ -108,6 +123,11 @@ Public Class Roomies
         CompletedBtn.BackColor = greendefault
         ExpensesBtn.BackColor = greendefault
         ExpenseSummaryBtn.BackColor = greenClicked
+
+        ToDoBtnAlice.BackColor = greendefault
+        CompletedBtnAlice.BackColor = greendefault
+        ExpenseBtnAlice.BackColor = greendefault
+        SummaryBtnAlice.BackColor = greenClicked
     End Sub
 #End Region
 
