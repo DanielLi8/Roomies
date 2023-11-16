@@ -43,8 +43,6 @@ Public Class Roomies
 #End Region
 
 
-
-
 #Region "household"
     Private Sub AddHouseholdBtn_Click(sender As Object, e As EventArgs) Handles AddHouseholdBtn.Click
         Dim householdform As New HouseholdDetails(Me)
@@ -61,6 +59,7 @@ Public Class Roomies
 
     End Sub
 #End Region
+
 
 #Region "Methods for selecting menu panel controls"
     Dim greenClicked As Color = Color.FromArgb(62, 90, 60)
@@ -116,6 +115,7 @@ Public Class Roomies
 
 
 #End Region
+
 
 #Region "Adding chore functionality"
     Private Sub AddChoreBtn_Click(sender As Object, e As EventArgs) Handles AddChoreBtn.Click, AliceAddChoreBtn.Click

@@ -3,10 +3,12 @@
 Public Class ExpenseClass
     Private name As String
     Private amount As String
+    Private split As Boolean
 #Region "Initalizer and Formatting"
-    Public Sub New(Ename As String, Samount As String)
+    Public Sub New(Ename As String, Samount As String, Ssplit As Boolean)
         name = Ename
         SetAmount(Samount)
+        split = Ssplit
     End Sub
     Private Function ValidateMonetaryAmount(input As String) As Boolean
         ' Regular expression pattern for validating monetary amounts
@@ -52,6 +54,9 @@ Public Class ExpenseClass
     Public Function getName()
         Return name
     End Function
+    Public Function getSplit()
+        Return split
+    End Function
     Public Sub SetAmount(Samount As String)
         If ValidateMonetaryAmount(Samount) Then
             amount = FormatAmount(Samount)
@@ -62,6 +67,9 @@ Public Class ExpenseClass
     End Sub
     Public Sub setName(Sname As String)
         name = Sname
+    End Sub
+    Public Sub setSplit(Ssplit As Boolean)
+        split = Ssplit
     End Sub
 #End Region
 End Class
