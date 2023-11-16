@@ -764,4 +764,12 @@ Partial Class Roomies
     Friend WithEvents Button7 As Button
     Friend WithEvents Label8 As Label
     Friend WithEvents CompletedChoreBobDate As Label
+    Friend WithEvents CompletedDateLabelBob As Label
+    Friend WithEvents CompletedLabel1 As Label
+    Friend WithEvents CompletedPerspective2 As Panel
+    Friend WithEvents CompletedChoreAlicePanel As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents CompletedDateLabelAlice As Label
+    Friend WithEvents CompletedChoreAliceDate As Label
 End Class
