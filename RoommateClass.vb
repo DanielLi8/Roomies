@@ -4,7 +4,7 @@ Public Class RoommateClass
     'Variables
     Private Name As String
     Private Address As String
-    Private ExpenseList As List(Of String)
+    Private ExpenseList As List(Of ExpenseClass)
     'expense should be its own class with cost
     Private ChoreList As List(Of ChoreClass)
     'can convert into class for chorelist since it has a property for recurring, effort rating
@@ -12,7 +12,7 @@ Public Class RoommateClass
     Public Sub New()
         Name = ""
         Address = ""
-        ExpenseList = New List(Of String)
+        ExpenseList = New List(Of ExpenseClass)
         ChoreList = New List(Of ChoreClass)
 
     End Sub
@@ -20,7 +20,7 @@ Public Class RoommateClass
     Public Sub New(name1 As String, address1 As String)
         Name = name1
         Address = address1
-        ExpenseList = New List(Of String)
+        ExpenseList = New List(Of ExpenseClass)
         ChoreList = New List(Of ChoreClass)
     End Sub
 
@@ -74,36 +74,47 @@ Public Class RoommateClass
     End Sub
 #End Region
 
-#Region "Add, retrieve and remove from expense list"
+#Region "Add, retrieve, edit, and remove from expense list"
 
-    Public Sub AddExepnse(ByVal expense As String)
+    ' Add an expense to the list
+    Public Sub AddExpense(ByVal expense As ExpenseClass)
         ExpenseList.Add(expense)
     End Sub
 
-    Public Function getExpense(expense) As String
+    ' Retrieve an expense by name
+    Public Function GetExpenseByName(name As String) As ExpenseClass
+        Dim matchingExpense As ExpenseClass = ExpenseList.Find(Function(expense) expense.getName() = name)
 
-        Dim index As Integer = ExpenseList.IndexOf(expense)
-
-        If index = -1 Then
-            MessageBox.Show("Error, value not found")
-            Return "error"
+        If matchingExpense IsNot Nothing Then
+            Return matchingExpense
         Else
-            Return ExpenseList(index)
+            MessageBox.Show("Error: Expense not found.")
+            Return New ExpenseClass("", "0.00")
         End If
-
     End Function
 
-    Public Sub RemoveExpense(Expense As String)
-        Dim index As Integer = ExpenseList.IndexOf(Expense)
+    ' Edit the name and amount of an expense
+    Public Sub EditExpenseByName(oldName As String, newName As String, newAmount As String)
+        Dim matchingExpense As ExpenseClass = ExpenseList.Find(Function(expense) expense.getName() = oldName)
 
-        If index = -1 Then
-            MessageBox.Show("Error, value not found")
+        If matchingExpense IsNot Nothing Then
+            matchingExpense.setName(newName)
+            matchingExpense.SetAmount(newAmount)
         Else
-            ExpenseList.RemoveAt(index)
+            MessageBox.Show("Error: Expense not found.")
         End If
     End Sub
 
-    'add an edit function 
+    ' Remove an expense by name
+    Public Sub RemoveExpenseByName(name As String)
+        Dim matchingExpense As ExpenseClass = ExpenseList.Find(Function(expense) expense.getName() = name)
+
+        If matchingExpense IsNot Nothing Then
+            ExpenseList.Remove(matchingExpense)
+        Else
+            MessageBox.Show("Error: Expense not found.")
+        End If
+    End Sub
 
 #End Region
 End Class
