@@ -1,6 +1,17 @@
 ﻿Public Class TodoCheckbox
 
+    Private position1 As Integer
+    'position keeps track of the index of todobox in todoboxList and chorelist
 
+    Public Property position() As Integer
+        Get
+            Return position1
+        End Get
+        Set(ByVal value As Integer)
+            position1 = value
+        End Set
+    End Property
+#Region "Constructor"
     Public Sub New()
 
         ' This call is required by the designer.
@@ -10,16 +21,6 @@
 
     End Sub
 
-    'position keeps track of the index of todobox in todoboxList and chorelist
-    Private position1 As Integer
-    Public Property position() As Integer
-        Get
-            Return position1
-        End Get
-        Set(ByVal value As Integer)
-            position1 = value
-        End Set
-    End Property
 
     Public Sub New(name As String, recurring As String, effort As Integer, position As Integer)
 
@@ -33,6 +34,7 @@
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
+#End Region
     Private Sub RecurringLabel_Click(sender As Object, e As EventArgs) Handles RecurringLabel.VisibleChanged, RecurringLabel.Resize
         EffortIcon.Left = RecurringLabel.Right + 10
         EffortLabel.Left = RecurringLabel.Right + 30
@@ -48,6 +50,7 @@
         Me.ChoreCheckbox.Text = newChore.Name
         Me.RecurringLabel.Text = "Recurring: " & newChore.recurring
         Me.EffortLabel.Text = newChore.Effort
+        Roomies.AddTodoboxToPanel()
 
     End Sub
 

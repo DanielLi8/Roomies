@@ -30,7 +30,6 @@ Partial Class Roomies
         TabControl1 = New TabControl()
         Bob = New TabPage()
         TodoViewPanel = New Panel()
-        User2ChoreCheckboxPanel = New Panel()
         User1ChoreCheckboxPanel = New Panel()
         Alice = New Label()
         Roommate1 = New Label()
@@ -43,6 +42,7 @@ Partial Class Roomies
         CompletedBtn = New Button()
         TodoBtn = New Button()
         UserB = New TabPage()
+        User2ChoreCheckboxPanel = New Panel()
         AddHouseholdBtn = New Button()
         AddHouseholdPanel = New Panel()
         TabControl1.SuspendLayout()
@@ -132,18 +132,11 @@ Partial Class Roomies
         TodoViewPanel.Size = New Size(345, 507)
         TodoViewPanel.TabIndex = 4
         ' 
-        ' User2ChoreCheckboxPanel
-        ' 
-        User2ChoreCheckboxPanel.Location = New Point(21, 333)
-        User2ChoreCheckboxPanel.Name = "User2ChoreCheckboxPanel"
-        User2ChoreCheckboxPanel.Size = New Size(287, 152)
-        User2ChoreCheckboxPanel.TabIndex = 8
-        ' 
         ' User1ChoreCheckboxPanel
         ' 
         User1ChoreCheckboxPanel.Location = New Point(21, 143)
         User1ChoreCheckboxPanel.Name = "User1ChoreCheckboxPanel"
-        User1ChoreCheckboxPanel.Size = New Size(287, 158)
+        User1ChoreCheckboxPanel.Size = New Size(302, 160)
         User1ChoreCheckboxPanel.TabIndex = 8
         ' 
         ' Alice
@@ -296,6 +289,13 @@ Partial Class Roomies
         UserB.TabIndex = 1
         UserB.Text = "Alice"
         ' 
+        ' User2ChoreCheckboxPanel
+        ' 
+        User2ChoreCheckboxPanel.Location = New Point(21, 333)
+        User2ChoreCheckboxPanel.Name = "User2ChoreCheckboxPanel"
+        User2ChoreCheckboxPanel.Size = New Size(302, 160)
+        User2ChoreCheckboxPanel.TabIndex = 8
+        ' 
         ' AddHouseholdBtn
         ' 
         AddHouseholdBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
@@ -320,6 +320,7 @@ Partial Class Roomies
         AddHouseholdPanel.Name = "AddHouseholdPanel"
         AddHouseholdPanel.Size = New Size(345, 507)
         AddHouseholdPanel.TabIndex = 5
+        AddHouseholdPanel.Visible = False
         ' 
         ' Roomies
         ' 

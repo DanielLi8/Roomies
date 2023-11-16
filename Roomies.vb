@@ -121,7 +121,8 @@ Public Class Roomies
     End Sub
 
     Public Sub AddTodoboxToPanel()
-
+        User1ChoreCheckboxPanel.Controls.Clear()
+        User2ChoreCheckboxPanel.Controls.Clear()
         Dim User1VerticalSpacing As Integer = 0
         Dim User2VerticalSpacing As Integer = 0
         Dim position As Integer = 0
