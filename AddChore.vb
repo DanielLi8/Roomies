@@ -114,10 +114,7 @@
 
         If isEdit Then
             Roomies.UpdateChoreList(chore, index1)
-            ' Dim indexInRoommate As Integer = rList(Assignee.SelectedIndex).getChoreIndex(currentchore)
-            ' rList(Assignee.SelectedIndex).UpdateChore(chore, indexInRoommate)
         Else
-            'rList(Assignee.SelectedIndex).AddChore(chore)
             Roomies.AddChoreList(chore)
         End If
 
