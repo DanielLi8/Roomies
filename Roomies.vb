@@ -4,8 +4,10 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip
 
 Public Class Roomies
 
-    Private Sub Roomies_Load(sender As Object, e As EventArgs)
+    Private Sub Roomies_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Cursor = CustomCursor.CirclePointCursor
+
+
     End Sub
 
 
@@ -116,12 +118,13 @@ Public Class Roomies
 #End Region
 
 #Region "Adding chore functionality"
-    Private Sub AddChoreBtn_Click(sender As Object, e As EventArgs) Handles AddChoreBtn.Click
+    Private Sub AddChoreBtn_Click(sender As Object, e As EventArgs) Handles AddChoreBtn.Click, AliceAddChoreBtn.Click
 
         Dim choreAdd As New AddChore()
         choreAdd.ShowDialog()
 
         AddTodoboxToPanel()
+        AliceAddTodoboxToPanel()
     End Sub
 
     Public Sub AddTodoboxToPanel()
@@ -150,6 +153,33 @@ Public Class Roomies
         Next
 
     End Sub
+
+    Public Sub AliceAddTodoboxToPanel()
+        AliceMeTodoboxPanel.Controls.Clear()
+        AliceBobTodoPanel.Controls.Clear()
+        Dim User1VerticalSpacing As Integer = 0
+        Dim User2VerticalSpacing As Integer = 0
+        Dim position As Integer = 0
+
+        For Each chore In ChoreList
+
+            Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, position)
+            Me.AddTodoboxList(todobox)
+            ' fix below to add to panel depending on which user
+            If chore.Roommate = 0 Then
+                todobox.Location = New Point(0, 58 * User1VerticalSpacing)
+                AliceBobTodoPanel.Controls.Add(todobox)
+                User1VerticalSpacing += 1
+
+            ElseIf chore.Roommate = 1 Then
+                todobox.Location = New Point(0, 58 * User2VerticalSpacing)
+                AliceMeTodoboxPanel.Controls.Add(todobox)
+                User2VerticalSpacing += 1
+            End If
+            position += 1
+        Next
+
+    End Sub
 #End Region
 
 
@@ -166,11 +196,12 @@ Public Class Roomies
         Dim formattedDate As String = currentDate.ToString("ddd, MMM d", CultureInfo.InvariantCulture)
 
         DateLabel.Text = "Today: " & formattedDate
+        AliceDateLabel.Text = "Today: " & formattedDate
     End Sub
 
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles AliceHouseLabel.Click
 
-
-
+    End Sub
 
 
 End Class

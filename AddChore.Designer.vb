@@ -58,7 +58,7 @@ Partial Class AddChore
         ' Chore
         ' 
         Chore.AutoSize = True
-        Chore.Location = New Point(58, 104)
+        Chore.Location = New Point(59, 105)
         Chore.Name = "Chore"
         Chore.Size = New Size(42, 15)
         Chore.TabIndex = 0
@@ -67,7 +67,7 @@ Partial Class AddChore
         ' PictureBox1
         ' 
         PictureBox1.Image = My.Resources.Resources.broom_dark
-        PictureBox1.Location = New Point(26, 94)
+        PictureBox1.Location = New Point(27, 95)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(26, 34)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
@@ -76,7 +76,7 @@ Partial Class AddChore
         ' 
         ' ChoreInput
         ' 
-        ChoreInput.Location = New Point(106, 114)
+        ChoreInput.Location = New Point(107, 105)
         ChoreInput.Name = "ChoreInput"
         ChoreInput.Size = New Size(188, 23)
         ChoreInput.TabIndex = 2
@@ -84,7 +84,7 @@ Partial Class AddChore
         ' PictureBox2
         ' 
         PictureBox2.Image = My.Resources.Resources.recurring_dark
-        PictureBox2.Location = New Point(26, 134)
+        PictureBox2.Location = New Point(27, 140)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(26, 32)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
@@ -147,7 +147,7 @@ Partial Class AddChore
         ' PictureBox3
         ' 
         PictureBox3.Image = My.Resources.Resources.bicep_dark
-        PictureBox3.Location = New Point(26, 216)
+        PictureBox3.Location = New Point(27, 222)
         PictureBox3.Name = "PictureBox3"
         PictureBox3.Size = New Size(26, 32)
         PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
@@ -157,7 +157,7 @@ Partial Class AddChore
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(58, 233)
+        Label2.Location = New Point(58, 231)
         Label2.Name = "Label2"
         Label2.Size = New Size(73, 15)
         Label2.TabIndex = 4
@@ -236,7 +236,7 @@ Partial Class AddChore
         Panel2.Controls.Add(Effort4)
         Panel2.Controls.Add(Effort2)
         Panel2.Controls.Add(Effort3)
-        Panel2.Location = New Point(58, 251)
+        Panel2.Location = New Point(59, 252)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(271, 31)
         Panel2.TabIndex = 11
@@ -244,7 +244,7 @@ Partial Class AddChore
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(58, 285)
+        Label3.Location = New Point(58, 277)
         Label3.Name = "Label3"
         Label3.Size = New Size(30, 15)
         Label3.TabIndex = 12
@@ -253,7 +253,7 @@ Partial Class AddChore
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(280, 285)
+        Label4.Location = New Point(280, 277)
         Label4.Name = "Label4"
         Label4.Size = New Size(49, 15)
         Label4.TabIndex = 13
@@ -262,7 +262,7 @@ Partial Class AddChore
         ' PictureBox4
         ' 
         PictureBox4.Image = My.Resources.Resources.dude_dark1
-        PictureBox4.Location = New Point(26, 306)
+        PictureBox4.Location = New Point(27, 306)
         PictureBox4.Name = "PictureBox4"
         PictureBox4.Size = New Size(26, 32)
         PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
@@ -272,7 +272,7 @@ Partial Class AddChore
         ' AssignToLabel
         ' 
         AssignToLabel.AutoSize = True
-        AssignToLabel.Location = New Point(58, 323)
+        AssignToLabel.Location = New Point(59, 315)
         AssignToLabel.Name = "AssignToLabel"
         AssignToLabel.Size = New Size(59, 15)
         AssignToLabel.TabIndex = 14
@@ -281,7 +281,7 @@ Partial Class AddChore
         ' Assignee
         ' 
         Assignee.FormattingEnabled = True
-        Assignee.Location = New Point(126, 323)
+        Assignee.Location = New Point(127, 315)
         Assignee.Name = "Assignee"
         Assignee.Size = New Size(121, 23)
         Assignee.TabIndex = 15
@@ -308,7 +308,7 @@ Partial Class AddChore
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.FromArgb(CByte(249), CByte(247), CByte(206))
+        BackColor = Color.FromArgb(CByte(224), CByte(218), CByte(207))
         ClientSize = New Size(349, 556)
         Controls.Add(Button1)
         Controls.Add(CreateButton)

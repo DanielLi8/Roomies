@@ -51,6 +51,7 @@
         Me.RecurringLabel.Text = "Recurring: " & newChore.recurring
         Me.EffortLabel.Text = newChore.Effort
         Roomies.AddTodoboxToPanel()
+        Roomies.AliceAddTodoboxToPanel()
 
     End Sub
 
