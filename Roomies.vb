@@ -89,6 +89,7 @@ Public Class Roomies
         CompletedBtn.BackColor = greendefault
         ExpensesBtn.BackColor = greenClicked
         ExpenseSummaryBtn.BackColor = greendefault
+        BuildExpensePage(False)
     End Sub
 
     Private Sub ExpenseSummaryBtn_Click(sender As Object, e As EventArgs) Handles ExpenseSummaryBtn.Click
@@ -96,6 +97,52 @@ Public Class Roomies
         CompletedBtn.BackColor = greendefault
         ExpensesBtn.BackColor = greendefault
         ExpenseSummaryBtn.BackColor = greenClicked
+        BuildExpensePage(True)
+    End Sub
+
+    Private Sub BuildExpensePage(SummaryPage As Boolean)
+        Dim counter As Integer = 1
+        ClearExpensesPage()
+        If SummaryPage Then
+            ETitleLabel.Text = "Summary"
+            EButton.Visible = False
+            SummaryLabel.Visible = True
+        Else
+            ETitleLabel.Text = "Balance Sheet"
+            EButton.Visible = True
+            SummaryLabel.Visible = False
+        End If
+
+        For Each roommate As RoommateClass In RoommateList
+            If roommate.GetName() = TabControl1.SelectedTab.Text Then
+                ' Loop through the ExpenseList of the found Roomate
+                For Each expense As ExpenseClass In roommate.getExpenseList
+                    ' Create a label for the expense name and cost
+                    Dim labelname As String = "PE" & Str(counter)
+                    Dim labelControl As Label = TryCast(Me.Controls.Find(labelname, True).FirstOrDefault(), Label)
+                    labelControl.Text = $"{expense.getName()}: {expense.getAmount()}"
+                    ' Adjust label properties if needed (e.g., Font, Location, etc.)
+                Next
+                ' Exit the loop after finding the Roomate
+                Exit For
+            End If
+        Next
+
+    End Sub
+    Private Sub ClearExpensesPage()
+        SE1.Text = ""
+        SE2.Text = ""
+        SE3.Text = ""
+        SE1A.Text = ""
+        SE2A.Text = ""
+        SE3A.Text = ""
+        PE1.Text = ""
+        PE2.Text = ""
+        PE3.Text = ""
+        PE1A.Text = ""
+        PE2A.Text = ""
+        PE3A.Text = ""
+        SummaryLabel.Text = "Summary: "
     End Sub
 #End Region
 
@@ -201,9 +248,7 @@ Public Class Roomies
         CompletedChoreBobDate.Text = "Today: " & formattedDate
     End Sub
 
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles AliceHouseLabel.Click
+    Private Sub ExpensePanel_Paint(sender As Object, e As PaintEventArgs) Handles ExpensePanel.Paint
 
     End Sub
-
-
 End Class
