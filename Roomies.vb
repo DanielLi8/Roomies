@@ -4,9 +4,8 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip
 
 Public Class Roomies
 
-    Private Sub Roomies_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Roomies_Load(sender As Object, e As EventArgs)
         Me.Cursor = CustomCursor.CirclePointCursor
-
 
     End Sub
 

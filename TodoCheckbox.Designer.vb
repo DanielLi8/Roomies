@@ -35,7 +35,7 @@ Partial Class TodoCheckbox
         EditBtn.BackgroundImageLayout = ImageLayout.Center
         EditBtn.FlatAppearance.BorderSize = 0
         EditBtn.FlatStyle = FlatStyle.Flat
-        EditBtn.Location = New Point(246, 3)
+        EditBtn.Location = New Point(228, 3)
         EditBtn.Name = "EditBtn"
         EditBtn.Size = New Size(42, 40)
         EditBtn.TabIndex = 14
@@ -95,7 +95,7 @@ Partial Class TodoCheckbox
         Controls.Add(ChoreCheckbox)
         Margin = New Padding(0)
         Name = "TodoCheckbox"
-        Size = New Size(291, 49)
+        Size = New Size(277, 49)
         ResumeLayout(False)
         PerformLayout()
     End Sub
