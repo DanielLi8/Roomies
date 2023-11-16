@@ -1,7 +1,10 @@
 ﻿Public Class AddChore
 
-    Private myRoomies As Roomies
+    Private isEdit As Boolean = False
+    Private index1 As Integer = 0
+    Private currentchore As New ChoreClass
 
+#Region "Constructors"
     Public Sub New()
 
         ' This call is required by the designer.
@@ -10,26 +13,65 @@
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
-    Public Sub New(myRoomies As Roomies)
+    Public Sub New(chore As ChoreClass, index As Integer)
 
         ' This call is required by the designer.
         InitializeComponent()
-        Me.myRoomies = myRoomies
+        Edit(chore)
+        index1 = index
+        currentchore = chore
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
+#End Region
 
+#Region "Edit view"
+    Public Sub Edit(chore As ChoreClass)
+        ChoreInput.Text = chore.Name
 
+        If chore.recurring = "Daily" Then
+            RecurringDaily.Checked = True
+        ElseIf chore.recurring = "Weekly" Then
+            RecurringWeekly.Checked = True
+        ElseIf chore.recurring = "Monthly" Then
+            RecurringMonthly.Checked = True
+        Else
+            RecurringNone.Checked = True
+        End If
 
-    Private Sub AddChore_Load(sender As Object, e As EventArgs) Handles MyBase.Activated
+        'set EffortRating
+        If chore.Effort = 1 Then
+            Effort1.Checked = True
+        ElseIf chore.Effort = 2 Then
+            Effort2.Checked = True
+        ElseIf chore.Effort = 3 Then
+            Effort3.Checked = True
+        ElseIf chore.Effort = 4 Then
+            Effort4.Checked = True
+        ElseIf chore.Effort = 5 Then
+            Effort5.Checked = True
+        End If
 
-        ' Clear existing items in the ComboBox
-        Assignee.Items.Clear()
+        CreateButton.Text = "Update"
+        isEdit = True
+    End Sub
+#End Region
 
+#Region "Methods for the form"
+    Private Sub AddChore_Load(sender As Object, e As EventArgs) Handles MyBase.Shown
+
+        Dim rlist = Roomies.getRoommateList
         ' Add roommates to ComboBox
-        For Each roommate In myRoomies.getRoommateList
+        For Each roommate In rlist
             Assignee.Items.Add(roommate.GetName)
         Next
+
+        'if its the edit form
+        If isEdit Then
+            Dim roommateIndex As Integer = currentchore.Roommate
+            Assignee.SelectedItem = rlist(roommateIndex).GetName
+        End If
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -64,20 +106,24 @@
             chore.Effort = 5
         End If
 
+
         'Assign roommate associated with the chore
         chore.Roommate = Assignee.SelectedIndex
-        ' fix the below line add chore to selected index
-
         'Assign chore associated to roommate
         Dim rList = Roomies.getRoommateList()
-        rList(Assignee.SelectedIndex).AddChore(chore)
 
-        ' will eventually remove this line
-        myRoomies.AddChoreList(chore)
-
+        If isEdit Then
+            Roomies.UpdateChoreList(chore, index1)
+            ' Dim indexInRoommate As Integer = rList(Assignee.SelectedIndex).getChoreIndex(currentchore)
+            ' rList(Assignee.SelectedIndex).UpdateChore(chore, indexInRoommate)
+        Else
+            'rList(Assignee.SelectedIndex).AddChore(chore)
+            Roomies.AddChoreList(chore)
+        End If
 
         'close window
         Me.Close()
 
     End Sub
+#End Region
 End Class

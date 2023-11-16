@@ -28,11 +28,11 @@ Partial Class Roomies
         LeftToolStripPanel = New ToolStripPanel()
         ContentPanel = New ToolStripContentPanel()
         TabControl1 = New TabControl()
-        UserA = New TabPage()
+        Bob = New TabPage()
         TodoViewPanel = New Panel()
         User2ChoreCheckboxPanel = New Panel()
         User1ChoreCheckboxPanel = New Panel()
-        Userb2 = New Label()
+        Alice = New Label()
         Roommate1 = New Label()
         AddChoreBtn = New Button()
         HouseholdName = New Label()
@@ -46,7 +46,7 @@ Partial Class Roomies
         AddHouseholdBtn = New Button()
         AddHouseholdPanel = New Panel()
         TabControl1.SuspendLayout()
-        UserA.SuspendLayout()
+        Bob.SuspendLayout()
         TodoViewPanel.SuspendLayout()
         MenuPanel.SuspendLayout()
         AddHouseholdPanel.SuspendLayout()
@@ -91,7 +91,7 @@ Partial Class Roomies
         ' TabControl1
         ' 
         TabControl1.Appearance = TabAppearance.Buttons
-        TabControl1.Controls.Add(UserA)
+        TabControl1.Controls.Add(Bob)
         TabControl1.Controls.Add(UserB)
         TabControl1.Location = New Point(0, 0)
         TabControl1.Margin = New Padding(0)
@@ -101,27 +101,27 @@ Partial Class Roomies
         TabControl1.Size = New Size(553, 729)
         TabControl1.TabIndex = 2
         ' 
-        ' UserA
+        ' Bob
         ' 
-        UserA.BackColor = Color.Silver
-        UserA.BackgroundImage = My.Resources.Resources.phone_template
-        UserA.BackgroundImageLayout = ImageLayout.Stretch
-        UserA.Controls.Add(TodoViewPanel)
-        UserA.Controls.Add(MenuPanel)
-        UserA.ForeColor = Color.Black
-        UserA.Location = New Point(4, 27)
-        UserA.Name = "UserA"
-        UserA.Padding = New Padding(3)
-        UserA.Size = New Size(545, 698)
-        UserA.TabIndex = 0
-        UserA.Text = "User A"
+        Bob.BackColor = Color.Silver
+        Bob.BackgroundImage = My.Resources.Resources.phone_template
+        Bob.BackgroundImageLayout = ImageLayout.Stretch
+        Bob.Controls.Add(TodoViewPanel)
+        Bob.Controls.Add(MenuPanel)
+        Bob.ForeColor = Color.Black
+        Bob.Location = New Point(4, 27)
+        Bob.Name = "Bob"
+        Bob.Padding = New Padding(3)
+        Bob.Size = New Size(545, 698)
+        Bob.TabIndex = 0
+        Bob.Text = "Bob"
         ' 
         ' TodoViewPanel
         ' 
         TodoViewPanel.BackColor = Color.Transparent
         TodoViewPanel.Controls.Add(User2ChoreCheckboxPanel)
         TodoViewPanel.Controls.Add(User1ChoreCheckboxPanel)
-        TodoViewPanel.Controls.Add(Userb2)
+        TodoViewPanel.Controls.Add(Alice)
         TodoViewPanel.Controls.Add(Roommate1)
         TodoViewPanel.Controls.Add(AddChoreBtn)
         TodoViewPanel.Controls.Add(HouseholdName)
@@ -146,15 +146,15 @@ Partial Class Roomies
         User1ChoreCheckboxPanel.Size = New Size(287, 158)
         User1ChoreCheckboxPanel.TabIndex = 8
         ' 
-        ' Userb2
+        ' Alice
         ' 
-        Userb2.AutoSize = True
-        Userb2.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Userb2.Location = New Point(21, 312)
-        Userb2.Name = "Userb2"
-        Userb2.Size = New Size(60, 18)
-        Userb2.TabIndex = 7
-        Userb2.Text = "User B:"
+        Alice.AutoSize = True
+        Alice.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Alice.Location = New Point(21, 312)
+        Alice.Name = "Alice"
+        Alice.Size = New Size(43, 18)
+        Alice.TabIndex = 7
+        Alice.Text = "Alice"
         ' 
         ' Roommate1
         ' 
@@ -294,7 +294,7 @@ Partial Class Roomies
         UserB.Padding = New Padding(3)
         UserB.Size = New Size(545, 698)
         UserB.TabIndex = 1
-        UserB.Text = "User B"
+        UserB.Text = "Alice"
         ' 
         ' AddHouseholdBtn
         ' 
@@ -327,7 +327,7 @@ Partial Class Roomies
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(1080, 781)
+        ClientSize = New Size(1026, 765)
         Controls.Add(AddHouseholdPanel)
         Controls.Add(TabControl1)
         DoubleBuffered = True
@@ -335,7 +335,7 @@ Partial Class Roomies
         StartPosition = FormStartPosition.CenterScreen
         Text = "Roomies"
         TabControl1.ResumeLayout(False)
-        UserA.ResumeLayout(False)
+        Bob.ResumeLayout(False)
         TodoViewPanel.ResumeLayout(False)
         TodoViewPanel.PerformLayout()
         MenuPanel.ResumeLayout(False)
@@ -348,7 +348,7 @@ Partial Class Roomies
     Friend WithEvents LeftToolStripPanel As ToolStripPanel
     Friend WithEvents ContentPanel As ToolStripContentPanel
     Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents UserA As TabPage
+    Friend WithEvents Bob As TabPage
     Friend WithEvents TodoViewPanel As Panel
     Friend WithEvents DateLabel As Label
     Friend WithEvents AddHouseholdBtn As Button
@@ -363,6 +363,6 @@ Partial Class Roomies
     Friend WithEvents Roommate1 As Label
     Friend WithEvents AddHouseholdPanel As Panel
     Friend WithEvents User1ChoreCheckboxPanel As Panel
-    Friend WithEvents Userb2 As Label
+    Friend WithEvents Alice As Label
     Friend WithEvents User2ChoreCheckboxPanel As Panel
 End Class

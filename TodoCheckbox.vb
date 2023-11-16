@@ -1,5 +1,6 @@
 ﻿Public Class TodoCheckbox
 
+
     Public Sub New()
 
         ' This call is required by the designer.
@@ -8,7 +9,19 @@
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
-    Public Sub New(name As String, recurring As String, effort As Integer)
+
+    'position keeps track of the index of todobox in todoboxList and chorelist
+    Private position1 As Integer
+    Public Property position() As Integer
+        Get
+            Return position1
+        End Get
+        Set(ByVal value As Integer)
+            position1 = value
+        End Set
+    End Property
+
+    Public Sub New(name As String, recurring As String, effort As Integer, position As Integer)
 
         ' This call is required by the designer.
         InitializeComponent()
@@ -16,7 +29,7 @@
         Me.RecurringLabel.Text = "Recurring: " & recurring
 
         Me.EffortLabel.Text = effort
-
+        Me.position = position
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
@@ -26,8 +39,15 @@
     End Sub
 
     Private Sub EditBtn_Click(sender As Object, e As EventArgs) Handles EditBtn.Click
-        Dim choreEdit As New AddChore
+        Dim chorelist = Roomies.getChoreList
+        Dim choreEdit As New AddChore(chorelist(Me.position), Me.position)
+
         choreEdit.ShowDialog()
+
+        Dim newChore = chorelist(Me.position)
+        Me.ChoreCheckbox.Text = newChore.Name
+        Me.RecurringLabel.Text = "Recurring: " & newChore.recurring
+        Me.EffortLabel.Text = newChore.Effort
 
     End Sub
 

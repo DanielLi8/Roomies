@@ -32,12 +32,12 @@ Partial Class TodoCheckbox
         ' EditBtn
         ' 
         EditBtn.BackgroundImage = My.Resources.Resources.EditPic
-        EditBtn.BackgroundImageLayout = ImageLayout.Zoom
+        EditBtn.BackgroundImageLayout = ImageLayout.Center
         EditBtn.FlatAppearance.BorderSize = 0
         EditBtn.FlatStyle = FlatStyle.Flat
         EditBtn.Location = New Point(246, 3)
         EditBtn.Name = "EditBtn"
-        EditBtn.Size = New Size(33, 43)
+        EditBtn.Size = New Size(42, 40)
         EditBtn.TabIndex = 14
         EditBtn.UseVisualStyleBackColor = True
         ' 

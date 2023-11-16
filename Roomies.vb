@@ -30,9 +30,14 @@ Public Class Roomies
         ChoreList.Add(newChore)
     End Sub
 
+    Public Sub UpdateChoreList(newChore As ChoreClass, index As Integer)
+        ChoreList(index) = newChore
+    End Sub
     Public Function getChoreList() As List(Of ChoreClass)
         Return ChoreList
     End Function
+
+
 #End Region
 
 
@@ -44,8 +49,13 @@ Public Class Roomies
 
         householdform.Location = New Point(householdform.Location.X, householdform.Location.Y + 12)
         householdform.ShowDialog()
-        AddHouseholdBtn.Enabled = False
-        Userb2.Text = RoommateList(1).GetName()
+
+
+        If RoommateList.Any Then
+            AddHouseholdBtn.Enabled = False
+            Alice.Text = RoommateList(1).GetName()
+        End If
+
 
     End Sub
 #End Region
@@ -85,17 +95,41 @@ Public Class Roomies
 #End Region
 
 
+#Region "List to keep track of todocheckbox that are dynamically created in the household"
+    Private todoboxList As New List(Of TodoCheckbox)()
+
+    Public Sub AddTodoboxList(newTodobox As TodoCheckbox)
+        todoboxList.Add(newTodobox)
+    End Sub
+    Public Sub UpdateTodoBox(newTodobox As TodoCheckbox, index As Integer)
+        todoboxList(index) = newTodobox
+    End Sub
+    Public Function getTodoboxList() As List(Of TodoCheckbox)
+        Return todoboxList
+    End Function
+
+
+#End Region
+
+#Region "Adding chore functionality"
     Private Sub AddChoreBtn_Click(sender As Object, e As EventArgs) Handles AddChoreBtn.Click
 
-        Dim choreAdd As New AddChore(Me)
+        Dim choreAdd As New AddChore()
         choreAdd.ShowDialog()
+
+        AddTodoboxToPanel()
+    End Sub
+
+    Public Sub AddTodoboxToPanel()
 
         Dim User1VerticalSpacing As Integer = 0
         Dim User2VerticalSpacing As Integer = 0
+        Dim position As Integer = 0
 
         For Each chore In ChoreList
-            Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort)
 
+            Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, position)
+            Me.AddTodoboxList(todobox)
             ' fix below to add to panel depending on which user
             If chore.Roommate = 0 Then
                 todobox.Location = New Point(0, 58 * User1VerticalSpacing)
@@ -107,15 +141,19 @@ Public Class Roomies
                 User2ChoreCheckboxPanel.Controls.Add(todobox)
                 User2VerticalSpacing += 1
             End If
+            position += 1
         Next
 
     End Sub
-
-
+#End Region
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         UpdateDate()
+        Dim currentUser As New RoommateClass("Bob", "user_a@gmail.com")
+        Me.AddRoommate(currentUser)
+        Dim currentUser2 As New RoommateClass("Alice", "user_a@gmail.com")
+        Me.AddRoommate(currentUser2)
     End Sub
 
     Private Sub UpdateDate()
