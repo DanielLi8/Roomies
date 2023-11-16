@@ -123,6 +123,9 @@ Public Class RoommateClass
             MessageBox.Show("Error: Expense not found.")
         End If
     End Sub
+    Public Function getExpenseList()
+        Return ExpenseList
+    End Function
 
 #End Region
 End Class
