@@ -28,12 +28,11 @@ Partial Class Roomies
         LeftToolStripPanel = New ToolStripPanel()
         ContentPanel = New ToolStripContentPanel()
         TabControl1 = New TabControl()
-        UserA = New TabPage()
-        Label1 = New Label()
+        Bob = New TabPage()
         TodoViewPanel = New Panel()
-        Panel1 = New Panel()
-        ChoreCheckboxPanel = New Panel()
-        Label2 = New Label()
+        User2ChoreCheckboxPanel = New Panel()
+        User1ChoreCheckboxPanel = New Panel()
+        Alice = New Label()
         Roommate1 = New Label()
         AddChoreBtn = New Button()
         HouseholdName = New Label()
@@ -47,7 +46,7 @@ Partial Class Roomies
         AddHouseholdBtn = New Button()
         AddHouseholdPanel = New Panel()
         TabControl1.SuspendLayout()
-        UserA.SuspendLayout()
+        Bob.SuspendLayout()
         TodoViewPanel.SuspendLayout()
         MenuPanel.SuspendLayout()
         AddHouseholdPanel.SuspendLayout()
@@ -92,87 +91,83 @@ Partial Class Roomies
         ' TabControl1
         ' 
         TabControl1.Appearance = TabAppearance.Buttons
-        TabControl1.Controls.Add(UserA)
+        TabControl1.Controls.Add(Bob)
         TabControl1.Controls.Add(UserB)
         TabControl1.Location = New Point(0, 0)
         TabControl1.Margin = New Padding(0)
         TabControl1.Name = "TabControl1"
         TabControl1.Padding = New Point(0, 0)
         TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(553, 729)
+        TabControl1.Size = New Size(790, 1215)
         TabControl1.TabIndex = 2
         ' 
-        ' UserA
+        ' Bob
         ' 
-        UserA.BackColor = Color.Silver
-        UserA.BackgroundImage = My.Resources.Resources.phone_template
-        UserA.BackgroundImageLayout = ImageLayout.Stretch
-        UserA.Controls.Add(Label1)
-        UserA.Controls.Add(TodoViewPanel)
-        UserA.Controls.Add(MenuPanel)
-        UserA.ForeColor = Color.Black
-        UserA.Location = New Point(4, 27)
-        UserA.Name = "UserA"
-        UserA.Padding = New Padding(3)
-        UserA.Size = New Size(545, 698)
-        UserA.TabIndex = 0
-        UserA.Text = "User A"
-        ' 
-        ' Label1
-        ' 
-        Label1.Location = New Point(8, 78)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(52, 20)
-        Label1.TabIndex = 5
-        Label1.Text = "JASLLLO"
+        Bob.BackColor = Color.Silver
+        Bob.BackgroundImage = My.Resources.Resources.phone_template
+        Bob.BackgroundImageLayout = ImageLayout.Stretch
+        Bob.Controls.Add(TodoViewPanel)
+        Bob.Controls.Add(MenuPanel)
+        Bob.ForeColor = Color.Black
+        Bob.Location = New Point(4, 37)
+        Bob.Margin = New Padding(4, 5, 4, 5)
+        Bob.Name = "Bob"
+        Bob.Padding = New Padding(4, 5, 4, 5)
+        Bob.Size = New Size(782, 1174)
+        Bob.TabIndex = 0
+        Bob.Text = "Bob"
         ' 
         ' TodoViewPanel
         ' 
         TodoViewPanel.BackColor = Color.Transparent
-        TodoViewPanel.Controls.Add(Panel1)
-        TodoViewPanel.Controls.Add(ChoreCheckboxPanel)
-        TodoViewPanel.Controls.Add(Label2)
+        TodoViewPanel.Controls.Add(User2ChoreCheckboxPanel)
+        TodoViewPanel.Controls.Add(User1ChoreCheckboxPanel)
+        TodoViewPanel.Controls.Add(Alice)
         TodoViewPanel.Controls.Add(Roommate1)
         TodoViewPanel.Controls.Add(AddChoreBtn)
         TodoViewPanel.Controls.Add(HouseholdName)
         TodoViewPanel.Controls.Add(DateLabel)
-        TodoViewPanel.Location = New Point(102, 42)
+        TodoViewPanel.Location = New Point(146, 70)
         TodoViewPanel.Margin = New Padding(0)
         TodoViewPanel.Name = "TodoViewPanel"
-        TodoViewPanel.Size = New Size(345, 507)
+        TodoViewPanel.Size = New Size(493, 845)
         TodoViewPanel.TabIndex = 4
         ' 
-        ' Panel1
+        ' User2ChoreCheckboxPanel
         ' 
-        Panel1.Location = New Point(21, 333)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(287, 152)
-        Panel1.TabIndex = 8
+        User2ChoreCheckboxPanel.Location = New Point(30, 555)
+        User2ChoreCheckboxPanel.Margin = New Padding(4, 5, 4, 5)
+        User2ChoreCheckboxPanel.Name = "User2ChoreCheckboxPanel"
+        User2ChoreCheckboxPanel.Size = New Size(431, 267)
+        User2ChoreCheckboxPanel.TabIndex = 8
         ' 
-        ' ChoreCheckboxPanel
+        ' User1ChoreCheckboxPanel
         ' 
-        ChoreCheckboxPanel.Location = New Point(21, 143)
-        ChoreCheckboxPanel.Name = "ChoreCheckboxPanel"
-        ChoreCheckboxPanel.Size = New Size(287, 158)
-        ChoreCheckboxPanel.TabIndex = 8
+        User1ChoreCheckboxPanel.Location = New Point(30, 238)
+        User1ChoreCheckboxPanel.Margin = New Padding(4, 5, 4, 5)
+        User1ChoreCheckboxPanel.Name = "User1ChoreCheckboxPanel"
+        User1ChoreCheckboxPanel.Size = New Size(431, 267)
+        User1ChoreCheckboxPanel.TabIndex = 8
         ' 
-        ' Label2
+        ' Alice
         ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label2.Location = New Point(21, 312)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(60, 18)
-        Label2.TabIndex = 7
-        Label2.Text = "User B:"
+        Alice.AutoSize = True
+        Alice.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Alice.Location = New Point(30, 520)
+        Alice.Margin = New Padding(4, 0, 4, 0)
+        Alice.Name = "Alice"
+        Alice.Size = New Size(63, 27)
+        Alice.TabIndex = 7
+        Alice.Text = "Alice"
         ' 
         ' Roommate1
         ' 
         Roommate1.AutoSize = True
         Roommate1.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Roommate1.Location = New Point(21, 122)
+        Roommate1.Location = New Point(30, 203)
+        Roommate1.Margin = New Padding(4, 0, 4, 0)
         Roommate1.Name = "Roommate1"
-        Roommate1.Size = New Size(34, 18)
+        Roommate1.Size = New Size(51, 27)
         Roommate1.TabIndex = 7
         Roommate1.Text = "Me:"
         ' 
@@ -184,9 +179,10 @@ Partial Class Roomies
         AddChoreBtn.FlatStyle = FlatStyle.Flat
         AddChoreBtn.Font = New Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
         AddChoreBtn.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        AddChoreBtn.Location = New Point(270, 82)
+        AddChoreBtn.Location = New Point(386, 137)
+        AddChoreBtn.Margin = New Padding(4, 5, 4, 5)
         AddChoreBtn.Name = "AddChoreBtn"
-        AddChoreBtn.Size = New Size(38, 40)
+        AddChoreBtn.Size = New Size(54, 67)
         AddChoreBtn.TabIndex = 6
         AddChoreBtn.Text = "+"
         AddChoreBtn.UseVisualStyleBackColor = False
@@ -195,21 +191,23 @@ Partial Class Roomies
         ' 
         HouseholdName.AutoSize = True
         HouseholdName.Font = New Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        HouseholdName.Location = New Point(21, 66)
+        HouseholdName.Location = New Point(30, 110)
+        HouseholdName.Margin = New Padding(4, 0, 4, 0)
         HouseholdName.Name = "HouseholdName"
-        HouseholdName.Size = New Size(78, 15)
+        HouseholdName.Size = New Size(109, 21)
         HouseholdName.TabIndex = 5
         HouseholdName.Text = "HouseName"
         ' 
         ' DateLabel
         ' 
+        DateLabel.AutoSize = True
         DateLabel.BackColor = Color.Transparent
         DateLabel.Font = New Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
         DateLabel.ForeColor = Color.Black
-        DateLabel.Location = New Point(21, 82)
+        DateLabel.Location = New Point(30, 137)
         DateLabel.Margin = New Padding(0)
         DateLabel.Name = "DateLabel"
-        DateLabel.Size = New Size(200, 40)
+        DateLabel.Size = New Size(266, 36)
         DateLabel.TabIndex = 0
         DateLabel.Text = "Today: Tue, Nov 7"
         DateLabel.TextAlign = ContentAlignment.MiddleLeft
@@ -221,9 +219,10 @@ Partial Class Roomies
         MenuPanel.Controls.Add(ExpensesBtn)
         MenuPanel.Controls.Add(CompletedBtn)
         MenuPanel.Controls.Add(TodoBtn)
-        MenuPanel.Location = New Point(102, 549)
+        MenuPanel.Location = New Point(146, 915)
+        MenuPanel.Margin = New Padding(4, 5, 4, 5)
         MenuPanel.Name = "MenuPanel"
-        MenuPanel.Size = New Size(345, 65)
+        MenuPanel.Size = New Size(493, 108)
         MenuPanel.TabIndex = 4
         ' 
         ' ExpenseSummaryBtn
@@ -232,14 +231,13 @@ Partial Class Roomies
         ExpenseSummaryBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         ExpenseSummaryBtn.BackgroundImage = My.Resources.Resources.expense_summary_icon
         ExpenseSummaryBtn.BackgroundImageLayout = ImageLayout.Zoom
-        ExpenseSummaryBtn.Enabled = False
         ExpenseSummaryBtn.FlatAppearance.BorderSize = 0
         ExpenseSummaryBtn.FlatStyle = FlatStyle.Flat
-        ExpenseSummaryBtn.Location = New Point(244, 0)
+        ExpenseSummaryBtn.Location = New Point(349, 0)
         ExpenseSummaryBtn.Margin = New Padding(0)
         ExpenseSummaryBtn.Name = "ExpenseSummaryBtn"
-        ExpenseSummaryBtn.Padding = New Padding(1)
-        ExpenseSummaryBtn.Size = New Size(101, 65)
+        ExpenseSummaryBtn.Padding = New Padding(1, 2, 1, 2)
+        ExpenseSummaryBtn.Size = New Size(144, 108)
         ExpenseSummaryBtn.TabIndex = 7
         ExpenseSummaryBtn.UseVisualStyleBackColor = False
         ' 
@@ -249,14 +247,13 @@ Partial Class Roomies
         ExpensesBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         ExpensesBtn.BackgroundImage = My.Resources.Resources.expenses_icon
         ExpensesBtn.BackgroundImageLayout = ImageLayout.Zoom
-        ExpensesBtn.Enabled = False
         ExpensesBtn.FlatAppearance.BorderSize = 0
         ExpensesBtn.FlatStyle = FlatStyle.Flat
-        ExpensesBtn.Location = New Point(172, 0)
+        ExpensesBtn.Location = New Point(246, 0)
         ExpensesBtn.Margin = New Padding(0)
         ExpensesBtn.Name = "ExpensesBtn"
-        ExpensesBtn.Padding = New Padding(1)
-        ExpensesBtn.Size = New Size(89, 65)
+        ExpensesBtn.Padding = New Padding(1, 2, 1, 2)
+        ExpensesBtn.Size = New Size(127, 108)
         ExpensesBtn.TabIndex = 7
         ExpensesBtn.UseVisualStyleBackColor = False
         ' 
@@ -266,14 +263,13 @@ Partial Class Roomies
         CompletedBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         CompletedBtn.BackgroundImage = My.Resources.Resources.completed_icon
         CompletedBtn.BackgroundImageLayout = ImageLayout.Zoom
-        CompletedBtn.Enabled = False
         CompletedBtn.FlatAppearance.BorderSize = 0
         CompletedBtn.FlatStyle = FlatStyle.Flat
-        CompletedBtn.Location = New Point(83, 0)
+        CompletedBtn.Location = New Point(119, 0)
         CompletedBtn.Margin = New Padding(0)
         CompletedBtn.Name = "CompletedBtn"
-        CompletedBtn.Padding = New Padding(1)
-        CompletedBtn.Size = New Size(89, 65)
+        CompletedBtn.Padding = New Padding(1, 2, 1, 2)
+        CompletedBtn.Size = New Size(127, 108)
         CompletedBtn.TabIndex = 6
         CompletedBtn.UseVisualStyleBackColor = False
         ' 
@@ -283,14 +279,13 @@ Partial Class Roomies
         TodoBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         TodoBtn.BackgroundImage = My.Resources.Resources.to_do_icon
         TodoBtn.BackgroundImageLayout = ImageLayout.Zoom
-        TodoBtn.Enabled = False
         TodoBtn.FlatAppearance.BorderSize = 0
         TodoBtn.FlatStyle = FlatStyle.Flat
         TodoBtn.Location = New Point(0, 0)
         TodoBtn.Margin = New Padding(0)
         TodoBtn.Name = "TodoBtn"
-        TodoBtn.Padding = New Padding(1)
-        TodoBtn.Size = New Size(83, 65)
+        TodoBtn.Padding = New Padding(1, 2, 1, 2)
+        TodoBtn.Size = New Size(119, 108)
         TodoBtn.TabIndex = 5
         TodoBtn.UseVisualStyleBackColor = False
         ' 
@@ -298,12 +293,13 @@ Partial Class Roomies
         ' 
         UserB.BackColor = Color.White
         UserB.ForeColor = Color.Black
-        UserB.Location = New Point(4, 27)
+        UserB.Location = New Point(4, 37)
+        UserB.Margin = New Padding(4, 5, 4, 5)
         UserB.Name = "UserB"
-        UserB.Padding = New Padding(3)
-        UserB.Size = New Size(545, 698)
+        UserB.Padding = New Padding(4, 5, 4, 5)
+        UserB.Size = New Size(782, 1174)
         UserB.TabIndex = 1
-        UserB.Text = "User B"
+        UserB.Text = "Alice"
         ' 
         ' AddHouseholdBtn
         ' 
@@ -313,9 +309,10 @@ Partial Class Roomies
         AddHouseholdBtn.FlatAppearance.BorderColor = Color.Black
         AddHouseholdBtn.FlatAppearance.BorderSize = 0
         AddHouseholdBtn.FlatStyle = FlatStyle.Flat
-        AddHouseholdBtn.Location = New Point(109, 215)
+        AddHouseholdBtn.Location = New Point(156, 358)
+        AddHouseholdBtn.Margin = New Padding(4, 5, 4, 5)
         AddHouseholdBtn.Name = "AddHouseholdBtn"
-        AddHouseholdBtn.Size = New Size(103, 88)
+        AddHouseholdBtn.Size = New Size(147, 147)
         AddHouseholdBtn.TabIndex = 1
         AddHouseholdBtn.TextImageRelation = TextImageRelation.ImageAboveText
         AddHouseholdBtn.UseVisualStyleBackColor = False
@@ -324,27 +321,29 @@ Partial Class Roomies
         ' 
         AddHouseholdPanel.BackColor = Color.Transparent
         AddHouseholdPanel.Controls.Add(AddHouseholdBtn)
-        AddHouseholdPanel.Location = New Point(567, 78)
+        AddHouseholdPanel.Location = New Point(834, 115)
         AddHouseholdPanel.Margin = New Padding(0)
         AddHouseholdPanel.Name = "AddHouseholdPanel"
-        AddHouseholdPanel.Size = New Size(345, 507)
+        AddHouseholdPanel.Size = New Size(493, 845)
         AddHouseholdPanel.TabIndex = 5
+        AddHouseholdPanel.Visible = False
         ' 
         ' Roomies
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(1080, 781)
+        ClientSize = New Size(1466, 1275)
         Controls.Add(AddHouseholdPanel)
         Controls.Add(TabControl1)
         DoubleBuffered = True
+        Margin = New Padding(4, 5, 4, 5)
         Name = "Roomies"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Roomies"
         TabControl1.ResumeLayout(False)
-        UserA.ResumeLayout(False)
+        Bob.ResumeLayout(False)
         TodoViewPanel.ResumeLayout(False)
         TodoViewPanel.PerformLayout()
         MenuPanel.ResumeLayout(False)
@@ -357,7 +356,7 @@ Partial Class Roomies
     Friend WithEvents LeftToolStripPanel As ToolStripPanel
     Friend WithEvents ContentPanel As ToolStripContentPanel
     Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents UserA As TabPage
+    Friend WithEvents Bob As TabPage
     Friend WithEvents TodoViewPanel As Panel
     Friend WithEvents DateLabel As Label
     Friend WithEvents AddHouseholdBtn As Button
@@ -367,12 +366,11 @@ Partial Class Roomies
     Friend WithEvents ExpenseSummaryBtn As Button
     Friend WithEvents ExpensesBtn As Button
     Friend WithEvents CompletedBtn As Button
-    Friend WithEvents Label1 As Label
     Friend WithEvents AddChoreBtn As Button
     Friend WithEvents HouseholdName As Label
     Friend WithEvents Roommate1 As Label
     Friend WithEvents AddHouseholdPanel As Panel
-    Friend WithEvents ChoreCheckboxPanel As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents User1ChoreCheckboxPanel As Panel
+    Friend WithEvents Alice As Label
+    Friend WithEvents User2ChoreCheckboxPanel As Panel
 End Class

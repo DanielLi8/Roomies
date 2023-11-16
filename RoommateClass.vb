@@ -50,6 +50,14 @@ Public Class RoommateClass
         ChoreList.Add(chore)
     End Sub
 
+    Public Sub UpdateChore(ByVal chore As ChoreClass, index As Integer)
+        ChoreList(index) = chore
+    End Sub
+
+    Public Function getChoreIndex(chore) As Integer
+        Return ChoreList.IndexOf(chore)
+
+    End Function
     Public Function getChore(chore) As ChoreClass
 
         Dim index As Integer = ChoreList.IndexOf(chore)
