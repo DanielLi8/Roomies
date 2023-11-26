@@ -89,6 +89,7 @@ Partial Class Roomies
         CompletedChoreBobDate = New Label()
         Label6 = New Label()
         ContextMenuStrip1 = New ContextMenuStrip(components)
+        Panel1 = New Panel()
         TabControl1.SuspendLayout()
         Bob.SuspendLayout()
         TodoViewPanel.SuspendLayout()
@@ -155,7 +156,7 @@ Partial Class Roomies
         ' Bob
         ' 
         Bob.BackColor = Color.Silver
-        Bob.BackgroundImage = My.Resources.Resources.iphone5
+        Bob.BackgroundImage = Roomies.My.Resources.Resources.iphone5
         Bob.BackgroundImageLayout = ImageLayout.Zoom
         Bob.Controls.Add(TodoViewPanel)
         Bob.Controls.Add(MenuPanel)
@@ -277,7 +278,7 @@ Partial Class Roomies
         ' 
         ExpenseSummaryBtn.Anchor = AnchorStyles.None
         ExpenseSummaryBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
-        ExpenseSummaryBtn.BackgroundImage = My.Resources.Resources.expense_summary_icon
+        ExpenseSummaryBtn.BackgroundImage = Roomies.My.Resources.Resources.expense_summary_icon
         ExpenseSummaryBtn.BackgroundImageLayout = ImageLayout.Zoom
         ExpenseSummaryBtn.FlatAppearance.BorderSize = 0
         ExpenseSummaryBtn.FlatStyle = FlatStyle.Flat
@@ -293,7 +294,7 @@ Partial Class Roomies
         ' 
         ExpensesBtn.Anchor = AnchorStyles.None
         ExpensesBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
-        ExpensesBtn.BackgroundImage = My.Resources.Resources.expenses_icon
+        ExpensesBtn.BackgroundImage = Roomies.My.Resources.Resources.expenses_icon
         ExpensesBtn.BackgroundImageLayout = ImageLayout.Zoom
         ExpensesBtn.FlatAppearance.BorderSize = 0
         ExpensesBtn.FlatStyle = FlatStyle.Flat
@@ -309,7 +310,7 @@ Partial Class Roomies
         ' 
         CompletedBtn.Anchor = AnchorStyles.None
         CompletedBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
-        CompletedBtn.BackgroundImage = My.Resources.Resources.completed_icon
+        CompletedBtn.BackgroundImage = Roomies.My.Resources.Resources.completed_icon
         CompletedBtn.BackgroundImageLayout = ImageLayout.Zoom
         CompletedBtn.FlatAppearance.BorderSize = 0
         CompletedBtn.FlatStyle = FlatStyle.Flat
@@ -325,7 +326,7 @@ Partial Class Roomies
         ' 
         TodoBtn.Anchor = AnchorStyles.None
         TodoBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
-        TodoBtn.BackgroundImage = My.Resources.Resources.to_do_icon
+        TodoBtn.BackgroundImage = Roomies.My.Resources.Resources.to_do_icon
         TodoBtn.BackgroundImageLayout = ImageLayout.Zoom
         TodoBtn.FlatAppearance.BorderSize = 0
         TodoBtn.FlatStyle = FlatStyle.Flat
@@ -351,7 +352,7 @@ Partial Class Roomies
         ' AddHouseholdBtn
         ' 
         AddHouseholdBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
-        AddHouseholdBtn.BackgroundImage = My.Resources.Resources.icons8_home_100
+        AddHouseholdBtn.BackgroundImage = Roomies.My.Resources.Resources.icons8_home_100
         AddHouseholdBtn.BackgroundImageLayout = ImageLayout.Zoom
         AddHouseholdBtn.FlatAppearance.BorderColor = Color.Black
         AddHouseholdBtn.FlatAppearance.BorderSize = 0
@@ -366,7 +367,7 @@ Partial Class Roomies
         ' UserB
         ' 
         UserB.BackColor = Color.Silver
-        UserB.BackgroundImage = My.Resources.Resources.iphone5
+        UserB.BackgroundImage = Roomies.My.Resources.Resources.iphone5
         UserB.BackgroundImageLayout = ImageLayout.Zoom
         UserB.Controls.Add(ToDoViewPanelAlice)
         UserB.Controls.Add(AliceMenuPanel)
@@ -486,7 +487,7 @@ Partial Class Roomies
         ' 
         SummaryBtnAlice.Anchor = AnchorStyles.None
         SummaryBtnAlice.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
-        SummaryBtnAlice.BackgroundImage = My.Resources.Resources.expense_summary_icon
+        SummaryBtnAlice.BackgroundImage = Roomies.My.Resources.Resources.expense_summary_icon
         SummaryBtnAlice.BackgroundImageLayout = ImageLayout.Zoom
         SummaryBtnAlice.FlatAppearance.BorderSize = 0
         SummaryBtnAlice.FlatStyle = FlatStyle.Flat
@@ -502,7 +503,7 @@ Partial Class Roomies
         ' 
         ExpenseBtnAlice.Anchor = AnchorStyles.None
         ExpenseBtnAlice.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
-        ExpenseBtnAlice.BackgroundImage = My.Resources.Resources.expenses_icon
+        ExpenseBtnAlice.BackgroundImage = Roomies.My.Resources.Resources.expenses_icon
         ExpenseBtnAlice.BackgroundImageLayout = ImageLayout.Zoom
         ExpenseBtnAlice.FlatAppearance.BorderSize = 0
         ExpenseBtnAlice.FlatStyle = FlatStyle.Flat
@@ -518,7 +519,7 @@ Partial Class Roomies
         ' 
         CompletedBtnAlice.Anchor = AnchorStyles.None
         CompletedBtnAlice.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
-        CompletedBtnAlice.BackgroundImage = My.Resources.Resources.completed_icon
+        CompletedBtnAlice.BackgroundImage = Roomies.My.Resources.Resources.completed_icon
         CompletedBtnAlice.BackgroundImageLayout = ImageLayout.Zoom
         CompletedBtnAlice.FlatAppearance.BorderSize = 0
         CompletedBtnAlice.FlatStyle = FlatStyle.Flat
@@ -534,7 +535,7 @@ Partial Class Roomies
         ' 
         ToDoBtnAlice.Anchor = AnchorStyles.None
         ToDoBtnAlice.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
-        ToDoBtnAlice.BackgroundImage = My.Resources.Resources.to_do_icon
+        ToDoBtnAlice.BackgroundImage = Roomies.My.Resources.Resources.to_do_icon
         ToDoBtnAlice.BackgroundImageLayout = ImageLayout.Zoom
         ToDoBtnAlice.FlatAppearance.BorderSize = 0
         ToDoBtnAlice.FlatStyle = FlatStyle.Flat
@@ -858,6 +859,13 @@ Partial Class Roomies
         ContextMenuStrip1.Name = "ContextMenuStrip1"
         ContextMenuStrip1.Size = New Size(61, 4)
         ' 
+        ' Panel1
+        ' 
+        Panel1.Location = New Point(1350, 121)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(250, 125)
+        Panel1.TabIndex = 10
+        ' 
         ' Roomies
         ' 
         AutoScaleDimensions = New SizeF(8.0F, 20.0F)
@@ -865,6 +873,7 @@ Partial Class Roomies
         BackColor = Color.White
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1924, 1055)
+        Controls.Add(Panel1)
         Controls.Add(ExpensesPanel)
         Controls.Add(Label6)
         Controls.Add(CompletedPerspective2)
@@ -873,6 +882,7 @@ Partial Class Roomies
         DoubleBuffered = True
         Margin = New Padding(3, 4, 3, 4)
         Name = "Roomies"
+        SizeGripStyle = SizeGripStyle.Show
         StartPosition = FormStartPosition.CenterScreen
         Text = "Roomies"
         TabControl1.ResumeLayout(False)
@@ -963,4 +973,5 @@ Partial Class Roomies
     Friend WithEvents ESharedExpensesPanel As Panel
     Friend WithEvents ESharedExpenseLabel As Label
     Friend WithEvents EButton As Button
+    Friend WithEvents Panel1 As Panel
 End Class

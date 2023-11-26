@@ -336,7 +336,6 @@ Public Class Roomies
     End Sub
 #Region "Calculating subs for Expense Features"
     Private Sub CalculateTotalExpense()
-        ' Assuming Roommates is a List(Of Roommate)
         Dim selectedRoommateName As String = TabControl1.SelectedTab.Text
         Dim totalExpense As Decimal = 0
 
@@ -351,9 +350,10 @@ Public Class Roomies
                 Next
             End If
         Next
-
-        ' Display or use the totalExpense as needed
         ESummaryLabel.Text = ($"Total: ${totalExpense}")
+    End Sub
+    Private Sub PopulateRegions()
+
     End Sub
 #End Region
 End Class
