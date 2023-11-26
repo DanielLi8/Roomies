@@ -308,8 +308,18 @@ Public Class Roomies
         Dim currentUser2 As New RoommateClass("Alice", "user_a@gmail.com")
         Me.AddRoommate(currentUser2)
 
+        'setting panel locations for bob view
+        TodoViewPanel.Parent = BobMasterPanel
+        TodoViewPanel.Location = New Point(0, 0)
+        CompletedPerspective.Parent = BobMasterPanel
+        CompletedPerspective.Location = New Point(0, 0)
 
 
+        'setting panel locations for bob view
+        ToDoViewPanelAlice.Parent = AliceMasterPanel
+        ToDoViewPanelAlice.Location = New Point(0, 0)
+        CompletedPerspective2.Parent = AliceMasterPanel
+        CompletedPerspective2.Location = New Point(0, 0)
     End Sub
 
     Private Sub UpdateDate()
@@ -355,5 +365,17 @@ Public Class Roomies
     Private Sub PopulateRegions()
 
     End Sub
+
+    Private Sub TodoViewPanel_Paint(sender As Object, e As PaintEventArgs) Handles TodoViewPanel.Paint
+
+    End Sub
+
+    Private Sub MenuPanel_Paint(sender As Object, e As PaintEventArgs) Handles MenuPanel.Paint
+    End Sub
+
+    Private Sub AddHouseholdPanel_Paint(sender As Object, e As PaintEventArgs) Handles AddHouseholdPanel.Paint
+    End Sub
+
+
 #End Region
 End Class
