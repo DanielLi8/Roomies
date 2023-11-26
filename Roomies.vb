@@ -131,6 +131,8 @@ Public Class Roomies
         CompletedBtnAlice.BackColor = greendefault
         ExpenseBtnAlice.BackColor = greenClicked
         SummaryBtnAlice.BackColor = greendefault
+
+        GenerateSummaryExpenses(False)
     End Sub
 
     Private Sub ExpenseSummaryBtn_Click(sender As Object, e As EventArgs) Handles ExpenseSummaryBtn.Click, SummaryBtnAlice.Click
@@ -143,9 +145,10 @@ Public Class Roomies
         CompletedBtnAlice.BackColor = greendefault
         ExpenseBtnAlice.BackColor = greendefault
         SummaryBtnAlice.BackColor = greenClicked
+
+        GenerateSummaryExpenses(True)
     End Sub
 #End Region
-
 
 #Region "List to keep track of todocheckbox that are dynamically created in the household"
     Private todoboxList As New List(Of TodoCheckbox)()
@@ -162,7 +165,6 @@ Public Class Roomies
 
 
 #End Region
-
 
 #Region "Adding chore functionality"
     Private Sub AddChoreBtn_Click(sender As Object, e As EventArgs) Handles AddChoreBtn.Click, AliceAddChoreBtn.Click
@@ -320,4 +322,38 @@ Public Class Roomies
         CompletedDateLabelBob.Text = "Today: " & formattedDate
     End Sub
 
+    Private Sub GenerateSummaryExpenses(summary As Boolean)
+        If summary Then
+            ETitleLabel.Text = "Summary"
+            EButton.Visible = False
+            ESummaryLabel.Visible = True
+        Else
+            ETitleLabel.Text = "Balence Sheet"
+            EButton.Visible = True
+            ESummaryLabel.Visible = False
+        End If
+
+    End Sub
+#Region "Calculating subs for Expense Features"
+    Private Sub CalculateTotalExpense()
+        ' Assuming Roommates is a List(Of Roommate)
+        Dim selectedRoommateName As String = TabControl1.SelectedTab.Text
+        Dim totalExpense As Decimal = 0
+
+        ' Loop through all roommates
+        For Each roommate As RoommateClass In RoommateList
+            ' Check if the roommate's name matches the selected tab text
+            If roommate.GetName() = selectedRoommateName Then
+                ' Loop through the ExpenseList of the selected roommate
+                For Each expense As ExpenseClass In roommate.getExpenseList()
+                    totalExpense += Decimal.Parse(expense.getAmount())
+                    End
+                Next
+            End If
+        Next
+
+        ' Display or use the totalExpense as needed
+        MessageBox.Show($"Total Expense for {selectedRoommateName}: {totalExpense}")
+    End Sub
+#End Region
 End Class

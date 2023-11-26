@@ -26,7 +26,6 @@ Public Class RoommateClass
 
 #Region "Setter and getter for name"
 
-
     Public Sub setName(ByVal n As String)
         Name = n
     End Sub
