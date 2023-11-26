@@ -62,12 +62,17 @@
             copyCheckBox.Text = Me.ChoreCheckbox.Text
             copyCheckBox.Font = New Font("Arial", 12.0F, FontStyle.Strikeout, GraphicsUnit.Point)
             Me.ChoreCheckbox.Enabled = False
+            Roomies.RemoveChoreList(Me.position1)
+            copyCheckBox.AutoSize = True
             Roomies.AddCompetedCheckBoxList(copyCheckBox)
-            Roomies.UpdateCompletedPanelView()
+            Roomies.AddTodoboxToPanel()
+            Roomies.AliceAddTodoboxToPanel()
             Roomies.AliceUpdateCompletedPanelView()
+            Roomies.UpdateCompletedPanelView()
+
         Else
-            ChoreCheckbox.Font = New Font("Arial", 12.0F, GraphicsUnit.Point)
-            Dim copyCheckBox As New CheckBox
+            'ChoreCheckbox.Font = New Font("Arial", 12.0F, GraphicsUnit.Point)
+            'Dim copyCheckBox As New CheckBox
 
         End If
 

@@ -30,11 +30,6 @@ Partial Class Roomies
         TabControl1 = New TabControl()
         Bob = New TabPage()
         TodoViewPanel = New Panel()
-        CompletedPerspective = New Panel()
-        CompletedChoreBobPanel = New Panel()
-        CompletedLabel1 = New Label()
-        Label4 = New Label()
-        CompletedDateLabelBob = New Label()
         User2ChoreCheckboxPanel = New Panel()
         User1ChoreCheckboxPanel = New Panel()
         Alice = New Label()
@@ -50,11 +45,6 @@ Partial Class Roomies
         AddHouseholdPanel = New Panel()
         AddHouseholdBtn = New Button()
         UserB = New TabPage()
-        CompletedPerspective2 = New Panel()
-        CompletedChoreAlicePanel = New Panel()
-        Label1 = New Label()
-        Label3 = New Label()
-        CompletedDateLabelAlice = New Label()
         ToDoViewPanelAlice = New Panel()
         AliceAddChoreBtn = New Button()
         AliceBobTodoPanel = New Panel()
@@ -68,6 +58,16 @@ Partial Class Roomies
         ExpenseBtnAlice = New Button()
         CompletedBtnAlice = New Button()
         ToDoBtnAlice = New Button()
+        CompletedPerspective = New Panel()
+        CompletedChoreBobPanel = New Panel()
+        CompletedLabel1 = New Label()
+        Label4 = New Label()
+        CompletedDateLabelBob = New Label()
+        CompletedPerspective2 = New Panel()
+        CompletedChoreAlicePanel = New Panel()
+        Label1 = New Label()
+        Label3 = New Label()
+        CompletedDateLabelAlice = New Label()
         CompletedChoreAliceDate = New Label()
         CompletedBobPerspective = New Panel()
         Panel6 = New Panel()
@@ -77,16 +77,17 @@ Partial Class Roomies
         Button7 = New Button()
         Label8 = New Label()
         CompletedChoreBobDate = New Label()
+        Label6 = New Label()
         TabControl1.SuspendLayout()
         Bob.SuspendLayout()
         TodoViewPanel.SuspendLayout()
-        CompletedPerspective.SuspendLayout()
         MenuPanel.SuspendLayout()
         AddHouseholdPanel.SuspendLayout()
         UserB.SuspendLayout()
-        CompletedPerspective2.SuspendLayout()
         ToDoViewPanelAlice.SuspendLayout()
         AliceMenuPanel.SuspendLayout()
+        CompletedPerspective.SuspendLayout()
+        CompletedPerspective2.SuspendLayout()
         CompletedBobPerspective.SuspendLayout()
         SuspendLayout()
         ' 
@@ -144,7 +145,6 @@ Partial Class Roomies
         Bob.BackColor = Color.Silver
         Bob.BackgroundImage = My.Resources.Resources.iphone5
         Bob.BackgroundImageLayout = ImageLayout.Zoom
-        Bob.Controls.Add(CompletedPerspective)
         Bob.Controls.Add(TodoViewPanel)
         Bob.Controls.Add(MenuPanel)
         Bob.Controls.Add(AddHouseholdPanel)
@@ -169,73 +169,16 @@ Partial Class Roomies
         TodoViewPanel.Location = New Point(123, 92)
         TodoViewPanel.Margin = New Padding(0)
         TodoViewPanel.Name = "TodoViewPanel"
-        TodoViewPanel.Size = New Size(330, 526)
+        TodoViewPanel.Size = New Size(330, 520)
         TodoViewPanel.TabIndex = 4
-        ' 
-        ' CompletedPerspective
-        ' 
-        CompletedPerspective.BackColor = Color.Transparent
-        CompletedPerspective.Controls.Add(CompletedChoreBobPanel)
-        CompletedPerspective.Controls.Add(CompletedLabel1)
-        CompletedPerspective.Controls.Add(Label4)
-        CompletedPerspective.Controls.Add(CompletedDateLabelBob)
-        CompletedPerspective.Location = New Point(150, 40)
-        CompletedPerspective.Margin = New Padding(0)
-        CompletedPerspective.Name = "CompletedPerspective"
-        CompletedPerspective.Size = New Size(330, 526)
-        CompletedPerspective.TabIndex = 6
-        CompletedPerspective.Visible = False
-        ' 
-        ' CompletedChoreBobPanel
-        ' 
-        CompletedChoreBobPanel.Enabled = False
-        CompletedChoreBobPanel.Location = New Point(12, 118)
-        CompletedChoreBobPanel.Margin = New Padding(3, 2, 3, 2)
-        CompletedChoreBobPanel.Name = "CompletedChoreBobPanel"
-        CompletedChoreBobPanel.Size = New Size(264, 262)
-        CompletedChoreBobPanel.TabIndex = 8
-        ' 
-        ' CompletedLabel1
-        ' 
-        CompletedLabel1.AutoSize = True
-        CompletedLabel1.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
-        CompletedLabel1.Location = New Point(10, 100)
-        CompletedLabel1.Name = "CompletedLabel1"
-        CompletedLabel1.Size = New Size(144, 18)
-        CompletedLabel1.TabIndex = 7
-        CompletedLabel1.Text = "Completed Chores:"
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Arial", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
-        Label4.Location = New Point(10, 60)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(46, 15)
-        Label4.TabIndex = 5
-        Label4.Text = "LeSpot"
-        ' 
-        ' CompletedDateLabelBob
-        ' 
-        CompletedDateLabelBob.AutoSize = True
-        CompletedDateLabelBob.BackColor = Color.Transparent
-        CompletedDateLabelBob.Font = New Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
-        CompletedDateLabelBob.ForeColor = Color.Black
-        CompletedDateLabelBob.Location = New Point(10, 72)
-        CompletedDateLabelBob.Margin = New Padding(0)
-        CompletedDateLabelBob.Name = "CompletedDateLabelBob"
-        CompletedDateLabelBob.Size = New Size(179, 24)
-        CompletedDateLabelBob.TabIndex = 0
-        CompletedDateLabelBob.Text = "Today: Tue, Nov 7"
-        CompletedDateLabelBob.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' User2ChoreCheckboxPanel
         ' 
         User2ChoreCheckboxPanel.AutoScroll = True
-        User2ChoreCheckboxPanel.Location = New Point(10, 228)
+        User2ChoreCheckboxPanel.Location = New Point(12, 234)
         User2ChoreCheckboxPanel.Margin = New Padding(3, 2, 3, 2)
         User2ChoreCheckboxPanel.Name = "User2ChoreCheckboxPanel"
-        User2ChoreCheckboxPanel.Size = New Size(264, 164)
+        User2ChoreCheckboxPanel.Size = New Size(288, 268)
         User2ChoreCheckboxPanel.TabIndex = 8
         ' 
         ' User1ChoreCheckboxPanel
@@ -244,14 +187,14 @@ Partial Class Roomies
         User1ChoreCheckboxPanel.Location = New Point(12, 81)
         User1ChoreCheckboxPanel.Margin = New Padding(3, 2, 3, 2)
         User1ChoreCheckboxPanel.Name = "User1ChoreCheckboxPanel"
-        User1ChoreCheckboxPanel.Size = New Size(264, 129)
+        User1ChoreCheckboxPanel.Size = New Size(288, 129)
         User1ChoreCheckboxPanel.TabIndex = 8
         ' 
         ' Alice
         ' 
         Alice.AutoSize = True
-        Alice.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
-        Alice.Location = New Point(12, 212)
+        Alice.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Alice.Location = New Point(12, 214)
         Alice.Name = "Alice"
         Alice.Size = New Size(43, 18)
         Alice.TabIndex = 7
@@ -260,7 +203,7 @@ Partial Class Roomies
         ' Roommate1
         ' 
         Roommate1.AutoSize = True
-        Roommate1.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Roommate1.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
         Roommate1.Location = New Point(12, 65)
         Roommate1.Name = "Roommate1"
         Roommate1.Size = New Size(34, 18)
@@ -275,7 +218,7 @@ Partial Class Roomies
         AddChoreBtn.FlatStyle = FlatStyle.Flat
         AddChoreBtn.Font = New Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
         AddChoreBtn.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        AddChoreBtn.Location = New Point(215, 7)
+        AddChoreBtn.Location = New Point(213, 6)
         AddChoreBtn.Margin = New Padding(3, 2, 3, 2)
         AddChoreBtn.Name = "AddChoreBtn"
         AddChoreBtn.Size = New Size(41, 47)
@@ -347,7 +290,7 @@ Partial Class Roomies
         ExpensesBtn.Margin = New Padding(0)
         ExpensesBtn.Name = "ExpensesBtn"
         ExpensesBtn.Padding = New Padding(1)
-        ExpensesBtn.Size = New Size(87, 62)
+        ExpensesBtn.Size = New Size(80, 62)
         ExpensesBtn.TabIndex = 7
         ExpensesBtn.UseVisualStyleBackColor = False
         ' 
@@ -359,11 +302,11 @@ Partial Class Roomies
         CompletedBtn.BackgroundImageLayout = ImageLayout.Zoom
         CompletedBtn.FlatAppearance.BorderSize = 0
         CompletedBtn.FlatStyle = FlatStyle.Flat
-        CompletedBtn.Location = New Point(76, 3)
+        CompletedBtn.Location = New Point(76, 0)
         CompletedBtn.Margin = New Padding(0)
         CompletedBtn.Name = "CompletedBtn"
         CompletedBtn.Padding = New Padding(1)
-        CompletedBtn.Size = New Size(89, 62)
+        CompletedBtn.Size = New Size(80, 65)
         CompletedBtn.TabIndex = 6
         CompletedBtn.UseVisualStyleBackColor = False
         ' 
@@ -379,7 +322,7 @@ Partial Class Roomies
         TodoBtn.Margin = New Padding(0)
         TodoBtn.Name = "TodoBtn"
         TodoBtn.Padding = New Padding(1)
-        TodoBtn.Size = New Size(76, 62)
+        TodoBtn.Size = New Size(80, 62)
         TodoBtn.TabIndex = 5
         TodoBtn.UseVisualStyleBackColor = False
         ' 
@@ -415,7 +358,6 @@ Partial Class Roomies
         UserB.BackColor = Color.Silver
         UserB.BackgroundImage = My.Resources.Resources.iphone5
         UserB.BackgroundImageLayout = ImageLayout.Zoom
-        UserB.Controls.Add(CompletedPerspective2)
         UserB.Controls.Add(ToDoViewPanelAlice)
         UserB.Controls.Add(AliceMenuPanel)
         UserB.ForeColor = Color.Black
@@ -425,62 +367,6 @@ Partial Class Roomies
         UserB.Size = New Size(576, 767)
         UserB.TabIndex = 1
         UserB.Text = "Alice"
-        ' 
-        ' CompletedPerspective2
-        ' 
-        CompletedPerspective2.BackColor = Color.Transparent
-        CompletedPerspective2.Controls.Add(CompletedChoreAlicePanel)
-        CompletedPerspective2.Controls.Add(Label1)
-        CompletedPerspective2.Controls.Add(Label3)
-        CompletedPerspective2.Controls.Add(CompletedDateLabelAlice)
-        CompletedPerspective2.Location = New Point(148, 46)
-        CompletedPerspective2.Margin = New Padding(0)
-        CompletedPerspective2.Name = "CompletedPerspective2"
-        CompletedPerspective2.Size = New Size(289, 394)
-        CompletedPerspective2.TabIndex = 7
-        ' 
-        ' CompletedChoreAlicePanel
-        ' 
-        CompletedChoreAlicePanel.Enabled = False
-        CompletedChoreAlicePanel.Location = New Point(12, 110)
-        CompletedChoreAlicePanel.Margin = New Padding(3, 2, 3, 2)
-        CompletedChoreAlicePanel.Name = "CompletedChoreAlicePanel"
-        CompletedChoreAlicePanel.Size = New Size(264, 270)
-        CompletedChoreAlicePanel.TabIndex = 8
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
-        Label1.Location = New Point(11, 94)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(144, 18)
-        Label1.TabIndex = 7
-        Label1.Text = "Completed Chores:"
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Font = New Font("Arial", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
-        Label3.Location = New Point(10, 52)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(46, 15)
-        Label3.TabIndex = 5
-        Label3.Text = "LeSpot"
-        ' 
-        ' CompletedDateLabelAlice
-        ' 
-        CompletedDateLabelAlice.AutoSize = True
-        CompletedDateLabelAlice.BackColor = Color.Transparent
-        CompletedDateLabelAlice.Font = New Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
-        CompletedDateLabelAlice.ForeColor = Color.Black
-        CompletedDateLabelAlice.Location = New Point(10, 64)
-        CompletedDateLabelAlice.Margin = New Padding(0)
-        CompletedDateLabelAlice.Name = "CompletedDateLabelAlice"
-        CompletedDateLabelAlice.Size = New Size(179, 24)
-        CompletedDateLabelAlice.TabIndex = 0
-        CompletedDateLabelAlice.Text = "Today: Tue, Nov 7"
-        CompletedDateLabelAlice.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' ToDoViewPanelAlice
         ' 
@@ -492,10 +378,10 @@ Partial Class Roomies
         ToDoViewPanelAlice.Controls.Add(Label2)
         ToDoViewPanelAlice.Controls.Add(AliceHouseLabel)
         ToDoViewPanelAlice.Controls.Add(AliceDateLabel)
-        ToDoViewPanelAlice.Location = New Point(121, 92)
+        ToDoViewPanelAlice.Location = New Point(123, 88)
         ToDoViewPanelAlice.Margin = New Padding(0)
         ToDoViewPanelAlice.Name = "ToDoViewPanelAlice"
-        ToDoViewPanelAlice.Size = New Size(330, 516)
+        ToDoViewPanelAlice.Size = New Size(330, 525)
         ToDoViewPanelAlice.TabIndex = 5
         ' 
         ' AliceAddChoreBtn
@@ -506,7 +392,7 @@ Partial Class Roomies
         AliceAddChoreBtn.FlatStyle = FlatStyle.Flat
         AliceAddChoreBtn.Font = New Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
         AliceAddChoreBtn.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        AliceAddChoreBtn.Location = New Point(236, 68)
+        AliceAddChoreBtn.Location = New Point(223, 11)
         AliceAddChoreBtn.Margin = New Padding(3, 2, 3, 2)
         AliceAddChoreBtn.Name = "AliceAddChoreBtn"
         AliceAddChoreBtn.Size = New Size(41, 47)
@@ -517,10 +403,10 @@ Partial Class Roomies
         ' AliceBobTodoPanel
         ' 
         AliceBobTodoPanel.AutoScroll = True
-        AliceBobTodoPanel.Location = New Point(14, 262)
+        AliceBobTodoPanel.Location = New Point(14, 293)
         AliceBobTodoPanel.Margin = New Padding(3, 2, 3, 2)
         AliceBobTodoPanel.Name = "AliceBobTodoPanel"
-        AliceBobTodoPanel.Size = New Size(264, 129)
+        AliceBobTodoPanel.Size = New Size(287, 213)
         AliceBobTodoPanel.TabIndex = 8
         ' 
         ' AliceMeTodoboxPanel
@@ -529,14 +415,14 @@ Partial Class Roomies
         AliceMeTodoboxPanel.Location = New Point(12, 77)
         AliceMeTodoboxPanel.Margin = New Padding(3, 2, 3, 2)
         AliceMeTodoboxPanel.Name = "AliceMeTodoboxPanel"
-        AliceMeTodoboxPanel.Size = New Size(264, 167)
+        AliceMeTodoboxPanel.Size = New Size(289, 194)
         AliceMeTodoboxPanel.TabIndex = 8
         ' 
         ' AliceBobLabel
         ' 
         AliceBobLabel.AutoSize = True
         AliceBobLabel.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
-        AliceBobLabel.Location = New Point(14, 247)
+        AliceBobLabel.Location = New Point(14, 273)
         AliceBobLabel.Name = "AliceBobLabel"
         AliceBobLabel.Size = New Size(37, 18)
         AliceBobLabel.TabIndex = 7
@@ -545,7 +431,7 @@ Partial Class Roomies
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Label2.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
         Label2.Location = New Point(10, 62)
         Label2.Name = "Label2"
         Label2.Size = New Size(34, 18)
@@ -555,8 +441,8 @@ Partial Class Roomies
         ' AliceHouseLabel
         ' 
         AliceHouseLabel.AutoSize = True
-        AliceHouseLabel.Font = New Font("Arial", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
-        AliceHouseLabel.Location = New Point(10, 7)
+        AliceHouseLabel.Font = New Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        AliceHouseLabel.Location = New Point(14, 42)
         AliceHouseLabel.Name = "AliceHouseLabel"
         AliceHouseLabel.Size = New Size(46, 15)
         AliceHouseLabel.TabIndex = 5
@@ -583,7 +469,7 @@ Partial Class Roomies
         AliceMenuPanel.Controls.Add(ExpenseBtnAlice)
         AliceMenuPanel.Controls.Add(CompletedBtnAlice)
         AliceMenuPanel.Controls.Add(ToDoBtnAlice)
-        AliceMenuPanel.Location = New Point(121, 610)
+        AliceMenuPanel.Location = New Point(123, 615)
         AliceMenuPanel.Margin = New Padding(3, 2, 3, 2)
         AliceMenuPanel.Name = "AliceMenuPanel"
         AliceMenuPanel.Size = New Size(330, 65)
@@ -597,11 +483,11 @@ Partial Class Roomies
         SummaryBtnAlice.BackgroundImageLayout = ImageLayout.Zoom
         SummaryBtnAlice.FlatAppearance.BorderSize = 0
         SummaryBtnAlice.FlatStyle = FlatStyle.Flat
-        SummaryBtnAlice.Location = New Point(207, 2)
+        SummaryBtnAlice.Location = New Point(237, 3)
         SummaryBtnAlice.Margin = New Padding(0)
         SummaryBtnAlice.Name = "SummaryBtnAlice"
         SummaryBtnAlice.Padding = New Padding(1)
-        SummaryBtnAlice.Size = New Size(81, 46)
+        SummaryBtnAlice.Size = New Size(93, 62)
         SummaryBtnAlice.TabIndex = 7
         SummaryBtnAlice.UseVisualStyleBackColor = False
         ' 
@@ -613,11 +499,11 @@ Partial Class Roomies
         ExpenseBtnAlice.BackgroundImageLayout = ImageLayout.Zoom
         ExpenseBtnAlice.FlatAppearance.BorderSize = 0
         ExpenseBtnAlice.FlatStyle = FlatStyle.Flat
-        ExpenseBtnAlice.Location = New Point(144, 2)
+        ExpenseBtnAlice.Location = New Point(165, 3)
         ExpenseBtnAlice.Margin = New Padding(0)
         ExpenseBtnAlice.Name = "ExpenseBtnAlice"
         ExpenseBtnAlice.Padding = New Padding(1)
-        ExpenseBtnAlice.Size = New Size(76, 46)
+        ExpenseBtnAlice.Size = New Size(80, 62)
         ExpenseBtnAlice.TabIndex = 7
         ExpenseBtnAlice.UseVisualStyleBackColor = False
         ' 
@@ -629,11 +515,11 @@ Partial Class Roomies
         CompletedBtnAlice.BackgroundImageLayout = ImageLayout.Zoom
         CompletedBtnAlice.FlatAppearance.BorderSize = 0
         CompletedBtnAlice.FlatStyle = FlatStyle.Flat
-        CompletedBtnAlice.Location = New Point(66, 2)
+        CompletedBtnAlice.Location = New Point(76, 0)
         CompletedBtnAlice.Margin = New Padding(0)
         CompletedBtnAlice.Name = "CompletedBtnAlice"
         CompletedBtnAlice.Padding = New Padding(1)
-        CompletedBtnAlice.Size = New Size(78, 46)
+        CompletedBtnAlice.Size = New Size(80, 65)
         CompletedBtnAlice.TabIndex = 6
         CompletedBtnAlice.UseVisualStyleBackColor = False
         ' 
@@ -645,13 +531,125 @@ Partial Class Roomies
         ToDoBtnAlice.BackgroundImageLayout = ImageLayout.Zoom
         ToDoBtnAlice.FlatAppearance.BorderSize = 0
         ToDoBtnAlice.FlatStyle = FlatStyle.Flat
-        ToDoBtnAlice.Location = New Point(0, 2)
+        ToDoBtnAlice.Location = New Point(0, 3)
         ToDoBtnAlice.Margin = New Padding(0)
         ToDoBtnAlice.Name = "ToDoBtnAlice"
         ToDoBtnAlice.Padding = New Padding(1)
-        ToDoBtnAlice.Size = New Size(66, 46)
+        ToDoBtnAlice.Size = New Size(80, 62)
         ToDoBtnAlice.TabIndex = 5
         ToDoBtnAlice.UseVisualStyleBackColor = False
+        ' 
+        ' CompletedPerspective
+        ' 
+        CompletedPerspective.BackColor = Color.Transparent
+        CompletedPerspective.Controls.Add(CompletedChoreBobPanel)
+        CompletedPerspective.Controls.Add(CompletedLabel1)
+        CompletedPerspective.Controls.Add(Label4)
+        CompletedPerspective.Controls.Add(CompletedDateLabelBob)
+        CompletedPerspective.Location = New Point(1024, 95)
+        CompletedPerspective.Margin = New Padding(0)
+        CompletedPerspective.Name = "CompletedPerspective"
+        CompletedPerspective.Size = New Size(330, 526)
+        CompletedPerspective.TabIndex = 6
+        ' 
+        ' CompletedChoreBobPanel
+        ' 
+        CompletedChoreBobPanel.Enabled = False
+        CompletedChoreBobPanel.Location = New Point(12, 118)
+        CompletedChoreBobPanel.Margin = New Padding(3, 2, 3, 2)
+        CompletedChoreBobPanel.Name = "CompletedChoreBobPanel"
+        CompletedChoreBobPanel.Size = New Size(264, 262)
+        CompletedChoreBobPanel.TabIndex = 8
+        ' 
+        ' CompletedLabel1
+        ' 
+        CompletedLabel1.AutoSize = True
+        CompletedLabel1.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        CompletedLabel1.Location = New Point(10, 100)
+        CompletedLabel1.Name = "CompletedLabel1"
+        CompletedLabel1.Size = New Size(144, 18)
+        CompletedLabel1.TabIndex = 7
+        CompletedLabel1.Text = "Completed Chores:"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        Label4.Location = New Point(10, 60)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(46, 15)
+        Label4.TabIndex = 5
+        Label4.Text = "LeSpot"
+        ' 
+        ' CompletedDateLabelBob
+        ' 
+        CompletedDateLabelBob.AutoSize = True
+        CompletedDateLabelBob.BackColor = Color.Transparent
+        CompletedDateLabelBob.Font = New Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
+        CompletedDateLabelBob.ForeColor = Color.Black
+        CompletedDateLabelBob.Location = New Point(10, 72)
+        CompletedDateLabelBob.Margin = New Padding(0)
+        CompletedDateLabelBob.Name = "CompletedDateLabelBob"
+        CompletedDateLabelBob.Size = New Size(179, 24)
+        CompletedDateLabelBob.TabIndex = 0
+        CompletedDateLabelBob.Text = "Today: Tue, Nov 7"
+        CompletedDateLabelBob.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' CompletedPerspective2
+        ' 
+        CompletedPerspective2.BackColor = Color.Transparent
+        CompletedPerspective2.Controls.Add(CompletedChoreAlicePanel)
+        CompletedPerspective2.Controls.Add(Label1)
+        CompletedPerspective2.Controls.Add(Label3)
+        CompletedPerspective2.Controls.Add(CompletedDateLabelAlice)
+        CompletedPerspective2.Location = New Point(673, 95)
+        CompletedPerspective2.Margin = New Padding(0)
+        CompletedPerspective2.Name = "CompletedPerspective2"
+        CompletedPerspective2.Size = New Size(306, 484)
+        CompletedPerspective2.TabIndex = 7
+        ' 
+        ' CompletedChoreAlicePanel
+        ' 
+        CompletedChoreAlicePanel.Enabled = False
+        CompletedChoreAlicePanel.Location = New Point(12, 110)
+        CompletedChoreAlicePanel.Margin = New Padding(3, 2, 3, 2)
+        CompletedChoreAlicePanel.Name = "CompletedChoreAlicePanel"
+        CompletedChoreAlicePanel.Size = New Size(264, 270)
+        CompletedChoreAlicePanel.TabIndex = 8
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label1.Location = New Point(11, 94)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(144, 18)
+        Label1.TabIndex = 7
+        Label1.Text = "Completed Chores:"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        Label3.Location = New Point(10, 52)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(46, 15)
+        Label3.TabIndex = 5
+        Label3.Text = "LeSpot"
+        ' 
+        ' CompletedDateLabelAlice
+        ' 
+        CompletedDateLabelAlice.AutoSize = True
+        CompletedDateLabelAlice.BackColor = Color.Transparent
+        CompletedDateLabelAlice.Font = New Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
+        CompletedDateLabelAlice.ForeColor = Color.Black
+        CompletedDateLabelAlice.Location = New Point(10, 64)
+        CompletedDateLabelAlice.Margin = New Padding(0)
+        CompletedDateLabelAlice.Name = "CompletedDateLabelAlice"
+        CompletedDateLabelAlice.Size = New Size(179, 24)
+        CompletedDateLabelAlice.TabIndex = 0
+        CompletedDateLabelAlice.Text = "Today: Tue, Nov 7"
+        CompletedDateLabelAlice.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' CompletedChoreAliceDate
         ' 
@@ -739,13 +737,26 @@ Partial Class Roomies
         CompletedChoreBobDate.Text = "Today: Tue, Nov 7"
         CompletedChoreBobDate.TextAlign = ContentAlignment.MiddleLeft
         ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Location = New Point(673, 69)
+        Label6.Name = "Label6"
+        Label6.RightToLeft = RightToLeft.No
+        Label6.Size = New Size(33, 15)
+        Label6.TabIndex = 8
+        Label6.Text = "Alice"
+        ' 
         ' Roomies
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(918, 738)
+        ClientSize = New Size(1416, 820)
+        Controls.Add(Label6)
+        Controls.Add(CompletedPerspective2)
+        Controls.Add(CompletedPerspective)
         Controls.Add(TabControl1)
         DoubleBuffered = True
         Name = "Roomies"
@@ -755,19 +766,20 @@ Partial Class Roomies
         Bob.ResumeLayout(False)
         TodoViewPanel.ResumeLayout(False)
         TodoViewPanel.PerformLayout()
-        CompletedPerspective.ResumeLayout(False)
-        CompletedPerspective.PerformLayout()
         MenuPanel.ResumeLayout(False)
         AddHouseholdPanel.ResumeLayout(False)
         UserB.ResumeLayout(False)
-        CompletedPerspective2.ResumeLayout(False)
-        CompletedPerspective2.PerformLayout()
         ToDoViewPanelAlice.ResumeLayout(False)
         ToDoViewPanelAlice.PerformLayout()
         AliceMenuPanel.ResumeLayout(False)
+        CompletedPerspective.ResumeLayout(False)
+        CompletedPerspective.PerformLayout()
+        CompletedPerspective2.ResumeLayout(False)
+        CompletedPerspective2.PerformLayout()
         CompletedBobPerspective.ResumeLayout(False)
         CompletedBobPerspective.PerformLayout()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
     Friend WithEvents BottomToolStripPanel As ToolStripPanel
     Friend WithEvents TopToolStripPanel As ToolStripPanel
@@ -825,4 +837,5 @@ Partial Class Roomies
     Friend WithEvents Label3 As Label
     Friend WithEvents CompletedDateLabelAlice As Label
     Friend WithEvents CompletedChoreAliceDate As Label
+    Friend WithEvents Label6 As Label
 End Class

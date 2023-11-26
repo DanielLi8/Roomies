@@ -34,10 +34,25 @@ Public Class Roomies
     Public Sub UpdateChoreList(newChore As ChoreClass, index As Integer)
         ChoreList(index) = newChore
     End Sub
+
+    Public Sub RemoveChoreList(index As Integer)
+        Dim newChore As New ChoreClass
+        ChoreList(index) = newChore
+        'ChoreList.RemoveAt(index)
+    End Sub
     Public Function getChoreList() As List(Of ChoreClass)
         Return ChoreList
     End Function
 
+    Public Function FindChore(choreToFind As ChoreClass) As ChoreClass
+        Dim foundChore As ChoreClass = ChoreList.Find(Function(chore) _
+        chore.Name = choreToFind.Name AndAlso
+        chore.recurring = choreToFind.recurring AndAlso
+        chore.Effort = choreToFind.Effort)
+
+        Return foundChore
+
+    End Function
 
 #End Region
 
@@ -159,56 +174,68 @@ Public Class Roomies
         AliceAddTodoboxToPanel()
     End Sub
 
+
     Public Sub AddTodoboxToPanel()
         User1ChoreCheckboxPanel.Controls.Clear()
         User2ChoreCheckboxPanel.Controls.Clear()
-        Dim User1VerticalSpacing As Integer = 0
-        Dim User2VerticalSpacing As Integer = 0
-        Dim position As Integer = 0
+        Dim BobUser1VerticalSpacing As Integer = 0
+        Dim BobUser2VerticalSpacing As Integer = 0
+        Dim Bobposition As Integer = 0
 
         For Each chore In ChoreList
+            If chore.Name = "" Then
+                Bobposition += 1
+                Continue For
+            End If
 
-            Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, position)
+            Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, Bobposition)
             Me.AddTodoboxList(todobox)
             ' fix below to add to panel depending on which user
             If chore.Roommate = 0 Then
-                todobox.Location = New Point(0, 58 * User1VerticalSpacing)
+                todobox.Location = New Point(0, 58 * BobUser1VerticalSpacing)
                 User1ChoreCheckboxPanel.Controls.Add(todobox)
-                User1VerticalSpacing += 1
+                BobUser1VerticalSpacing += 1
 
             ElseIf chore.Roommate = 1 Then
-                todobox.Location = New Point(0, 58 * User2VerticalSpacing)
+                todobox.Location = New Point(0, 58 * BobUser2VerticalSpacing)
                 User2ChoreCheckboxPanel.Controls.Add(todobox)
-                User2VerticalSpacing += 1
+                BobUser2VerticalSpacing += 1
             End If
-            position += 1
+            Bobposition += 1
+
         Next
 
     End Sub
 
+
     Public Sub AliceAddTodoboxToPanel()
         AliceMeTodoboxPanel.Controls.Clear()
         AliceBobTodoPanel.Controls.Clear()
-        Dim User1VerticalSpacing As Integer = 0
-        Dim User2VerticalSpacing As Integer = 0
-        Dim position As Integer = 0
+        Dim AliceUser1VerticalSpacing As Integer = 0
+        Dim AliceUser2VerticalSpacing As Integer = 0
+        Dim AlicePosition As Integer = 0
 
         For Each chore In ChoreList
+            If chore.Name = "" Then
+                AlicePosition += 1
 
-            Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, position)
+                Continue For
+            End If
+            Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, AlicePosition)
             Me.AddTodoboxList(todobox)
             ' fix below to add to panel depending on which user
             If chore.Roommate = 0 Then
-                todobox.Location = New Point(0, 58 * User1VerticalSpacing)
+                todobox.Location = New Point(0, 58 * AliceUser1VerticalSpacing)
                 AliceBobTodoPanel.Controls.Add(todobox)
-                User1VerticalSpacing += 1
+                AliceUser1VerticalSpacing += 1
 
             ElseIf chore.Roommate = 1 Then
-                todobox.Location = New Point(0, 58 * User2VerticalSpacing)
+                todobox.Location = New Point(0, 58 * AliceUser2VerticalSpacing)
                 AliceMeTodoboxPanel.Controls.Add(todobox)
-                User2VerticalSpacing += 1
+                AliceUser2VerticalSpacing += 1
             End If
-            position += 1
+            AlicePosition += 1
+
         Next
 
     End Sub
@@ -232,7 +259,7 @@ Public Class Roomies
 
 
     Public Sub UpdateCompletedPanelView()
-        CompletedChoreBobPanel.Controls.Clear()
+        ' CompletedChoreBobPanel.Controls.Clear()
 
         Dim VerticalSpacing As Integer = 0
 
@@ -250,16 +277,20 @@ Public Class Roomies
     End Sub
 
     Public Sub AliceUpdateCompletedPanelView()
-        CompletedChoreAlicePanel.Controls.Clear()
+        ' CompletedChoreAlicePanel.Controls.Clear()
 
         Dim VerticalSpacing As Integer = 0
 
         For Each CompletedCheckBox In CompletedCheckBoxList
+            Dim newCheckBox As New CheckBox
 
-            CompletedCheckBox.Font = New Font("Arial", 12.0F, FontStyle.Strikeout, GraphicsUnit.Point)
+            newCheckBox.Text = CompletedCheckBox.Text
+            newCheckBox.Checked = CompletedCheckBox.Checked
+            newCheckBox.Font = New Font("Arial", 12.0F, FontStyle.Strikeout, GraphicsUnit.Point)
+            newCheckBox.AutoSize = True
             ' fix below to add to panel depending on which user
-            CompletedCheckBox.Location = New Point(0, 30 * VerticalSpacing)
-            CompletedChoreAlicePanel.Controls.Add(CompletedCheckBox)
+            newCheckBox.Location = New Point(0, 30 * VerticalSpacing)
+            CompletedChoreAlicePanel.Controls.Add(newCheckBox)
             VerticalSpacing += 1
 
         Next
@@ -275,8 +306,7 @@ Public Class Roomies
         Dim currentUser2 As New RoommateClass("Alice", "user_a@gmail.com")
         Me.AddRoommate(currentUser2)
 
-        CompletedPerspective.Parent = Bob
-        CompletedPerspective2.Parent = UserB
+
 
     End Sub
 
@@ -289,6 +319,5 @@ Public Class Roomies
         CompletedDateLabelAlice.Text = "Today: " & formattedDate
         CompletedDateLabelBob.Text = "Today: " & formattedDate
     End Sub
-
 
 End Class

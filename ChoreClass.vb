@@ -3,6 +3,10 @@
     Private Recurring1 As String
     Private effortRating1 As Integer
     Private RoommateNum As Integer
+
+    Public Sub New()
+        choreName1 = ""
+    End Sub
     Public Property Name() As String
         Get
             Return choreName1
