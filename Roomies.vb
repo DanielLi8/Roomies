@@ -353,7 +353,7 @@ Public Class Roomies
         Next
 
         ' Display or use the totalExpense as needed
-        MessageBox.Show($"Total Expense for {selectedRoommateName}: {totalExpense}")
+        ESummaryLabel.Text = ($"Total: ${totalExpense}")
     End Sub
 #End Region
 End Class
