@@ -28,16 +28,18 @@ Partial Class ExpensesComponent
         AmountTextbox = New TextBox()
         SplitLabel = New Label()
         ExpenseRadioGroup = New GroupBox()
-        YesButton = New RadioButton()
         NoButton = New RadioButton()
-        Panel1 = New Panel()
+        YesButton = New RadioButton()
+        RoommateExpensePanel = New Panel()
+        ExpenseCEButton = New Button()
+        ExpenseDButton = New Button()
         ExpenseRadioGroup.SuspendLayout()
         SuspendLayout()
         ' 
         ' ExpenseLabel
         ' 
         ExpenseLabel.AutoSize = True
-        ExpenseLabel.Location = New Point(31, 33)
+        ExpenseLabel.Location = New Point(11, 28)
         ExpenseLabel.Name = "ExpenseLabel"
         ExpenseLabel.Size = New Size(66, 20)
         ExpenseLabel.TabIndex = 0
@@ -46,7 +48,7 @@ Partial Class ExpensesComponent
         ' AmountLabel
         ' 
         AmountLabel.AutoSize = True
-        AmountLabel.Location = New Point(31, 84)
+        AmountLabel.Location = New Point(11, 79)
         AmountLabel.Name = "AmountLabel"
         AmountLabel.Size = New Size(65, 20)
         AmountLabel.TabIndex = 1
@@ -54,14 +56,14 @@ Partial Class ExpensesComponent
         ' 
         ' ExpenseTextbox
         ' 
-        ExpenseTextbox.Location = New Point(115, 30)
+        ExpenseTextbox.Location = New Point(81, 25)
         ExpenseTextbox.Name = "ExpenseTextbox"
         ExpenseTextbox.Size = New Size(279, 27)
         ExpenseTextbox.TabIndex = 2
         ' 
         ' AmountTextbox
         ' 
-        AmountTextbox.Location = New Point(115, 84)
+        AmountTextbox.Location = New Point(81, 76)
         AmountTextbox.Name = "AmountTextbox"
         AmountTextbox.Size = New Size(279, 27)
         AmountTextbox.TabIndex = 3
@@ -69,7 +71,7 @@ Partial Class ExpensesComponent
         ' SplitLabel
         ' 
         SplitLabel.AutoSize = True
-        SplitLabel.Location = New Point(115, 127)
+        SplitLabel.Location = New Point(70, 122)
         SplitLabel.Name = "SplitLabel"
         SplitLabel.Size = New Size(183, 20)
         SplitLabel.TabIndex = 4
@@ -79,22 +81,11 @@ Partial Class ExpensesComponent
         ' 
         ExpenseRadioGroup.Controls.Add(NoButton)
         ExpenseRadioGroup.Controls.Add(YesButton)
-        ExpenseRadioGroup.Location = New Point(31, 150)
+        ExpenseRadioGroup.Location = New Point(3, 145)
         ExpenseRadioGroup.Name = "ExpenseRadioGroup"
         ExpenseRadioGroup.Size = New Size(363, 73)
         ExpenseRadioGroup.TabIndex = 5
         ExpenseRadioGroup.TabStop = False
-        ' 
-        ' YesButton
-        ' 
-        YesButton.AutoSize = True
-        YesButton.Location = New Point(67, 32)
-        YesButton.Name = "YesButton"
-        YesButton.Size = New Size(51, 24)
-        YesButton.TabIndex = 0
-        YesButton.TabStop = True
-        YesButton.Text = "Yes"
-        YesButton.UseVisualStyleBackColor = True
         ' 
         ' NoButton
         ' 
@@ -107,18 +98,49 @@ Partial Class ExpensesComponent
         NoButton.Text = "No"
         NoButton.UseVisualStyleBackColor = True
         ' 
-        ' Panel1
+        ' YesButton
         ' 
-        Panel1.Location = New Point(37, 245)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(357, 277)
-        Panel1.TabIndex = 6
+        YesButton.AutoSize = True
+        YesButton.Location = New Point(67, 32)
+        YesButton.Name = "YesButton"
+        YesButton.Size = New Size(51, 24)
+        YesButton.TabIndex = 0
+        YesButton.TabStop = True
+        YesButton.Text = "Yes"
+        YesButton.UseVisualStyleBackColor = True
+        ' 
+        ' RoommateExpensePanel
+        ' 
+        RoommateExpensePanel.Location = New Point(3, 240)
+        RoommateExpensePanel.Name = "RoommateExpensePanel"
+        RoommateExpensePanel.Size = New Size(357, 204)
+        RoommateExpensePanel.TabIndex = 6
+        ' 
+        ' ExpenseCEButton
+        ' 
+        ExpenseCEButton.Location = New Point(256, 471)
+        ExpenseCEButton.Name = "ExpenseCEButton"
+        ExpenseCEButton.Size = New Size(94, 29)
+        ExpenseCEButton.TabIndex = 7
+        ExpenseCEButton.Text = "Create/Edit"
+        ExpenseCEButton.UseVisualStyleBackColor = True
+        ' 
+        ' ExpenseDButton
+        ' 
+        ExpenseDButton.Location = New Point(156, 471)
+        ExpenseDButton.Name = "ExpenseDButton"
+        ExpenseDButton.Size = New Size(94, 29)
+        ExpenseDButton.TabIndex = 8
+        ExpenseDButton.Text = "Delete"
+        ExpenseDButton.UseVisualStyleBackColor = True
         ' 
         ' ExpensesComponent
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        Controls.Add(Panel1)
+        Controls.Add(ExpenseDButton)
+        Controls.Add(ExpenseCEButton)
+        Controls.Add(RoommateExpensePanel)
         Controls.Add(ExpenseRadioGroup)
         Controls.Add(SplitLabel)
         Controls.Add(AmountTextbox)
@@ -126,7 +148,7 @@ Partial Class ExpensesComponent
         Controls.Add(AmountLabel)
         Controls.Add(ExpenseLabel)
         Name = "ExpensesComponent"
-        Size = New Size(436, 525)
+        Size = New Size(377, 525)
         ExpenseRadioGroup.ResumeLayout(False)
         ExpenseRadioGroup.PerformLayout()
         ResumeLayout(False)
@@ -141,6 +163,8 @@ Partial Class ExpensesComponent
     Friend WithEvents ExpenseRadioGroup As GroupBox
     Friend WithEvents NoButton As RadioButton
     Friend WithEvents YesButton As RadioButton
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents RoommateExpensePanel As Panel
+    Friend WithEvents ExpenseCEButton As Button
+    Friend WithEvents ExpenseDButton As Button
 
 End Class

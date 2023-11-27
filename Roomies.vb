@@ -342,7 +342,7 @@ Public Class Roomies
             EButton.Visible = True
             ESummaryLabel.Visible = False
         End If
-
+        CalculateTotalExpense()
     End Sub
 #Region "Calculating subs for Expense Features"
     Private Sub CalculateTotalExpense()
@@ -362,8 +362,10 @@ Public Class Roomies
         Next
         ESummaryLabel.Text = ($"Total: ${totalExpense}")
     End Sub
-    Private Sub PopulateRegions()
+    Private Sub GenerateExpensesEditRegion(newE As Boolean)
+        If newE Then
 
+        End If
     End Sub
 
     Private Sub TodoViewPanel_Paint(sender As Object, e As PaintEventArgs) Handles TodoViewPanel.Paint
