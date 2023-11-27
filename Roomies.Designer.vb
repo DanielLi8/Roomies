@@ -158,7 +158,7 @@ Partial Class Roomies
         ' Bob
         ' 
         Bob.BackColor = Color.Silver
-        Bob.BackgroundImage = Roomies.My.Resources.Resources.iphone5
+        Bob.BackgroundImage = My.Resources.Resources.iphone5
         Bob.BackgroundImageLayout = ImageLayout.Zoom
         Bob.Controls.Add(TodoViewPanel)
         Bob.Controls.Add(BobMasterPanel)
@@ -347,7 +347,7 @@ Partial Class Roomies
         ' 
         ExpenseSummaryBtn.Anchor = AnchorStyles.None
         ExpenseSummaryBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
-        ExpenseSummaryBtn.BackgroundImage = Roomies.My.Resources.Resources.expense_summary_icon
+        ExpenseSummaryBtn.BackgroundImage = My.Resources.Resources.expense_summary_icon
         ExpenseSummaryBtn.BackgroundImageLayout = ImageLayout.Zoom
         ExpenseSummaryBtn.FlatAppearance.BorderSize = 0
         ExpenseSummaryBtn.FlatStyle = FlatStyle.Flat
@@ -363,7 +363,7 @@ Partial Class Roomies
         ' 
         ExpensesBtn.Anchor = AnchorStyles.None
         ExpensesBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
-        ExpensesBtn.BackgroundImage = Roomies.My.Resources.Resources.expenses_icon
+        ExpensesBtn.BackgroundImage = My.Resources.Resources.expenses_icon
         ExpensesBtn.BackgroundImageLayout = ImageLayout.Zoom
         ExpensesBtn.FlatAppearance.BorderSize = 0
         ExpensesBtn.FlatStyle = FlatStyle.Flat
@@ -379,7 +379,7 @@ Partial Class Roomies
         ' 
         CompletedBtn.Anchor = AnchorStyles.None
         CompletedBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
-        CompletedBtn.BackgroundImage = Roomies.My.Resources.Resources.completed_icon
+        CompletedBtn.BackgroundImage = My.Resources.Resources.completed_icon
         CompletedBtn.BackgroundImageLayout = ImageLayout.Zoom
         CompletedBtn.FlatAppearance.BorderSize = 0
         CompletedBtn.FlatStyle = FlatStyle.Flat
@@ -421,7 +421,7 @@ Partial Class Roomies
         ' AddHouseholdBtn
         ' 
         AddHouseholdBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
-        AddHouseholdBtn.BackgroundImage = Roomies.My.Resources.Resources.icons8_home_100
+        AddHouseholdBtn.BackgroundImage = My.Resources.Resources.icons8_home_100
         AddHouseholdBtn.BackgroundImageLayout = ImageLayout.Zoom
         AddHouseholdBtn.FlatAppearance.BorderColor = Color.Black
         AddHouseholdBtn.FlatAppearance.BorderSize = 0
@@ -437,7 +437,7 @@ Partial Class Roomies
         ' UserB
         ' 
         UserB.BackColor = Color.Silver
-        UserB.BackgroundImage = Roomies.My.Resources.Resources.iphone5
+        UserB.BackgroundImage = My.Resources.Resources.iphone5
         UserB.BackgroundImageLayout = ImageLayout.Zoom
         UserB.Controls.Add(ToDoViewPanelAlice)
         UserB.Controls.Add(AliceMenuPanel)
@@ -618,7 +618,7 @@ Partial Class Roomies
         ' 
         SummaryBtnAlice.Anchor = AnchorStyles.None
         SummaryBtnAlice.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
-        SummaryBtnAlice.BackgroundImage = Roomies.My.Resources.Resources.expense_summary_icon
+        SummaryBtnAlice.BackgroundImage = My.Resources.Resources.expense_summary_icon
         SummaryBtnAlice.BackgroundImageLayout = ImageLayout.Zoom
         SummaryBtnAlice.FlatAppearance.BorderSize = 0
         SummaryBtnAlice.FlatStyle = FlatStyle.Flat
@@ -634,7 +634,7 @@ Partial Class Roomies
         ' 
         ExpenseBtnAlice.Anchor = AnchorStyles.None
         ExpenseBtnAlice.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
-        ExpenseBtnAlice.BackgroundImage = Roomies.My.Resources.Resources.expenses_icon
+        ExpenseBtnAlice.BackgroundImage = My.Resources.Resources.expenses_icon
         ExpenseBtnAlice.BackgroundImageLayout = ImageLayout.Zoom
         ExpenseBtnAlice.FlatAppearance.BorderSize = 0
         ExpenseBtnAlice.FlatStyle = FlatStyle.Flat
@@ -650,7 +650,7 @@ Partial Class Roomies
         ' 
         CompletedBtnAlice.Anchor = AnchorStyles.None
         CompletedBtnAlice.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
-        CompletedBtnAlice.BackgroundImage = Roomies.My.Resources.Resources.completed_icon
+        CompletedBtnAlice.BackgroundImage = My.Resources.Resources.completed_icon
         CompletedBtnAlice.BackgroundImageLayout = ImageLayout.Zoom
         CompletedBtnAlice.FlatAppearance.BorderSize = 0
         CompletedBtnAlice.FlatStyle = FlatStyle.Flat
@@ -991,4 +991,6 @@ Partial Class Roomies
     Friend WithEvents EButton As Button
     Friend WithEvents BobMasterPanel As Panel
     Friend WithEvents AliceMasterPanel As Panel
+    Friend WithEvents Panel1 As Panel
+
 End Class
