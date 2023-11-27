@@ -214,7 +214,7 @@ Partial Class Roomies
         ' CompletedLabel1
         ' 
         CompletedLabel1.AutoSize = True
-        CompletedLabel1.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        CompletedLabel1.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
         CompletedLabel1.Location = New Point(12, 65)
         CompletedLabel1.Name = "CompletedLabel1"
         CompletedLabel1.Size = New Size(144, 18)
@@ -224,7 +224,7 @@ Partial Class Roomies
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Font = New Font("Arial", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Label4.Font = New Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point)
         Label4.Location = New Point(12, 14)
         Label4.Name = "Label4"
         Label4.Size = New Size(46, 15)
@@ -266,7 +266,7 @@ Partial Class Roomies
         ' Alice
         ' 
         Alice.AutoSize = True
-        Alice.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Alice.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
         Alice.Location = New Point(12, 270)
         Alice.Name = "Alice"
         Alice.Size = New Size(43, 18)
@@ -276,7 +276,7 @@ Partial Class Roomies
         ' Roommate1
         ' 
         Roommate1.AutoSize = True
-        Roommate1.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Roommate1.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
         Roommate1.Location = New Point(12, 65)
         Roommate1.Name = "Roommate1"
         Roommate1.Size = New Size(34, 18)
@@ -287,14 +287,14 @@ Partial Class Roomies
         ' 
         AddChoreBtn.Anchor = AnchorStyles.None
         AddChoreBtn.BackColor = Color.Transparent
-        AddChoreBtn.FlatAppearance.BorderSize = 0
+        AddChoreBtn.FlatAppearance.BorderSize = 3
         AddChoreBtn.FlatStyle = FlatStyle.Flat
-        AddChoreBtn.Font = New Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
+        AddChoreBtn.Font = New Font("Arial", 24F, FontStyle.Bold, GraphicsUnit.Point)
         AddChoreBtn.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        AddChoreBtn.Location = New Point(223, 8)
+        AddChoreBtn.Location = New Point(225, 12)
         AddChoreBtn.Margin = New Padding(3, 2, 3, 2)
         AddChoreBtn.Name = "AddChoreBtn"
-        AddChoreBtn.Size = New Size(41, 47)
+        AddChoreBtn.Size = New Size(57, 51)
         AddChoreBtn.TabIndex = 6
         AddChoreBtn.Text = "+"
         AddChoreBtn.UseVisualStyleBackColor = False
@@ -302,7 +302,7 @@ Partial Class Roomies
         ' HouseholdName
         ' 
         HouseholdName.AutoSize = True
-        HouseholdName.Font = New Font("Arial", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
+        HouseholdName.Font = New Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point)
         HouseholdName.Location = New Point(12, 44)
         HouseholdName.Name = "HouseholdName"
         HouseholdName.Size = New Size(46, 15)
@@ -474,7 +474,7 @@ Partial Class Roomies
         CompletedPerspective2.Controls.Add(Label1)
         CompletedPerspective2.Controls.Add(Label3)
         CompletedPerspective2.Controls.Add(CompletedDateLabelAlice)
-        CompletedPerspective2.Location = New Point(1, 0)
+        CompletedPerspective2.Location = New Point(3, 0)
         CompletedPerspective2.Margin = New Padding(0)
         CompletedPerspective2.Name = "CompletedPerspective2"
         CompletedPerspective2.Size = New Size(330, 520)
@@ -492,7 +492,7 @@ Partial Class Roomies
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Label1.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
         Label1.Location = New Point(12, 65)
         Label1.Name = "Label1"
         Label1.Size = New Size(144, 18)
@@ -502,7 +502,7 @@ Partial Class Roomies
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Arial", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Label3.Font = New Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point)
         Label3.Location = New Point(12, 14)
         Label3.Name = "Label3"
         Label3.Size = New Size(46, 15)
@@ -527,14 +527,14 @@ Partial Class Roomies
         ' 
         AliceAddChoreBtn.Anchor = AnchorStyles.None
         AliceAddChoreBtn.BackColor = Color.Transparent
-        AliceAddChoreBtn.FlatAppearance.BorderSize = 0
+        AliceAddChoreBtn.FlatAppearance.BorderSize = 3
         AliceAddChoreBtn.FlatStyle = FlatStyle.Flat
-        AliceAddChoreBtn.Font = New Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
+        AliceAddChoreBtn.Font = New Font("Arial", 26.25F, FontStyle.Bold, GraphicsUnit.Point)
         AliceAddChoreBtn.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        AliceAddChoreBtn.Location = New Point(223, 9)
+        AliceAddChoreBtn.Location = New Point(225, 12)
         AliceAddChoreBtn.Margin = New Padding(3, 2, 3, 2)
         AliceAddChoreBtn.Name = "AliceAddChoreBtn"
-        AliceAddChoreBtn.Size = New Size(41, 47)
+        AliceAddChoreBtn.Size = New Size(57, 51)
         AliceAddChoreBtn.TabIndex = 9
         AliceAddChoreBtn.Text = "+"
         AliceAddChoreBtn.UseVisualStyleBackColor = False
@@ -560,7 +560,7 @@ Partial Class Roomies
         ' AliceBobLabel
         ' 
         AliceBobLabel.AutoSize = True
-        AliceBobLabel.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        AliceBobLabel.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
         AliceBobLabel.Location = New Point(12, 270)
         AliceBobLabel.Name = "AliceBobLabel"
         AliceBobLabel.Size = New Size(37, 18)
@@ -570,7 +570,7 @@ Partial Class Roomies
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Label2.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
         Label2.Location = New Point(12, 65)
         Label2.Name = "Label2"
         Label2.Size = New Size(34, 18)
@@ -580,7 +580,7 @@ Partial Class Roomies
         ' AliceHouseLabel
         ' 
         AliceHouseLabel.AutoSize = True
-        AliceHouseLabel.Font = New Font("Arial", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
+        AliceHouseLabel.Font = New Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point)
         AliceHouseLabel.Location = New Point(12, 44)
         AliceHouseLabel.Name = "AliceHouseLabel"
         AliceHouseLabel.Size = New Size(46, 15)
@@ -704,7 +704,7 @@ Partial Class Roomies
         ' ESummaryLabel
         ' 
         ESummaryLabel.AutoSize = True
-        ESummaryLabel.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        ESummaryLabel.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
         ESummaryLabel.Location = New Point(3, 466)
         ESummaryLabel.Name = "ESummaryLabel"
         ESummaryLabel.Size = New Size(44, 18)
@@ -723,7 +723,7 @@ Partial Class Roomies
         ' EPersonalLabel
         ' 
         EPersonalLabel.AutoSize = True
-        EPersonalLabel.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        EPersonalLabel.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
         EPersonalLabel.Location = New Point(3, 281)
         EPersonalLabel.Name = "EPersonalLabel"
         EPersonalLabel.Size = New Size(34, 18)
@@ -742,7 +742,7 @@ Partial Class Roomies
         ' ESharedExpenseLabel
         ' 
         ESharedExpenseLabel.AutoSize = True
-        ESharedExpenseLabel.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        ESharedExpenseLabel.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
         ESharedExpenseLabel.Location = New Point(3, 100)
         ESharedExpenseLabel.Name = "ESharedExpenseLabel"
         ESharedExpenseLabel.Size = New Size(136, 18)
@@ -753,14 +753,14 @@ Partial Class Roomies
         ' 
         EButton.Anchor = AnchorStyles.None
         EButton.BackColor = Color.Transparent
-        EButton.FlatAppearance.BorderSize = 0
+        EButton.FlatAppearance.BorderSize = 3
         EButton.FlatStyle = FlatStyle.Flat
-        EButton.Font = New Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
+        EButton.Font = New Font("Arial", 26.25F, FontStyle.Bold, GraphicsUnit.Point)
         EButton.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         EButton.Location = New Point(237, 60)
         EButton.Margin = New Padding(3, 2, 3, 2)
         EButton.Name = "EButton"
-        EButton.Size = New Size(41, 47)
+        EButton.Size = New Size(57, 51)
         EButton.TabIndex = 7
         EButton.Text = "+"
         EButton.UseVisualStyleBackColor = False
@@ -768,7 +768,7 @@ Partial Class Roomies
         ' EFamilyLabel
         ' 
         EFamilyLabel.AutoSize = True
-        EFamilyLabel.Font = New Font("Arial", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
+        EFamilyLabel.Font = New Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point)
         EFamilyLabel.Location = New Point(16, 60)
         EFamilyLabel.Name = "EFamilyLabel"
         EFamilyLabel.Size = New Size(46, 15)
@@ -890,11 +890,11 @@ Partial Class Roomies
         ' 
         ' Roomies
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(1036, 765)
+        ClientSize = New Size(1036, 645)
         Controls.Add(ExpensesPanel)
         Controls.Add(TabControl1)
         DoubleBuffered = True
