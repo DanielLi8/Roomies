@@ -1031,9 +1031,6 @@ Partial Class Roomies
     Friend WithEvents EButton As Button
     Friend WithEvents BobMasterPanel As Panel
     Friend WithEvents AliceMasterPanel As Panel
-    Friend WithEvents ExpensesEditPanel As Panel
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
-    Friend WithEvents ExpensesComponent1 As ExpensesComponent
+    Friend WithEvents Panel1 As Panel
+
 End Class
