@@ -94,9 +94,6 @@ Public Class RoommateClass
 
         If matchingExpense IsNot Nothing Then
             Return matchingExpense
-        Else
-            MessageBox.Show("Error: Expense not found.")
-            Return New ExpenseClass("", "0.00", False)
         End If
     End Function
 
@@ -107,8 +104,6 @@ Public Class RoommateClass
         If matchingExpense IsNot Nothing Then
             matchingExpense.setName(newName)
             matchingExpense.SetAmount(newAmount)
-        Else
-            MessageBox.Show("Error: Expense not found.")
         End If
     End Sub
 
@@ -118,8 +113,6 @@ Public Class RoommateClass
 
         If matchingExpense IsNot Nothing Then
             ExpenseList.Remove(matchingExpense)
-        Else
-            MessageBox.Show("Error: Expense not found.")
         End If
     End Sub
     Public Function getExpenseList()

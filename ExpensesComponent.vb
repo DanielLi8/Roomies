@@ -12,4 +12,42 @@
             End If
         Next
     End Sub
+    Private Sub NoButton_CheckedChanged(sender As Object, e As EventArgs) Handles NoButton.CheckedChanged
+        RoommateExpensePanel.Controls.Clear()
+    End Sub
+    Private Sub ExpenseCEButton_Presses(sender As Object, e As EventArgs) Handles ExpenseCButton.Click
+        Dim amountText As String = AmountTextbox.Text
+        Dim expenseText As String = ExpenseTextbox.Text
+        Dim amount As Decimal
+        Dim roommateNames As List(Of RoommateClass) = Roomies.getRoommateList()
+        Dim names As List(Of String) = New List(Of String)
+        Dim checkedCount As Integer = 1
+        names.Add(Roomies.TabControl1.SelectedTab.Text)
+        If YesButton.Checked Then
+            If Decimal.TryParse(amountText, amount) Then
+                For Each ctrl As Control In RoommateExpensePanel.Controls
+                    If TypeOf ctrl Is CheckBox AndAlso DirectCast(ctrl, CheckBox).Checked Then
+                        checkedCount += 1
+                        names.Add(ctrl.Text)
+                    End If
+                Next
+                amount = Math.Round((amount / checkedCount), 2)
+                For Each rname As String In names
+                    For Each roommate As RoommateClass In roommateNames
+                        If roommate.GetName() = rname Then
+                            roommate.AddExpense(New ExpenseClass(expenseText, CStr(amount), True))
+                        End If
+                    Next
+                Next
+            End If
+        Else
+            For Each rname As String In names
+                For Each roommate As RoommateClass In roommateNames
+                    If roommate.GetName() = rname Then
+                        roommate.AddExpense(New ExpenseClass(expenseText, CStr(amount), True))
+                    End If
+                Next
+            Next
+        End If
+    End Sub
 End Class

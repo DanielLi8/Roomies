@@ -1,4 +1,5 @@
-﻿Imports System.Globalization
+﻿Imports System.Diagnostics.Eventing.Reader
+Imports System.Globalization
 Imports System.Net.Security
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip
 
@@ -343,6 +344,7 @@ Public Class Roomies
             ESummaryLabel.Visible = False
         End If
         CalculateTotalExpense()
+        GenerateSharedExpenses()
     End Sub
 #Region "Calculating subs for Expense Features"
     Private Sub CalculateTotalExpense()
@@ -362,10 +364,41 @@ Public Class Roomies
         Next
         ESummaryLabel.Text = ($"Total: ${totalExpense}")
     End Sub
-    Private Sub GenerateExpensesEditRegion(newE As Boolean)
-        If newE Then
-
+    Private Sub GenerateSharedExpenses()
+        Dim selectedRoommateName As String = TabControl1.SelectedTab.Text
+        Dim selectedRoommate As RoommateClass
+        For Each roommate As RoommateClass In RoommateList
+            If roommate.GetName() = selectedRoommateName Then
+                selectedRoommate = roommate
+            End If
+        Next
+        ESharedExpensesPanel.Controls.Clear() ' Clear existing controls in the panel
+        If selectedRoommate IsNot Nothing Then
+            ' Iterate through each expense in the selected roommate's expense list
+            For Each selectedExpense As ExpenseClass In selectedRoommate.getExpenseList()
+                If selectedExpense.getSplit() Then
+                    ' Iterate through each roommate in the list
+                    For Each otherRoommate As RoommateClass In getRoommateList()
+                        ' Check if the roommate is not the selected roommate
+                        If otherRoommate.GetName() <> selectedRoommateName Then
+                            ' Iterate through each expense in the other roommate's expense list
+                            For Each otherExpense As ExpenseClass In otherRoommate.getExpenseList()
+                                ' Check if the expense names match
+                                If otherExpense.getName() = selectedExpense.getName() Then
+                                    ' Create a label with roommate's name and expense amount
+                                    Dim label As New Label()
+                                    label.Text = $"{otherRoommate.GetName()}: {otherExpense.getName()} : {otherExpense.getAmount()}"
+                                    ESharedExpensesPanel.Controls.Add(label)
+                                End If
+                            Next
+                        End If
+                    Next
+                End If
+            Next
         End If
+    End Sub
+    Private Sub GeneratePersonalExpenses()
+
     End Sub
 
     Private Sub TodoViewPanel_Paint(sender As Object, e As PaintEventArgs) Handles TodoViewPanel.Paint

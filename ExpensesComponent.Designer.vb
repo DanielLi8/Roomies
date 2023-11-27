@@ -31,8 +31,7 @@ Partial Class ExpensesComponent
         NoButton = New RadioButton()
         YesButton = New RadioButton()
         RoommateExpensePanel = New Panel()
-        ExpenseCEButton = New Button()
-        ExpenseDButton = New Button()
+        ExpenseCButton = New Button()
         ExpenseRadioGroup.SuspendLayout()
         SuspendLayout()
         ' 
@@ -116,30 +115,20 @@ Partial Class ExpensesComponent
         RoommateExpensePanel.Size = New Size(357, 204)
         RoommateExpensePanel.TabIndex = 6
         ' 
-        ' ExpenseCEButton
+        ' ExpenseCButton
         ' 
-        ExpenseCEButton.Location = New Point(256, 471)
-        ExpenseCEButton.Name = "ExpenseCEButton"
-        ExpenseCEButton.Size = New Size(94, 29)
-        ExpenseCEButton.TabIndex = 7
-        ExpenseCEButton.Text = "Create/Edit"
-        ExpenseCEButton.UseVisualStyleBackColor = True
-        ' 
-        ' ExpenseDButton
-        ' 
-        ExpenseDButton.Location = New Point(156, 471)
-        ExpenseDButton.Name = "ExpenseDButton"
-        ExpenseDButton.Size = New Size(94, 29)
-        ExpenseDButton.TabIndex = 8
-        ExpenseDButton.Text = "Delete"
-        ExpenseDButton.UseVisualStyleBackColor = True
+        ExpenseCButton.Location = New Point(256, 471)
+        ExpenseCButton.Name = "ExpenseCButton"
+        ExpenseCButton.Size = New Size(94, 29)
+        ExpenseCButton.TabIndex = 7
+        ExpenseCButton.Text = "Create"
+        ExpenseCButton.UseVisualStyleBackColor = True
         ' 
         ' ExpensesComponent
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        Controls.Add(ExpenseDButton)
-        Controls.Add(ExpenseCEButton)
+        Controls.Add(ExpenseCButton)
         Controls.Add(RoommateExpensePanel)
         Controls.Add(ExpenseRadioGroup)
         Controls.Add(SplitLabel)
@@ -164,7 +153,6 @@ Partial Class ExpensesComponent
     Friend WithEvents NoButton As RadioButton
     Friend WithEvents YesButton As RadioButton
     Friend WithEvents RoommateExpensePanel As Panel
-    Friend WithEvents ExpenseCEButton As Button
-    Friend WithEvents ExpenseDButton As Button
+    Friend WithEvents ExpenseCButton As Button
 
 End Class

@@ -90,11 +90,8 @@ Partial Class Roomies
         Label8 = New Label()
         CompletedChoreBobDate = New Label()
         ContextMenuStrip1 = New ContextMenuStrip(components)
-        ExpensesEditPanel = New Panel()
-        Label6 = New Label()
-        Label7 = New Label()
-        ContextMenuStrip2 = New ContextMenuStrip(components)
         ExpensesComponent1 = New ExpensesComponent()
+        Panel2 = New Panel()
         TabControl1.SuspendLayout()
         Bob.SuspendLayout()
         TodoViewPanel.SuspendLayout()
@@ -108,7 +105,7 @@ Partial Class Roomies
         AliceMenuPanel.SuspendLayout()
         ExpensesPanel.SuspendLayout()
         CompletedBobPerspective.SuspendLayout()
-        ExpensesEditPanel.SuspendLayout()
+        Panel2.SuspendLayout()
         SuspendLayout()
         ' 
         ' BottomToolStripPanel
@@ -877,52 +874,20 @@ Partial Class Roomies
         ContextMenuStrip1.Name = "ContextMenuStrip1"
         ContextMenuStrip1.Size = New Size(61, 4)
         ' 
-        ' ExpensesEditPanel
-        ' 
-        ExpensesEditPanel.Controls.Add(ExpensesComponent1)
-        ExpensesEditPanel.Controls.Add(Label6)
-        ExpensesEditPanel.Controls.Add(Label7)
-        ExpensesEditPanel.Location = New Point(1266, 193)
-        ExpensesEditPanel.Name = "ExpensesEditPanel"
-        ExpensesEditPanel.Size = New Size(377, 693)
-        ExpensesEditPanel.TabIndex = 10
-        ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.Font = New Font("Arial", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
-        Label6.Location = New Point(29, 33)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(54, 17)
-        Label6.TabIndex = 9
-        Label6.Text = "LeSpot"
-        ' 
-        ' Label7
-        ' 
-        Label7.AutoSize = True
-        Label7.BackColor = Color.Transparent
-        Label7.Font = New Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label7.ForeColor = Color.Black
-        Label7.Location = New Point(29, 49)
-        Label7.Margin = New Padding(0)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(64, 32)
-        Label7.TabIndex = 8
-        Label7.Text = "Title"
-        Label7.TextAlign = ContentAlignment.MiddleLeft
-        ' 
-        ' ContextMenuStrip2
-        ' 
-        ContextMenuStrip2.ImageScalingSize = New Size(20, 20)
-        ContextMenuStrip2.Name = "ContextMenuStrip2"
-        ContextMenuStrip2.Size = New Size(61, 4)
-        ' 
         ' ExpensesComponent1
         ' 
-        ExpensesComponent1.Location = New Point(4, 84)
+        ExpensesComponent1.Location = New Point(19, 27)
         ExpensesComponent1.Name = "ExpensesComponent1"
-        ExpensesComponent1.Size = New Size(370, 569)
+        ExpensesComponent1.Size = New Size(471, 656)
         ExpensesComponent1.TabIndex = 10
+        ' 
+        ' Panel2
+        ' 
+        Panel2.Controls.Add(ExpensesComponent1)
+        Panel2.Location = New Point(1192, 127)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(636, 719)
+        Panel2.TabIndex = 11
         ' 
         ' Roomies
         ' 
@@ -931,7 +896,7 @@ Partial Class Roomies
         BackColor = Color.White
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1684, 1020)
-        Controls.Add(ExpensesEditPanel)
+        Controls.Add(Panel2)
         Controls.Add(ExpensesPanel)
         Controls.Add(TabControl1)
         DoubleBuffered = True
@@ -959,8 +924,7 @@ Partial Class Roomies
         ExpensesPanel.PerformLayout()
         CompletedBobPerspective.ResumeLayout(False)
         CompletedBobPerspective.PerformLayout()
-        ExpensesEditPanel.ResumeLayout(False)
-        ExpensesEditPanel.PerformLayout()
+        Panel2.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
     Friend WithEvents BottomToolStripPanel As ToolStripPanel
@@ -1032,5 +996,7 @@ Partial Class Roomies
     Friend WithEvents BobMasterPanel As Panel
     Friend WithEvents AliceMasterPanel As Panel
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents ExpensesComponent1 As ExpensesComponent
+    Friend WithEvents Panel2 As Panel
 
 End Class
