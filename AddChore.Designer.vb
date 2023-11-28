@@ -288,7 +288,7 @@ Partial Class AddChore
         ' 
         ' CreateButton
         ' 
-        CreateButton.Location = New Point(73, 505)
+        CreateButton.Location = New Point(210, 502)
         CreateButton.Name = "CreateButton"
         CreateButton.Size = New Size(75, 23)
         CreateButton.TabIndex = 16
@@ -297,7 +297,7 @@ Partial Class AddChore
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(191, 505)
+        Button1.Location = New Point(62, 502)
         Button1.Name = "Button1"
         Button1.Size = New Size(75, 23)
         Button1.TabIndex = 16

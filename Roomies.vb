@@ -87,6 +87,7 @@ Public Class Roomies
         'Hide Panels
         CompletedPerspective.Visible = False
         CompletedPerspective2.Visible = False
+        ExpensesPanel.Visible = False
 
         TodoBtn.BackColor = greenClicked
         CompletedBtn.BackColor = greendefault
@@ -107,6 +108,7 @@ Public Class Roomies
         'Hide Panels
         TodoViewPanel.Visible = False
         ToDoViewPanelAlice.Visible = False
+        ExpensesPanel.Visible = False
 
 
 
@@ -123,6 +125,13 @@ Public Class Roomies
     End Sub
 
     Private Sub ExpensesBtn_Click(sender As Object, e As EventArgs) Handles ExpensesBtn.Click, ExpenseBtnAlice.Click
+        ExpensesPanel.Visible = True
+
+        TodoViewPanel.Visible = False
+        ToDoViewPanelAlice.Visible = False
+        CompletedPerspective.Visible = False
+        CompletedPerspective2.Visible = False
+
         TodoBtn.BackColor = greendefault
         CompletedBtn.BackColor = greendefault
         ExpensesBtn.BackColor = greenClicked
@@ -314,13 +323,15 @@ Public Class Roomies
         TodoViewPanel.Location = New Point(0, 0)
         CompletedPerspective.Parent = BobMasterPanel
         CompletedPerspective.Location = New Point(0, 0)
-
+        ExpensesPanel.Parent = BobMasterPanel
+        ExpensesPanel.Location = New Point(0, 0)
 
         'setting panel locations for bob view
         ToDoViewPanelAlice.Parent = AliceMasterPanel
         ToDoViewPanelAlice.Location = New Point(0, 0)
         CompletedPerspective2.Parent = AliceMasterPanel
         CompletedPerspective2.Location = New Point(0, 0)
+
     End Sub
 
     Private Sub UpdateDate()
@@ -409,6 +420,23 @@ Public Class Roomies
     End Sub
 
     Private Sub AddHouseholdPanel_Paint(sender As Object, e As PaintEventArgs) Handles AddHouseholdPanel.Paint
+    End Sub
+
+    Private Sub EButton_Click(sender As Object, e As EventArgs) Handles EButton.Click
+        Dim expensesComponentForm As New Form()
+
+        ' Create an instance of ExpensesComponent
+        Dim expensesComponent As New ExpensesComponent()
+
+        ' Set the ExpensesComponent as the content of the new form
+        expensesComponentForm.Controls.Add(expensesComponent)
+
+        ' Set form properties as needed
+        expensesComponentForm.Text = "Expenses Form"
+        expensesComponentForm.Size = New Size(500, 400) ' Adjust the size accordingly
+
+        ' Show the form
+        expensesComponentForm.ShowDialog()
     End Sub
 
 
