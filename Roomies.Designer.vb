@@ -61,6 +61,15 @@ Partial Class Roomies
         AddHouseholdPanel = New Panel()
         AddHouseholdBtn = New Button()
         UserB = New TabPage()
+        ExpensesPanel2 = New Panel()
+        Label5 = New Label()
+        Panel2 = New Panel()
+        Label9 = New Label()
+        Panel3 = New Panel()
+        Label10 = New Label()
+        Button1 = New Button()
+        Label11 = New Label()
+        Label12 = New Label()
         ToDoViewPanelAlice = New Panel()
         CompletedPerspective2 = New Panel()
         CompletedChoreAlicePanel = New Panel()
@@ -104,6 +113,7 @@ Partial Class Roomies
         MenuPanel.SuspendLayout()
         AddHouseholdPanel.SuspendLayout()
         UserB.SuspendLayout()
+        ExpensesPanel2.SuspendLayout()
         ToDoViewPanelAlice.SuspendLayout()
         CompletedPerspective2.SuspendLayout()
         AliceMenuPanel.SuspendLayout()
@@ -270,7 +280,7 @@ Partial Class Roomies
         AddChoreBtn.FlatAppearance.BorderSize = 3
         AddChoreBtn.FlatStyle = FlatStyle.Flat
         AddChoreBtn.Font = New Font("Arial", 24.0F, FontStyle.Bold, GraphicsUnit.Point)
-        AddChoreBtn.ForeColor = Color.FromArgb(64, 64, 64)
+        AddChoreBtn.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         AddChoreBtn.Location = New Point(225, 12)
         AddChoreBtn.Margin = New Padding(3, 2, 3, 2)
         AddChoreBtn.Name = "AddChoreBtn"
@@ -358,7 +368,7 @@ Partial Class Roomies
         EButton.FlatAppearance.BorderSize = 3
         EButton.FlatStyle = FlatStyle.Flat
         EButton.Font = New Font("Arial", 26.25F, FontStyle.Bold, GraphicsUnit.Point)
-        EButton.ForeColor = Color.FromArgb(64, 64, 64)
+        EButton.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         EButton.Location = New Point(237, 59)
         EButton.Margin = New Padding(3, 2, 3, 2)
         EButton.Name = "EButton"
@@ -444,7 +454,7 @@ Partial Class Roomies
         ' 
         ' MenuPanel
         ' 
-        MenuPanel.BackColor = Color.FromArgb(89, 121, 87)
+        MenuPanel.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         MenuPanel.Controls.Add(ExpenseSummaryBtn)
         MenuPanel.Controls.Add(ExpensesBtn)
         MenuPanel.Controls.Add(CompletedBtn)
@@ -457,7 +467,7 @@ Partial Class Roomies
         ' ExpenseSummaryBtn
         ' 
         ExpenseSummaryBtn.Anchor = AnchorStyles.None
-        ExpenseSummaryBtn.BackColor = Color.FromArgb(89, 121, 87)
+        ExpenseSummaryBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         ExpenseSummaryBtn.BackgroundImage = My.Resources.Resources.expense_summary_icon
         ExpenseSummaryBtn.BackgroundImageLayout = ImageLayout.Zoom
         ExpenseSummaryBtn.FlatAppearance.BorderSize = 0
@@ -473,7 +483,7 @@ Partial Class Roomies
         ' ExpensesBtn
         ' 
         ExpensesBtn.Anchor = AnchorStyles.None
-        ExpensesBtn.BackColor = Color.FromArgb(89, 121, 87)
+        ExpensesBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         ExpensesBtn.BackgroundImage = My.Resources.Resources.expenses_icon
         ExpensesBtn.BackgroundImageLayout = ImageLayout.Zoom
         ExpensesBtn.FlatAppearance.BorderSize = 0
@@ -489,7 +499,7 @@ Partial Class Roomies
         ' CompletedBtn
         ' 
         CompletedBtn.Anchor = AnchorStyles.None
-        CompletedBtn.BackColor = Color.FromArgb(89, 121, 87)
+        CompletedBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         CompletedBtn.BackgroundImage = My.Resources.Resources.completed_icon
         CompletedBtn.BackgroundImageLayout = ImageLayout.Zoom
         CompletedBtn.FlatAppearance.BorderSize = 0
@@ -505,7 +515,7 @@ Partial Class Roomies
         ' TodoBtn
         ' 
         TodoBtn.Anchor = AnchorStyles.None
-        TodoBtn.BackColor = Color.FromArgb(62, 90, 60)
+        TodoBtn.BackColor = Color.FromArgb(CByte(62), CByte(90), CByte(60))
         TodoBtn.BackgroundImage = My.Resources.Resources.to_do_icon
         TodoBtn.BackgroundImageLayout = ImageLayout.Zoom
         TodoBtn.FlatAppearance.BorderSize = 0
@@ -531,7 +541,7 @@ Partial Class Roomies
         ' 
         ' AddHouseholdBtn
         ' 
-        AddHouseholdBtn.BackColor = Color.FromArgb(89, 121, 87)
+        AddHouseholdBtn.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         AddHouseholdBtn.BackgroundImage = My.Resources.Resources.icons8_home_100
         AddHouseholdBtn.BackgroundImageLayout = ImageLayout.Zoom
         AddHouseholdBtn.FlatAppearance.BorderColor = Color.Black
@@ -550,6 +560,7 @@ Partial Class Roomies
         UserB.BackColor = Color.Silver
         UserB.BackgroundImage = My.Resources.Resources.iphone5
         UserB.BackgroundImageLayout = ImageLayout.Zoom
+        UserB.Controls.Add(ExpensesPanel2)
         UserB.Controls.Add(ToDoViewPanelAlice)
         UserB.Controls.Add(AliceMenuPanel)
         UserB.Controls.Add(AliceMasterPanel)
@@ -560,6 +571,111 @@ Partial Class Roomies
         UserB.Size = New Size(576, 767)
         UserB.TabIndex = 1
         UserB.Text = "Alice"
+        ' 
+        ' ExpensesPanel2
+        ' 
+        ExpensesPanel2.Controls.Add(Label5)
+        ExpensesPanel2.Controls.Add(Panel2)
+        ExpensesPanel2.Controls.Add(Label9)
+        ExpensesPanel2.Controls.Add(Panel3)
+        ExpensesPanel2.Controls.Add(Label10)
+        ExpensesPanel2.Controls.Add(Button1)
+        ExpensesPanel2.Controls.Add(Label11)
+        ExpensesPanel2.Controls.Add(Label12)
+        ExpensesPanel2.Location = New Point(121, 88)
+        ExpensesPanel2.Margin = New Padding(3, 2, 3, 2)
+        ExpensesPanel2.Name = "ExpensesPanel2"
+        ExpensesPanel2.Size = New Size(330, 519)
+        ExpensesPanel2.TabIndex = 10
+        ExpensesPanel2.Visible = False
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Label5.Location = New Point(3, 466)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(44, 18)
+        Label5.TabIndex = 11
+        Label5.Text = "Total:"
+        ' 
+        ' Panel2
+        ' 
+        Panel2.Enabled = False
+        Panel2.Location = New Point(32, 319)
+        Panel2.Margin = New Padding(3, 2, 3, 2)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(264, 114)
+        Panel2.TabIndex = 10
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Label9.Location = New Point(3, 281)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(34, 18)
+        Label9.TabIndex = 10
+        Label9.Text = "Me:"
+        ' 
+        ' Panel3
+        ' 
+        Panel3.Enabled = False
+        Panel3.Location = New Point(32, 129)
+        Panel3.Margin = New Padding(3, 2, 3, 2)
+        Panel3.Name = "Panel3"
+        Panel3.Size = New Size(264, 114)
+        Panel3.TabIndex = 9
+        ' 
+        ' Label10
+        ' 
+        Label10.AutoSize = True
+        Label10.Font = New Font("Arial", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Label10.Location = New Point(3, 100)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(136, 18)
+        Label10.TabIndex = 8
+        Label10.Text = "Shared Expenses:"
+        ' 
+        ' Button1
+        ' 
+        Button1.Anchor = AnchorStyles.None
+        Button1.BackColor = Color.Transparent
+        Button1.FlatAppearance.BorderSize = 3
+        Button1.FlatStyle = FlatStyle.Flat
+        Button1.Font = New Font("Arial", 26.25F, FontStyle.Bold, GraphicsUnit.Point)
+        Button1.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        Button1.Location = New Point(222, 52)
+        Button1.Margin = New Padding(3, 2, 3, 2)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(57, 51)
+        Button1.TabIndex = 7
+        Button1.Text = "+"
+        Button1.UseVisualStyleBackColor = False
+        ' 
+        ' Label11
+        ' 
+        Label11.AutoSize = True
+        Label11.Font = New Font("Arial", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Label11.Location = New Point(16, 60)
+        Label11.Name = "Label11"
+        Label11.Size = New Size(46, 15)
+        Label11.TabIndex = 6
+        Label11.Text = "LeSpot"
+        ' 
+        ' Label12
+        ' 
+        Label12.AutoSize = True
+        Label12.BackColor = Color.Transparent
+        Label12.Font = New Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Label12.ForeColor = Color.Black
+        Label12.Location = New Point(16, 72)
+        Label12.Margin = New Padding(0)
+        Label12.Name = "Label12"
+        Label12.Size = New Size(48, 24)
+        Label12.TabIndex = 1
+        Label12.Text = "Title"
+        Label12.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' ToDoViewPanelAlice
         ' 
@@ -641,7 +757,7 @@ Partial Class Roomies
         AliceAddChoreBtn.FlatAppearance.BorderSize = 3
         AliceAddChoreBtn.FlatStyle = FlatStyle.Flat
         AliceAddChoreBtn.Font = New Font("Arial", 26.25F, FontStyle.Bold, GraphicsUnit.Point)
-        AliceAddChoreBtn.ForeColor = Color.FromArgb(64, 64, 64)
+        AliceAddChoreBtn.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         AliceAddChoreBtn.Location = New Point(225, 12)
         AliceAddChoreBtn.Margin = New Padding(3, 2, 3, 2)
         AliceAddChoreBtn.Name = "AliceAddChoreBtn"
@@ -714,7 +830,7 @@ Partial Class Roomies
         ' 
         ' AliceMenuPanel
         ' 
-        AliceMenuPanel.BackColor = Color.FromArgb(89, 121, 87)
+        AliceMenuPanel.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         AliceMenuPanel.Controls.Add(SummaryBtnAlice)
         AliceMenuPanel.Controls.Add(ExpenseBtnAlice)
         AliceMenuPanel.Controls.Add(CompletedBtnAlice)
@@ -728,39 +844,39 @@ Partial Class Roomies
         ' SummaryBtnAlice
         ' 
         SummaryBtnAlice.Anchor = AnchorStyles.None
-        SummaryBtnAlice.BackColor = Color.FromArgb(89, 121, 87)
+        SummaryBtnAlice.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         SummaryBtnAlice.BackgroundImage = My.Resources.Resources.expense_summary_icon
         SummaryBtnAlice.BackgroundImageLayout = ImageLayout.Zoom
         SummaryBtnAlice.FlatAppearance.BorderSize = 0
         SummaryBtnAlice.FlatStyle = FlatStyle.Flat
-        SummaryBtnAlice.Location = New Point(238, 3)
+        SummaryBtnAlice.Location = New Point(238, 0)
         SummaryBtnAlice.Margin = New Padding(0)
         SummaryBtnAlice.Name = "SummaryBtnAlice"
         SummaryBtnAlice.Padding = New Padding(1)
-        SummaryBtnAlice.Size = New Size(93, 62)
+        SummaryBtnAlice.Size = New Size(93, 65)
         SummaryBtnAlice.TabIndex = 7
         SummaryBtnAlice.UseVisualStyleBackColor = False
         ' 
         ' ExpenseBtnAlice
         ' 
         ExpenseBtnAlice.Anchor = AnchorStyles.None
-        ExpenseBtnAlice.BackColor = Color.FromArgb(89, 121, 87)
+        ExpenseBtnAlice.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         ExpenseBtnAlice.BackgroundImage = My.Resources.Resources.expenses_icon
         ExpenseBtnAlice.BackgroundImageLayout = ImageLayout.Zoom
         ExpenseBtnAlice.FlatAppearance.BorderSize = 0
         ExpenseBtnAlice.FlatStyle = FlatStyle.Flat
-        ExpenseBtnAlice.Location = New Point(166, 3)
+        ExpenseBtnAlice.Location = New Point(157, 0)
         ExpenseBtnAlice.Margin = New Padding(0)
         ExpenseBtnAlice.Name = "ExpenseBtnAlice"
         ExpenseBtnAlice.Padding = New Padding(1)
-        ExpenseBtnAlice.Size = New Size(80, 62)
+        ExpenseBtnAlice.Size = New Size(81, 65)
         ExpenseBtnAlice.TabIndex = 7
         ExpenseBtnAlice.UseVisualStyleBackColor = False
         ' 
         ' CompletedBtnAlice
         ' 
         CompletedBtnAlice.Anchor = AnchorStyles.None
-        CompletedBtnAlice.BackColor = Color.FromArgb(89, 121, 87)
+        CompletedBtnAlice.BackColor = Color.FromArgb(CByte(89), CByte(121), CByte(87))
         CompletedBtnAlice.BackgroundImage = My.Resources.Resources.completed_icon
         CompletedBtnAlice.BackgroundImageLayout = ImageLayout.Zoom
         CompletedBtnAlice.FlatAppearance.BorderSize = 0
@@ -776,7 +892,7 @@ Partial Class Roomies
         ' ToDoBtnAlice
         ' 
         ToDoBtnAlice.Anchor = AnchorStyles.None
-        ToDoBtnAlice.BackColor = Color.FromArgb(62, 90, 60)
+        ToDoBtnAlice.BackColor = Color.FromArgb(CByte(62), CByte(90), CByte(60))
         ToDoBtnAlice.BackgroundImage = My.Resources.Resources.to_do_icon
         ToDoBtnAlice.BackgroundImageLayout = ImageLayout.Zoom
         ToDoBtnAlice.FlatAppearance.BorderSize = 0
@@ -961,6 +1077,8 @@ Partial Class Roomies
         MenuPanel.ResumeLayout(False)
         AddHouseholdPanel.ResumeLayout(False)
         UserB.ResumeLayout(False)
+        ExpensesPanel2.ResumeLayout(False)
+        ExpensesPanel2.PerformLayout()
         ToDoViewPanelAlice.ResumeLayout(False)
         ToDoViewPanelAlice.PerformLayout()
         CompletedPerspective2.ResumeLayout(False)
@@ -1040,13 +1158,18 @@ Partial Class Roomies
     Friend WithEvents EButton As Button
     Friend WithEvents BobMasterPanel As Panel
     Friend WithEvents AliceMasterPanel As Panel
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents ExpensesPanel2 As Panel
     Friend WithEvents ExpensesEditPanel As Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
     Friend WithEvents ExpensesComponent1 As ExpensesComponent
     Friend WithEvents Panel2 As Panel
-
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
 
 End Class

@@ -88,6 +88,7 @@ Public Class Roomies
         CompletedPerspective.Visible = False
         CompletedPerspective2.Visible = False
         ExpensesPanel.Visible = False
+        ExpensesPanel2.Visible = False
 
         TodoBtn.BackColor = greenClicked
         CompletedBtn.BackColor = greendefault
@@ -109,6 +110,7 @@ Public Class Roomies
         TodoViewPanel.Visible = False
         ToDoViewPanelAlice.Visible = False
         ExpensesPanel.Visible = False
+        ExpensesPanel2.Visible = False
 
 
 
@@ -126,7 +128,7 @@ Public Class Roomies
 
     Private Sub ExpensesBtn_Click(sender As Object, e As EventArgs) Handles ExpensesBtn.Click, ExpenseBtnAlice.Click
         ExpensesPanel.Visible = True
-
+        ExpensesPanel2.Visible = True
         TodoViewPanel.Visible = False
         ToDoViewPanelAlice.Visible = False
         CompletedPerspective.Visible = False
@@ -331,6 +333,8 @@ Public Class Roomies
         ToDoViewPanelAlice.Location = New Point(0, 0)
         CompletedPerspective2.Parent = AliceMasterPanel
         CompletedPerspective2.Location = New Point(0, 0)
+        ExpensesPanel2.Parent = AliceMasterPanel
+        ExpensesPanel2.Location = New Point(0, 0)
 
     End Sub
 
@@ -422,7 +426,7 @@ Public Class Roomies
     Private Sub AddHouseholdPanel_Paint(sender As Object, e As PaintEventArgs) Handles AddHouseholdPanel.Paint
     End Sub
 
-    Private Sub EButton_Click(sender As Object, e As EventArgs) Handles EButton.Click
+    Private Sub EButton_Click(sender As Object, e As EventArgs) Handles EButton.Click, Button1.Click
         Dim expensesComponentForm As New Form()
 
         ' Create an instance of ExpensesComponent
