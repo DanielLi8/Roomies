@@ -1,4 +1,5 @@
 ﻿Public Class TodoCheckbox
+    Private ChoreOwner As String
 
     Private position1 As Integer
     'position keeps track of the index of todobox in todoboxList and chorelist
@@ -22,7 +23,7 @@
     End Sub
 
 
-    Public Sub New(name As String, recurring As String, effort As Integer, position As Integer)
+    Public Sub New(name As String, recurring As String, effort As Integer, position As Integer, choreOwner As String)
 
         ' This call is required by the designer.
         InitializeComponent()
@@ -32,7 +33,7 @@
         Me.EffortLabel.Text = effort
         Me.position = position
         ' Add any initialization after the InitializeComponent() call.
-
+        Me.ChoreOwner = choreOwner
     End Sub
 #End Region
     Private Sub RecurringLabel_Click(sender As Object, e As EventArgs) Handles RecurringLabel.VisibleChanged, RecurringLabel.Resize
@@ -58,9 +59,8 @@
     Private Sub ChoreCheckbox_CheckedChanged(sender As Object, e As EventArgs) Handles ChoreCheckbox.CheckedChanged
         If ChoreCheckbox.Checked Then
             ChoreCheckbox.Font = New Font("Arial", 12.0F, FontStyle.Strikeout, GraphicsUnit.Point)
-            Dim copyCheckBox As New CheckBox
-            copyCheckBox.Text = Me.ChoreCheckbox.Text
-            copyCheckBox.Font = New Font("Arial", 12.0F, FontStyle.Strikeout, GraphicsUnit.Point)
+            Dim copyCheckBox As New Completedcheckboxvb(ChoreCheckbox.Text, ChoreOwner)
+
             Me.ChoreCheckbox.Enabled = False
             Roomies.RemoveChoreList(Me.position1)
             copyCheckBox.AutoSize = True
@@ -78,5 +78,11 @@
 
     End Sub
 
-
+    Private Sub DeleteChoreBtn_Click(sender As Object, e As EventArgs) Handles DeleteChoreBtn.Click
+        Roomies.RemoveChoreList(Me.position1)
+        Roomies.AddTodoboxToPanel()
+        Roomies.AliceAddTodoboxToPanel()
+        Roomies.AliceUpdateCompletedPanelView()
+        Roomies.UpdateCompletedPanelView()
+    End Sub
 End Class

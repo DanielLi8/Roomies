@@ -27,6 +27,7 @@ Partial Class TodoCheckbox
         ChoreCheckbox = New CheckBox()
         EffortIcon = New Label()
         EffortLabel = New Label()
+        DeleteChoreBtn = New Button()
         SuspendLayout()
         ' 
         ' EditBtn
@@ -35,9 +36,9 @@ Partial Class TodoCheckbox
         EditBtn.BackgroundImageLayout = ImageLayout.Center
         EditBtn.FlatAppearance.BorderSize = 0
         EditBtn.FlatStyle = FlatStyle.Flat
-        EditBtn.Location = New Point(215, 3)
+        EditBtn.Location = New Point(193, 3)
         EditBtn.Name = "EditBtn"
-        EditBtn.Size = New Size(42, 40)
+        EditBtn.Size = New Size(32, 31)
         EditBtn.TabIndex = 14
         EditBtn.UseVisualStyleBackColor = True
         ' 
@@ -69,7 +70,7 @@ Partial Class TodoCheckbox
         ' 
         EffortIcon.Font = New Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         EffortIcon.Image = My.Resources.Resources.Effortpic
-        EffortIcon.Location = New Point(156, 33)
+        EffortIcon.Location = New Point(149, 33)
         EffortIcon.Name = "EffortIcon"
         EffortIcon.Size = New Size(18, 15)
         EffortIcon.TabIndex = 15
@@ -78,16 +79,29 @@ Partial Class TodoCheckbox
         ' 
         EffortLabel.AutoSize = True
         EffortLabel.Font = New Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        EffortLabel.Location = New Point(180, 33)
+        EffortLabel.Location = New Point(173, 33)
         EffortLabel.Name = "EffortLabel"
         EffortLabel.Size = New Size(14, 16)
         EffortLabel.TabIndex = 16
         EffortLabel.Text = "1"
         ' 
+        ' DeleteChoreBtn
+        ' 
+        DeleteChoreBtn.BackgroundImage = My.Resources.Resources.Deletebtnclear
+        DeleteChoreBtn.BackgroundImageLayout = ImageLayout.Stretch
+        DeleteChoreBtn.FlatAppearance.BorderSize = 0
+        DeleteChoreBtn.FlatStyle = FlatStyle.Flat
+        DeleteChoreBtn.Location = New Point(231, 3)
+        DeleteChoreBtn.Name = "DeleteChoreBtn"
+        DeleteChoreBtn.Size = New Size(24, 31)
+        DeleteChoreBtn.TabIndex = 17
+        DeleteChoreBtn.UseVisualStyleBackColor = True
+        ' 
         ' TodoCheckbox
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        Controls.Add(DeleteChoreBtn)
         Controls.Add(EffortLabel)
         Controls.Add(EffortIcon)
         Controls.Add(EditBtn)
@@ -106,4 +120,5 @@ Partial Class TodoCheckbox
     Friend WithEvents NameLabel As Label
     Friend WithEvents EffortIcon As Label
     Friend WithEvents EffortLabel As Label
+    Friend WithEvents DeleteChoreBtn As Button
 End Class

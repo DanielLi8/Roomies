@@ -186,6 +186,7 @@ Public Class Roomies
 
         AddTodoboxToPanel()
         AliceAddTodoboxToPanel()
+
     End Sub
 
 
@@ -202,15 +203,18 @@ Public Class Roomies
                 Continue For
             End If
 
-            Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, Bobposition)
-            Me.AddTodoboxList(todobox)
             ' fix below to add to panel depending on which user
             If chore.Roommate = 0 Then
+                Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, Bobposition, "Bob")
+                Me.AddTodoboxList(todobox)
+
                 todobox.Location = New Point(0, 58 * BobUser1VerticalSpacing)
                 User1ChoreCheckboxPanel.Controls.Add(todobox)
                 BobUser1VerticalSpacing += 1
 
             ElseIf chore.Roommate = 1 Then
+                Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, Bobposition, "Alice")
+                Me.AddTodoboxList(todobox)
                 todobox.Location = New Point(0, 58 * BobUser2VerticalSpacing)
                 User2ChoreCheckboxPanel.Controls.Add(todobox)
                 BobUser2VerticalSpacing += 1
@@ -235,15 +239,18 @@ Public Class Roomies
 
                 Continue For
             End If
-            Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, AlicePosition)
-            Me.AddTodoboxList(todobox)
+
             ' fix below to add to panel depending on which user
             If chore.Roommate = 0 Then
+                Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, AlicePosition, "Bob")
+                Me.AddTodoboxList(todobox)
                 todobox.Location = New Point(0, 58 * AliceUser1VerticalSpacing)
                 AliceBobTodoPanel.Controls.Add(todobox)
                 AliceUser1VerticalSpacing += 1
 
             ElseIf chore.Roommate = 1 Then
+                Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, AlicePosition, "Alice")
+                Me.AddTodoboxList(todobox)
                 todobox.Location = New Point(0, 58 * AliceUser2VerticalSpacing)
                 AliceMeTodoboxPanel.Controls.Add(todobox)
                 AliceUser2VerticalSpacing += 1
@@ -258,15 +265,15 @@ Public Class Roomies
 #Region "CompletedCheckbox panel view"
 
     'List to keep track of todocheckbox that are dynamically created in the household
-    Private CompletedCheckBoxList As New List(Of CheckBox)()
+    Private CompletedCheckBoxList As New List(Of Completedcheckboxvb)()
 
-    Public Sub AddCompetedCheckBoxList(newCheckBox As CheckBox)
+    Public Sub AddCompetedCheckBoxList(newCheckBox As Completedcheckboxvb)
         CompletedCheckBoxList.Add(newCheckBox)
     End Sub
-    Public Sub UpdateCompetedCheckBox(newCheckBox As CheckBox, index As Integer)
+    Public Sub UpdateCompetedCheckBox(newCheckBox As Completedcheckboxvb, index As Integer)
         CompletedCheckBoxList(index) = newCheckBox
     End Sub
-    Public Function getCompetedCheckBox() As List(Of CheckBox)
+    Public Function getCompetedCheckBox() As List(Of Completedcheckboxvb)
         Return CompletedCheckBoxList
     End Function
 
@@ -279,9 +286,8 @@ Public Class Roomies
 
         For Each CompletedCheckBox In CompletedCheckBoxList
 
-            CompletedCheckBox.Font = New Font("Arial", 12.0F, FontStyle.Strikeout, GraphicsUnit.Point)
             ' fix below to add to panel depending on which user
-            CompletedCheckBox.Location = New Point(0, 30 * VerticalSpacing)
+            CompletedCheckBox.Location = New Point(0, 58 * VerticalSpacing)
             CompletedChoreBobPanel.Controls.Add(CompletedCheckBox)
 
             VerticalSpacing += 1
@@ -296,14 +302,11 @@ Public Class Roomies
         Dim VerticalSpacing As Integer = 0
 
         For Each CompletedCheckBox In CompletedCheckBoxList
-            Dim newCheckBox As New CheckBox
+            Dim newCheckBox As New Completedcheckboxvb
+            newCheckBox = CompletedCheckBox
 
-            newCheckBox.Text = CompletedCheckBox.Text
-            newCheckBox.Checked = CompletedCheckBox.Checked
-            newCheckBox.Font = New Font("Arial", 12.0F, FontStyle.Strikeout, GraphicsUnit.Point)
-            newCheckBox.AutoSize = True
             ' fix below to add to panel depending on which user
-            newCheckBox.Location = New Point(0, 30 * VerticalSpacing)
+            newCheckBox.Location = New Point(0, 58 * VerticalSpacing)
             CompletedChoreAlicePanel.Controls.Add(newCheckBox)
             VerticalSpacing += 1
 
@@ -335,6 +338,8 @@ Public Class Roomies
         CompletedPerspective2.Location = New Point(0, 0)
         ExpensesPanel2.Parent = AliceMasterPanel
         ExpensesPanel2.Location = New Point(0, 0)
+
+
 
     End Sub
 
@@ -437,6 +442,36 @@ Public Class Roomies
         expensesComponentForm.ShowDialog()
     End Sub
 
+#End Region
 
+#Region "Reminder Pop up"
+    Private reminder As ReminderView
+    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
+        'Reminder pop-up
+
+        Dim rand As New Random
+        Dim seconds As Integer
+        seconds = rand.Next(30, 100)
+
+        If TabControl1.SelectedTab Is BobTab Then
+            Dim reminder1 As New ReminderView(0, "Bob", ChoreList)
+            reminder = reminder1
+            Timer1.Interval = seconds * 1000
+            Timer1.Start()
+        ElseIf TabControl1.SelectedTab Is AliceTab Then
+            Dim reminder1 As New ReminderView(1, "Alice", ChoreList)
+            reminder = reminder1
+            Timer1.Interval = seconds * 1000
+            Timer1.Start()
+        End If
+
+    End Sub
+
+    'start timer
+
+    Private Sub Timer_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Timer1.Stop()
+        reminder.Show()
+    End Sub
 #End Region
 End Class
