@@ -27,19 +27,23 @@ Public Class Roomies
 
 #Region "List to keep track of chores in the household"
     Private ChoreList As New List(Of ChoreClass)()
-
+    Private BobChoreCount As Integer
+    Private AliceChoreCount As Integer
     Public Sub AddChoreList(newChore As ChoreClass)
         ChoreList.Add(newChore)
+        UpdateCount()
+
     End Sub
 
     Public Sub UpdateChoreList(newChore As ChoreClass, index As Integer)
         ChoreList(index) = newChore
+        UpdateCount()
     End Sub
 
     Public Sub RemoveChoreList(index As Integer)
         Dim newChore As New ChoreClass
         ChoreList(index) = newChore
-        'ChoreList.RemoveAt(index)
+        UpdateCount()
     End Sub
     Public Function getChoreList() As List(Of ChoreClass)
         Return ChoreList
@@ -54,7 +58,17 @@ Public Class Roomies
         Return foundChore
 
     End Function
-
+    Public Sub UpdateCount()
+        AliceChoreCount = 0
+        BobChoreCount = 0
+        For Each chore In ChoreList
+            If chore.Roommate = 1 Then
+                AliceChoreCount += 1
+            ElseIf chore.Roommate = 0 Then
+                BobChoreCount += 1
+            End If
+        Next
+    End Sub
 #End Region
 
 
@@ -179,9 +193,10 @@ Public Class Roomies
 #End Region
 
 #Region "Adding chore functionality"
+
     Private Sub AddChoreBtn_Click(sender As Object, e As EventArgs) Handles AddChoreBtn.Click, AliceAddChoreBtn.Click
 
-        Dim choreAdd As New AddChore()
+        Dim choreAdd As New AddChore(BobChoreCount, AliceChoreCount)
         choreAdd.ShowDialog()
 
         AddTodoboxToPanel()
@@ -205,7 +220,7 @@ Public Class Roomies
 
             ' fix below to add to panel depending on which user
             If chore.Roommate = 0 Then
-                Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, Bobposition, "Bob")
+                Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, Bobposition, "Bob", BobChoreCount, AliceChoreCount)
                 Me.AddTodoboxList(todobox)
 
                 todobox.Location = New Point(0, 58 * BobUser1VerticalSpacing)
@@ -213,7 +228,7 @@ Public Class Roomies
                 BobUser1VerticalSpacing += 1
 
             ElseIf chore.Roommate = 1 Then
-                Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, Bobposition, "Alice")
+                Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, Bobposition, "Alice", BobChoreCount, AliceChoreCount)
                 Me.AddTodoboxList(todobox)
                 todobox.Location = New Point(0, 58 * BobUser2VerticalSpacing)
                 User2ChoreCheckboxPanel.Controls.Add(todobox)
@@ -242,14 +257,14 @@ Public Class Roomies
 
             ' fix below to add to panel depending on which user
             If chore.Roommate = 0 Then
-                Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, AlicePosition, "Bob")
+                Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, AlicePosition, "Bob", BobChoreCount, AliceChoreCount)
                 Me.AddTodoboxList(todobox)
                 todobox.Location = New Point(0, 58 * AliceUser1VerticalSpacing)
                 AliceBobTodoPanel.Controls.Add(todobox)
                 AliceUser1VerticalSpacing += 1
 
             ElseIf chore.Roommate = 1 Then
-                Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, AlicePosition, "Alice")
+                Dim todobox As New TodoCheckbox(chore.Name, chore.recurring, chore.Effort, AlicePosition, "Alice", BobChoreCount, AliceChoreCount)
                 Me.AddTodoboxList(todobox)
                 todobox.Location = New Point(0, 58 * AliceUser2VerticalSpacing)
                 AliceMeTodoboxPanel.Controls.Add(todobox)
@@ -445,7 +460,8 @@ Public Class Roomies
 #End Region
 
 #Region "Reminder Pop up"
-    Private reminder As ReminderView
+    Private inBobTab As Boolean
+    Private inAliceTab As Boolean
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
         'Reminder pop-up
 
@@ -454,24 +470,30 @@ Public Class Roomies
         seconds = rand.Next(30, 100)
 
         If TabControl1.SelectedTab Is BobTab Then
-            Dim reminder1 As New ReminderView(0, "Bob", ChoreList)
-            reminder = reminder1
-            Timer1.Interval = seconds * 1000
-            Timer1.Start()
+            inBobTab = True
+            inAliceTab = False
         ElseIf TabControl1.SelectedTab Is AliceTab Then
-            Dim reminder1 As New ReminderView(1, "Alice", ChoreList)
-            reminder = reminder1
-            Timer1.Interval = seconds * 1000
-            Timer1.Start()
-        End If
+            inBobTab = False
+            inAliceTab = True
 
+        End If
+        Timer1.Interval = seconds * 1000
+        Timer1.Start()
     End Sub
 
     'start timer
 
     Private Sub Timer_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Timer1.Stop()
-        reminder.Show()
+        If inBobTab Then
+            Dim reminder1 As New ReminderView(1, "Alice", ChoreList)
+            reminder1.Show()
+
+        ElseIf inAliceTab Then
+            Dim reminder1 As New ReminderView(0, "Bob", ChoreList)
+            reminder1.Show()
+        End If
+
     End Sub
 #End Region
 End Class

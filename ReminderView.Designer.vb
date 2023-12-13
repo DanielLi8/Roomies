@@ -26,6 +26,7 @@ Partial Class ReminderView
         ReminderHeader = New Label()
         ReminderPanel = New Panel()
         Timer1 = New Timer(components)
+        CloseBtn = New Button()
         SuspendLayout()
         ' 
         ' ReminderHeader
@@ -45,8 +46,19 @@ Partial Class ReminderView
         ReminderPanel.Size = New Size(311, 355)
         ReminderPanel.TabIndex = 1
         ' 
-        ' Timer1
+        ' CloseBtn
         ' 
+        CloseBtn.BackColor = Color.FromArgb(CByte(224), CByte(218), CByte(207))
+        CloseBtn.FlatAppearance.BorderColor = Color.Black
+        CloseBtn.FlatAppearance.BorderSize = 3
+        CloseBtn.FlatStyle = FlatStyle.Flat
+        CloseBtn.Font = New Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
+        CloseBtn.Location = New Point(69, 494)
+        CloseBtn.Name = "CloseBtn"
+        CloseBtn.Size = New Size(194, 38)
+        CloseBtn.TabIndex = 2
+        CloseBtn.Text = "Close"
+        CloseBtn.UseVisualStyleBackColor = False
         ' 
         ' ReminderView
         ' 
@@ -54,6 +66,7 @@ Partial Class ReminderView
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(224), CByte(218), CByte(207))
         ClientSize = New Size(349, 556)
+        Controls.Add(CloseBtn)
         Controls.Add(ReminderPanel)
         Controls.Add(ReminderHeader)
         Name = "ReminderView"
@@ -66,4 +79,5 @@ Partial Class ReminderView
     Friend WithEvents ReminderHeader As Label
     Friend WithEvents ReminderPanel As Panel
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents CloseBtn As Button
 End Class

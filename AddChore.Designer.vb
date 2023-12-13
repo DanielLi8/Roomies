@@ -47,12 +47,17 @@ Partial Class AddChore
         Assignee = New ComboBox()
         CreateButton = New Button()
         Button1 = New Button()
+        Panel3 = New Panel()
+        RadioButtonRandom = New RadioButton()
+        RadioButtonOptimal = New RadioButton()
+        RadioButtonManual = New RadioButton()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
+        Panel3.SuspendLayout()
         SuspendLayout()
         ' 
         ' Chore
@@ -281,10 +286,11 @@ Partial Class AddChore
         ' Assignee
         ' 
         Assignee.FormattingEnabled = True
-        Assignee.Location = New Point(127, 315)
+        Assignee.Location = New Point(126, 372)
         Assignee.Name = "Assignee"
         Assignee.Size = New Size(121, 23)
         Assignee.TabIndex = 15
+        Assignee.Visible = False
         ' 
         ' CreateButton
         ' 
@@ -304,12 +310,56 @@ Partial Class AddChore
         Button1.Text = "Cancel"
         Button1.UseVisualStyleBackColor = True
         ' 
+        ' Panel3
+        ' 
+        Panel3.Controls.Add(RadioButtonRandom)
+        Panel3.Controls.Add(RadioButtonOptimal)
+        Panel3.Controls.Add(RadioButtonManual)
+        Panel3.Location = New Point(59, 335)
+        Panel3.Name = "Panel3"
+        Panel3.Size = New Size(271, 31)
+        Panel3.TabIndex = 17
+        ' 
+        ' RadioButtonRandom
+        ' 
+        RadioButtonRandom.AutoSize = True
+        RadioButtonRandom.Location = New Point(3, 3)
+        RadioButtonRandom.Name = "RadioButtonRandom"
+        RadioButtonRandom.Size = New Size(70, 19)
+        RadioButtonRandom.TabIndex = 10
+        RadioButtonRandom.TabStop = True
+        RadioButtonRandom.Text = "Random"
+        RadioButtonRandom.UseVisualStyleBackColor = True
+        ' 
+        ' RadioButtonOptimal
+        ' 
+        RadioButtonOptimal.AutoSize = True
+        RadioButtonOptimal.Location = New Point(90, 3)
+        RadioButtonOptimal.Name = "RadioButtonOptimal"
+        RadioButtonOptimal.Size = New Size(68, 19)
+        RadioButtonOptimal.TabIndex = 10
+        RadioButtonOptimal.TabStop = True
+        RadioButtonOptimal.Text = "Optimal"
+        RadioButtonOptimal.UseVisualStyleBackColor = True
+        ' 
+        ' RadioButtonManual
+        ' 
+        RadioButtonManual.AutoSize = True
+        RadioButtonManual.Location = New Point(180, 3)
+        RadioButtonManual.Name = "RadioButtonManual"
+        RadioButtonManual.Size = New Size(65, 19)
+        RadioButtonManual.TabIndex = 10
+        RadioButtonManual.TabStop = True
+        RadioButtonManual.Text = "Manual"
+        RadioButtonManual.UseVisualStyleBackColor = True
+        ' 
         ' AddChore
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(224), CByte(218), CByte(207))
         ClientSize = New Size(349, 556)
+        Controls.Add(Panel3)
         Controls.Add(Button1)
         Controls.Add(CreateButton)
         Controls.Add(Assignee)
@@ -336,6 +386,8 @@ Partial Class AddChore
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
+        Panel3.ResumeLayout(False)
+        Panel3.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -365,4 +417,8 @@ Partial Class AddChore
     Friend WithEvents Assignee As ComboBox
     Friend WithEvents CreateButton As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents RadioButtonRandom As RadioButton
+    Friend WithEvents RadioButtonOptimal As RadioButton
+    Friend WithEvents RadioButtonManual As RadioButton
 End Class

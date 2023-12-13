@@ -22,8 +22,9 @@
 
     End Sub
 
-
-    Public Sub New(name As String, recurring As String, effort As Integer, position As Integer, choreOwner As String)
+    Private bobcount As Integer
+    Private alicecount As Integer
+    Public Sub New(name As String, recurring As String, effort As Integer, position As Integer, choreOwner As String, ByRef BobCount As Integer, ByRef AliceCount As Integer)
 
         ' This call is required by the designer.
         InitializeComponent()
@@ -32,8 +33,9 @@
 
         Me.EffortLabel.Text = effort
         Me.position = position
-        ' Add any initialization after the InitializeComponent() call.
         Me.ChoreOwner = choreOwner
+        Me.alicecount = AliceCount
+        Me.bobcount = BobCount
     End Sub
 #End Region
     Private Sub RecurringLabel_Click(sender As Object, e As EventArgs) Handles RecurringLabel.VisibleChanged, RecurringLabel.Resize
@@ -43,7 +45,7 @@
 
     Private Sub EditBtn_Click(sender As Object, e As EventArgs) Handles EditBtn.Click
         Dim chorelist = Roomies.getChoreList
-        Dim choreEdit As New AddChore(chorelist(Me.position), Me.position)
+        Dim choreEdit As New AddChore(chorelist(Me.position), Me.position, bobcount, alicecount)
 
         choreEdit.ShowDialog()
 
@@ -69,10 +71,8 @@
             Roomies.AliceAddTodoboxToPanel()
             Roomies.AliceUpdateCompletedPanelView()
             Roomies.UpdateCompletedPanelView()
+            MessageBox.Show("You have completed chore " + ChoreCheckbox.Text)
 
-        Else
-            'ChoreCheckbox.Font = New Font("Arial", 12.0F, GraphicsUnit.Point)
-            'Dim copyCheckBox As New CheckBox
 
         End If
 

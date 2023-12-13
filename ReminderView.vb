@@ -43,6 +43,10 @@ Public Class ReminderView
 
     End Sub
 
+    Private Sub Close_Click(sender As Object, e As EventArgs) Handles CloseBtn.Click
+        Me.Close()
+    End Sub
+
 #End Region
 
 

@@ -1,9 +1,12 @@
-﻿Public Class AddChore
+﻿Imports System.Threading
+
+Public Class AddChore
 
     Private isEdit As Boolean = False
     Private index1 As Integer = 0
     Private currentchore As New ChoreClass
-
+    Private AliceCount As Integer = 0
+    Private BobCount As Integer = 0
 #Region "Constructors"
     Public Sub New()
 
@@ -13,6 +16,15 @@
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
+    Public Sub New(ByRef BobCount As Integer, ByRef AliceCount As Integer)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+
+        Me.AliceCount = AliceCount
+        Me.BobCount = BobCount
+    End Sub
     Public Sub New(chore As ChoreClass, index As Integer)
 
         ' This call is required by the designer.
@@ -20,6 +32,20 @@
         Edit(chore)
         index1 = index
         currentchore = chore
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+
+
+    Public Sub New(chore As ChoreClass, index As Integer, ByRef BobCount As Integer, ByRef AliceCount As Integer)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+        Edit(chore)
+        index1 = index
+        currentchore = chore
+        Me.AliceCount = AliceCount
+        Me.BobCount = BobCount
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
@@ -108,7 +134,22 @@
 
 
         'Assign roommate associated with the chore
-        chore.Roommate = Assignee.SelectedIndex
+        If RadioButtonManual.Checked Then
+            chore.Roommate = Assignee.SelectedIndex
+
+        ElseIf RadioButtonRandom.Checked Then
+            Dim rand As New Random()
+            chore.Roommate = rand.Next(2) ' Generates either 0 or 1
+
+        ElseIf RadioButtonOptimal.Checked Then
+            If BobCount <= AliceCount Then
+                chore.Roommate = 0
+            Else
+                chore.Roommate = 1
+            End If
+        End If
+
+
         'Assign chore associated to roommate
         Dim rList = Roomies.getRoommateList()
 
@@ -122,6 +163,17 @@
         Me.Close()
 
     End Sub
+
+
+    Private Sub RadioButton5_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonManual.Click
+        Assignee.Visible = True
+    End Sub
+
+    Private Sub RadioButtonRandom_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonRandom.Click, RadioButtonOptimal.Click
+        Assignee.Visible = False
+    End Sub
+
+
 
 
 

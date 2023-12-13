@@ -420,7 +420,7 @@ Partial Class Roomies
         ' 
         ' AliceMasterPanel
         ' 
-        AliceMasterPanel.Controls.Add(ExpensesPanel2)
+        AliceMasterPanel.Controls.Add(ToDoViewPanelAlice)
         AliceMasterPanel.Controls.Add(CompletedPerspective2)
         AliceMasterPanel.Location = New Point(121, 89)
         AliceMasterPanel.Name = "AliceMasterPanel"
@@ -437,7 +437,7 @@ Partial Class Roomies
         ExpensesPanel2.Controls.Add(Button1)
         ExpensesPanel2.Controls.Add(Label11)
         ExpensesPanel2.Controls.Add(Label12)
-        ExpensesPanel2.Location = New Point(0, 1)
+        ExpensesPanel2.Location = New Point(0, 0)
         ExpensesPanel2.Margin = New Padding(3, 2, 3, 2)
         ExpensesPanel2.Name = "ExpensesPanel2"
         ExpensesPanel2.Size = New Size(330, 519)
@@ -535,8 +535,8 @@ Partial Class Roomies
         ' CompletedPerspective2
         ' 
         CompletedPerspective2.BackColor = Color.Transparent
+        CompletedPerspective2.Controls.Add(ExpensesPanel2)
         CompletedPerspective2.Controls.Add(CompletedChoreAlicePanel)
-        CompletedPerspective2.Controls.Add(ToDoViewPanelAlice)
         CompletedPerspective2.Controls.Add(Label1)
         CompletedPerspective2.Controls.Add(Label3)
         CompletedPerspective2.Controls.Add(CompletedDateLabelAlice)
@@ -566,7 +566,7 @@ Partial Class Roomies
         ToDoViewPanelAlice.Controls.Add(Label2)
         ToDoViewPanelAlice.Controls.Add(AliceHouseLabel)
         ToDoViewPanelAlice.Controls.Add(AliceDateLabel)
-        ToDoViewPanelAlice.Location = New Point(2, 0)
+        ToDoViewPanelAlice.Location = New Point(0, 0)
         ToDoViewPanelAlice.Margin = New Padding(0)
         ToDoViewPanelAlice.Name = "ToDoViewPanelAlice"
         ToDoViewPanelAlice.Size = New Size(330, 520)
@@ -619,7 +619,7 @@ Partial Class Roomies
         AliceMeTodoboxPanel.Location = New Point(12, 81)
         AliceMeTodoboxPanel.Margin = New Padding(3, 2, 3, 2)
         AliceMeTodoboxPanel.Name = "AliceMeTodoboxPanel"
-        AliceMeTodoboxPanel.Size = New Size(288, 187)
+        AliceMeTodoboxPanel.Size = New Size(291, 187)
         AliceMeTodoboxPanel.TabIndex = 8
         ' 
         ' AliceBobLabel
@@ -710,7 +710,7 @@ Partial Class Roomies
         ExpensesPanel.Controls.Add(EButton)
         ExpensesPanel.Controls.Add(EFamilyLabel)
         ExpensesPanel.Controls.Add(ETitleLabel)
-        ExpensesPanel.Location = New Point(809, 27)
+        ExpensesPanel.Location = New Point(779, 27)
         ExpensesPanel.Margin = New Padding(3, 2, 3, 2)
         ExpensesPanel.Name = "ExpensesPanel"
         ExpensesPanel.Size = New Size(330, 519)
@@ -816,7 +816,7 @@ Partial Class Roomies
         TodoViewPanel.Controls.Add(AddChoreBtn)
         TodoViewPanel.Controls.Add(HouseholdName)
         TodoViewPanel.Controls.Add(DateLabel)
-        TodoViewPanel.Location = New Point(606, 44)
+        TodoViewPanel.Location = New Point(619, 57)
         TodoViewPanel.Margin = New Padding(0)
         TodoViewPanel.Name = "TodoViewPanel"
         TodoViewPanel.Size = New Size(330, 521)
@@ -1046,6 +1046,9 @@ Partial Class Roomies
         ContextMenuStrip2.ImageScalingSize = New Size(20, 20)
         ContextMenuStrip2.Name = "ContextMenuStrip2"
         ContextMenuStrip2.Size = New Size(61, 4)
+        ' 
+        ' Timer1
+        ' 
         ' 
         ' Roomies
         ' 
