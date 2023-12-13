@@ -7,6 +7,7 @@ Public Class AddChore
     Private currentchore As New ChoreClass
     Private AliceCount As Integer = 0
     Private BobCount As Integer = 0
+    Private CurrentUser As Integer
 #Region "Constructors"
     Public Sub New()
 
@@ -16,7 +17,7 @@ Public Class AddChore
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
-    Public Sub New(ByRef BobCount As Integer, ByRef AliceCount As Integer)
+    Public Sub New(ByRef BobCount As Integer, ByRef AliceCount As Integer, userNum As Integer)
 
         ' This call is required by the designer.
         InitializeComponent()
@@ -24,6 +25,7 @@ Public Class AddChore
 
         Me.AliceCount = AliceCount
         Me.BobCount = BobCount
+        Me.CurrentUser = userNum
     End Sub
     Public Sub New(chore As ChoreClass, index As Integer)
 
@@ -80,6 +82,8 @@ Public Class AddChore
 
         CreateButton.Text = "Update"
         isEdit = True
+
+
     End Sub
 #End Region
 
@@ -148,12 +152,20 @@ Public Class AddChore
                 chore.Roommate = 1
             End If
         End If
+        If ExcludeRadioBtn.Checked Then
+            If CurrentUser = 0 Then
+                chore.Roommate = 1
+            Else
+                chore.Roommate = 0
+            End If
+        End If
 
 
         'Assign chore associated to roommate
         Dim rList = Roomies.getRoommateList()
 
         If isEdit Then
+
             Roomies.UpdateChoreList(chore, index1)
         Else
             Roomies.AddChoreList(chore)

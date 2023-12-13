@@ -51,6 +51,8 @@ Partial Class AddChore
         RadioButtonRandom = New RadioButton()
         RadioButtonOptimal = New RadioButton()
         RadioButtonManual = New RadioButton()
+        ExcludeRadioBtn = New RadioButton()
+        Label5 = New Label()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
@@ -353,12 +355,34 @@ Partial Class AddChore
         RadioButtonManual.Text = "Manual"
         RadioButtonManual.UseVisualStyleBackColor = True
         ' 
+        ' ExcludeRadioBtn
+        ' 
+        ExcludeRadioBtn.AutoSize = True
+        ExcludeRadioBtn.Location = New Point(176, 412)
+        ExcludeRadioBtn.Name = "ExcludeRadioBtn"
+        ExcludeRadioBtn.Size = New Size(42, 19)
+        ExcludeRadioBtn.TabIndex = 18
+        ExcludeRadioBtn.TabStop = True
+        ExcludeRadioBtn.Text = "Yes"
+        ExcludeRadioBtn.UseVisualStyleBackColor = True
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(58, 412)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(113, 15)
+        Label5.TabIndex = 19
+        Label5.Text = "Exclude from chore:"
+        ' 
         ' AddChore
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(224), CByte(218), CByte(207))
         ClientSize = New Size(349, 556)
+        Controls.Add(ExcludeRadioBtn)
+        Controls.Add(Label5)
         Controls.Add(Panel3)
         Controls.Add(Button1)
         Controls.Add(CreateButton)
@@ -421,4 +445,6 @@ Partial Class AddChore
     Friend WithEvents RadioButtonRandom As RadioButton
     Friend WithEvents RadioButtonOptimal As RadioButton
     Friend WithEvents RadioButtonManual As RadioButton
+    Friend WithEvents ExcludeRadioBtn As RadioButton
+    Friend WithEvents Label5 As Label
 End Class

@@ -193,10 +193,15 @@ Public Class Roomies
 #End Region
 
 #Region "Adding chore functionality"
-
+    Private userNum As Integer
     Private Sub AddChoreBtn_Click(sender As Object, e As EventArgs) Handles AddChoreBtn.Click, AliceAddChoreBtn.Click
+        If TabControl1.SelectedTab Is BobTab Then
+            userNum = 0
+        Else
+            userNum = 1
+        End If
 
-        Dim choreAdd As New AddChore(BobChoreCount, AliceChoreCount)
+        Dim choreAdd As New AddChore(BobChoreCount, AliceChoreCount, userNum)
         choreAdd.ShowDialog()
 
         AddTodoboxToPanel()
@@ -495,5 +500,6 @@ Public Class Roomies
         End If
 
     End Sub
+
 #End Region
 End Class
