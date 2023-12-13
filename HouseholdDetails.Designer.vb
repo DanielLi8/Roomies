@@ -32,6 +32,9 @@ Partial Class HouseholdDetails
         RadioButton3 = New RadioButton()
         CancelBtn = New Button()
         Panel1 = New Panel()
+        TextBox1 = New TextBox()
+        Label1 = New Label()
+        Label2 = New Label()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -47,6 +50,7 @@ Partial Class HouseholdDetails
         ' 
         ' HouseholdNameInput
         ' 
+        HouseholdNameInput.Enabled = False
         HouseholdNameInput.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         HouseholdNameInput.Location = New Point(169, 25)
         HouseholdNameInput.Name = "HouseholdNameInput"
@@ -57,7 +61,7 @@ Partial Class HouseholdDetails
         ' 
         RoomateSelectionLabel.AutoSize = True
         RoomateSelectionLabel.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        RoomateSelectionLabel.Location = New Point(44, 59)
+        RoomateSelectionLabel.Location = New Point(39, 96)
         RoomateSelectionLabel.Name = "RoomateSelectionLabel"
         RoomateSelectionLabel.Size = New Size(239, 18)
         RoomateSelectionLabel.TabIndex = 2
@@ -67,7 +71,7 @@ Partial Class HouseholdDetails
         ' 
         InviteLabel.AutoSize = True
         InviteLabel.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        InviteLabel.Location = New Point(44, 125)
+        InviteLabel.Location = New Point(39, 162)
         InviteLabel.Name = "InviteLabel"
         InviteLabel.Size = New Size(253, 18)
         InviteLabel.TabIndex = 3
@@ -75,6 +79,7 @@ Partial Class HouseholdDetails
         ' 
         ' CreateBtn
         ' 
+        CreateBtn.Enabled = False
         CreateBtn.Font = New Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         CreateBtn.Location = New Point(71, 500)
         CreateBtn.Name = "CreateBtn"
@@ -132,10 +137,39 @@ Partial Class HouseholdDetails
         Panel1.Controls.Add(RadioButton2)
         Panel1.Controls.Add(RadioButton3)
         Panel1.Controls.Add(RadioButton1)
-        Panel1.Location = New Point(53, 88)
+        Panel1.Enabled = False
+        Panel1.Location = New Point(48, 125)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(229, 28)
         Panel1.TabIndex = 16
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Enabled = False
+        TextBox1.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        TextBox1.Location = New Point(169, 64)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(128, 24)
+        TextBox1.TabIndex = 18
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        Label1.Location = New Point(39, 64)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(134, 18)
+        Label1.TabIndex = 17
+        Label1.Text = "Household Budget:"
+        ' 
+        ' Label2
+        ' 
+        Label2.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.Location = New Point(12, 389)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(314, 97)
+        Label2.TabIndex = 19
+        Label2.Text = "Error: You can not create a household as you are already in one."
         ' 
         ' HouseholdDetails
         ' 
@@ -143,6 +177,9 @@ Partial Class HouseholdDetails
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(222), CByte(213), CByte(188))
         ClientSize = New Size(349, 556)
+        Controls.Add(Label2)
+        Controls.Add(TextBox1)
+        Controls.Add(Label1)
         Controls.Add(Panel1)
         Controls.Add(InviteLabel)
         Controls.Add(CancelBtn)
@@ -169,4 +206,7 @@ Partial Class HouseholdDetails
     Friend WithEvents RadioButton3 As RadioButton
     Friend WithEvents CancelBtn As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class

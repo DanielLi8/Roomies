@@ -54,13 +54,13 @@
 
 
     Private Sub CancelBtn_Click(sender As Object, e As EventArgs) Handles CancelBtn.Click
-        myRoomies.AddHouseholdBtn.Enabled = True
+        myRoomies.BobAddHouseholdBtn.Enabled = True
         Me.Close()
     End Sub
 
     Private Sub CreateBtn_Click(sender As Object, e As EventArgs) Handles CreateBtn.Click
         'Hides addhousehold button
-        myRoomies.AddHouseholdBtn.Visible = False
+        myRoomies.BobAddHouseholdBtn.Visible = False
 
         'Enables Menu panel
         myRoomies.TodoBtn.Enabled = True

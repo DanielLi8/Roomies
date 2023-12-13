@@ -59,7 +59,7 @@ Public Class Roomies
 
 
 #Region "household"
-    Private Sub AddHouseholdBtn_Click(sender As Object, e As EventArgs) Handles AddHouseholdBtn.Click
+    Private Sub AddHouseholdBtn_Click(sender As Object, e As EventArgs) Handles BobAddHouseholdBtn.Click, AliceAddHouseholdBtn.Click
         Dim householdform As New HouseholdDetails(Me)
 
         householdform.Location = New Point(householdform.Location.X, householdform.Location.Y + 12)
@@ -67,7 +67,7 @@ Public Class Roomies
 
 
         If RoommateList.Any Then
-            AddHouseholdBtn.Enabled = False
+            BobAddHouseholdBtn.Enabled = False
             Alice.Text = RoommateList(1).GetName()
         End If
 
@@ -416,15 +416,9 @@ Public Class Roomies
 
     End Sub
 
-    Private Sub TodoViewPanel_Paint(sender As Object, e As PaintEventArgs) Handles TodoViewPanel.Paint
 
-    End Sub
 
-    Private Sub MenuPanel_Paint(sender As Object, e As PaintEventArgs) Handles MenuPanel.Paint
-    End Sub
 
-    Private Sub AddHouseholdPanel_Paint(sender As Object, e As PaintEventArgs) Handles AddHouseholdPanel.Paint
-    End Sub
 
     Private Sub EButton_Click(sender As Object, e As EventArgs) Handles EButton.Click, Button1.Click
         Dim expensesComponentForm As New Form()
