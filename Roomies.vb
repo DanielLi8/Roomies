@@ -407,40 +407,54 @@ Public Class Roomies
     End Sub
     Private Sub GenerateSharedExpenses()
         Dim selectedRoommateName As String = TabControl1.SelectedTab.Text
-        Dim selectedRoommate As RoommateClass
+        Dim selectedRoommate As RoommateClass = Nothing
+        Dim labelTop As Integer = 0
+
+        ' Find the selected roommate
         For Each roommate As RoommateClass In RoommateList
             If roommate.GetName() = selectedRoommateName Then
                 selectedRoommate = roommate
                 Exit For
             End If
         Next
-        ESharedExpensesPanel.Controls.Clear() ' Clear existing controls in the panel
-        ' Iterate through each expense in the selected roommate's expense list
-        For Each selectedExpense As ExpenseClass In selectedRoommate.getExpenseList()
-            If selectedExpense.getSplit() Then
-                ' Iterate through each roommate in the list
-                For Each otherRoommate As RoommateClass In getRoommateList()
-                    ' Check if the roommate is not the selected roommate
-                    If otherRoommate.GetName() <> selectedRoommateName Then
-                        ' Iterate through each expense in the other roommate's expense list
-                        For Each otherExpense As ExpenseClass In otherRoommate.getExpenseList()
-                            ' Check if the expense names match
-                            If otherExpense.getName() = selectedExpense.getName() Then
-                                ' Create a label with roommate's name and expense amount
-                                Dim label As New Label()
-                                label.Width = 250
-                                label.Text = $"{otherRoommate.GetName()}: {otherExpense.getName()} : {otherExpense.getAmount()}"
-                                ESharedExpensesPanel.Controls.Add(label)
-                            End If
-                        Next
-                    End If
-                Next
-            End If
-        Next
+
+        ' Ensure a selected roommate is found
+        If selectedRoommate IsNot Nothing Then
+            ESharedExpensesPanel.Controls.Clear() ' Clear existing controls in the panel
+
+            ' Iterate through each expense in the selected roommate's expense list
+            For Each selectedExpense As ExpenseClass In selectedRoommate.getExpenseList()
+                If selectedExpense.getSplit() Then
+                    ' Iterate through each roommate in the list
+                    For Each otherRoommate As RoommateClass In getRoommateList()
+                        ' Check if the roommate is not the selected roommate
+                        If otherRoommate.GetName() <> selectedRoommateName Then
+                            ' Iterate through each expense in the other roommate's expense list
+                            For Each otherExpense As ExpenseClass In otherRoommate.getExpenseList()
+                                ' Check if the expense names match
+                                If otherExpense.getName() = selectedExpense.getName() Then
+                                    ' Create a new label for each matching expense
+                                    Dim label As New Label()
+                                    label.Width = 250
+                                    label.Text = $"{otherRoommate.GetName()}: {otherExpense.getName()} : ${otherExpense.getAmount()}"
+                                    label.Top = labelTop
+                                    ESharedExpensesPanel.Controls.Add(label)
+
+                                    ' Increment the top position for the next label
+                                    labelTop += label.Height ' You can adjust this value as needed
+                                End If
+                            Next
+                        End If
+                    Next
+                End If
+            Next
+        End If
     End Sub
+
     Private Sub GeneratePersonalExpenses()
         Dim selectedRoommateName As String = TabControl1.SelectedTab.Text
         Dim selectedRoommate As RoommateClass
+        Dim labelTop As Integer = 0
         For Each roommate As RoommateClass In RoommateList
             If roommate.GetName() = selectedRoommateName Then
                 selectedRoommate = roommate
@@ -453,8 +467,10 @@ Public Class Roomies
             For Each selectedExpense As ExpenseClass In selectedRoommate.getExpenseList()
                 Dim label As New Label()
                 label.Width = 250
-                label.Text = $"{selectedExpense.getName()} : {selectedExpense.getAmount()}"
+                label.Text = $"{selectedExpense.getName()} : ${selectedExpense.getAmount()}"
+                label.Top = labelTop
                 EPersonalExpensesPanel.Controls.Add(label)
+                labelTop += label.Height
             Next
         End If
     End Sub
