@@ -40,7 +40,7 @@ Partial Class ExpensesComponent
         ExpenseLabel.AutoSize = True
         ExpenseLabel.Location = New Point(10, 21)
         ExpenseLabel.Name = "ExpenseLabel"
-        ExpenseLabel.Size = New Size(53, 15)
+        ExpenseLabel.Size = New Size(66, 20)
         ExpenseLabel.TabIndex = 0
         ExpenseLabel.Text = "Expense:"
         ' 
@@ -49,7 +49,7 @@ Partial Class ExpensesComponent
         AmountLabel.AutoSize = True
         AmountLabel.Location = New Point(10, 59)
         AmountLabel.Name = "AmountLabel"
-        AmountLabel.Size = New Size(54, 15)
+        AmountLabel.Size = New Size(65, 20)
         AmountLabel.TabIndex = 1
         AmountLabel.Text = "Amount:"
         ' 
@@ -58,7 +58,7 @@ Partial Class ExpensesComponent
         ExpenseTextbox.Location = New Point(71, 19)
         ExpenseTextbox.Margin = New Padding(3, 2, 3, 2)
         ExpenseTextbox.Name = "ExpenseTextbox"
-        ExpenseTextbox.Size = New Size(245, 23)
+        ExpenseTextbox.Size = New Size(245, 27)
         ExpenseTextbox.TabIndex = 2
         ' 
         ' AmountTextbox
@@ -66,7 +66,7 @@ Partial Class ExpensesComponent
         AmountTextbox.Location = New Point(71, 57)
         AmountTextbox.Margin = New Padding(3, 2, 3, 2)
         AmountTextbox.Name = "AmountTextbox"
-        AmountTextbox.Size = New Size(245, 23)
+        AmountTextbox.Size = New Size(245, 27)
         AmountTextbox.TabIndex = 3
         ' 
         ' SplitLabel
@@ -74,7 +74,7 @@ Partial Class ExpensesComponent
         SplitLabel.AutoSize = True
         SplitLabel.Location = New Point(61, 92)
         SplitLabel.Name = "SplitLabel"
-        SplitLabel.Size = New Size(144, 15)
+        SplitLabel.Size = New Size(183, 20)
         SplitLabel.TabIndex = 4
         SplitLabel.Text = "Split Between Household?"
         ' 
@@ -96,7 +96,7 @@ Partial Class ExpensesComponent
         NoButton.Location = New Point(201, 24)
         NoButton.Margin = New Padding(3, 2, 3, 2)
         NoButton.Name = "NoButton"
-        NoButton.Size = New Size(41, 19)
+        NoButton.Size = New Size(50, 24)
         NoButton.TabIndex = 1
         NoButton.TabStop = True
         NoButton.Text = "No"
@@ -108,7 +108,7 @@ Partial Class ExpensesComponent
         YesButton.Location = New Point(59, 24)
         YesButton.Margin = New Padding(3, 2, 3, 2)
         YesButton.Name = "YesButton"
-        YesButton.Size = New Size(42, 19)
+        YesButton.Size = New Size(51, 24)
         YesButton.TabIndex = 0
         YesButton.TabStop = True
         YesButton.Text = "Yes"
@@ -127,7 +127,7 @@ Partial Class ExpensesComponent
         ExpenseCButton.Location = New Point(123, 297)
         ExpenseCButton.Margin = New Padding(3, 2, 3, 2)
         ExpenseCButton.Name = "ExpenseCButton"
-        ExpenseCButton.Size = New Size(82, 22)
+        ExpenseCButton.Size = New Size(82, 32)
         ExpenseCButton.TabIndex = 7
         ExpenseCButton.Text = "Create"
         ExpenseCButton.UseVisualStyleBackColor = True

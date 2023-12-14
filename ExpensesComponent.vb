@@ -50,13 +50,21 @@
                 Next
             End If
         Else
-            For Each rname As String In names
+            If Decimal.TryParse(amountText, amount) Then
+                amount = Math.Round((amount / checkedCount), 2)
                 For Each roommate As RoommateClass In roommateNames
-                    If roommate.GetName() = rname Then
+                    If roommate.GetName() = Roomies.TabControl1.SelectedTab.Text Then
                         roommate.AddExpense(New ExpenseClass(expenseText, CStr(amount), True))
+                        Exit For
                     End If
                 Next
-            Next
+            End If
+        End If
+        If Roomies.ETitleLabel.Text = "Summary" Then
+            Roomies.GenerateSummaryExpenses(True)
+        Else
+            Roomies.GenerateSummaryExpenses(False)
         End If
     End Sub
+
 End Class

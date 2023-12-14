@@ -1,7 +1,9 @@
 ﻿Imports System.Diagnostics.Eventing.Reader
 Imports System.Globalization
 Imports System.Net.Security
+Imports System.Security.Permissions
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip
+Imports System.Xml.Schema
 
 Public Class Roomies
 
@@ -373,7 +375,7 @@ Public Class Roomies
         CompletedDateLabelBob.Text = "Today: " & formattedDate
     End Sub
 
-    Private Sub GenerateSummaryExpenses(summary As Boolean)
+    Public Sub GenerateSummaryExpenses(summary As Boolean)
         If summary Then
             ETitleLabel.Text = "Summary"
             EButton.Visible = False
@@ -385,12 +387,12 @@ Public Class Roomies
         End If
         CalculateTotalExpense()
         GenerateSharedExpenses()
+        GeneratePersonalExpenses()
     End Sub
 #Region "Calculating subs for Expense Features"
     Private Sub CalculateTotalExpense()
         Dim selectedRoommateName As String = TabControl1.SelectedTab.Text
         Dim totalExpense As Decimal = 0
-
         ' Loop through all roommates
         For Each roommate As RoommateClass In RoommateList
             ' Check if the roommate's name matches the selected tab text
@@ -398,7 +400,6 @@ Public Class Roomies
                 ' Loop through the ExpenseList of the selected roommate
                 For Each expense As ExpenseClass In roommate.getExpenseList()
                     totalExpense += Decimal.Parse(expense.getAmount())
-                    End
                 Next
             End If
         Next
@@ -410,55 +411,60 @@ Public Class Roomies
         For Each roommate As RoommateClass In RoommateList
             If roommate.GetName() = selectedRoommateName Then
                 selectedRoommate = roommate
+                Exit For
             End If
         Next
         ESharedExpensesPanel.Controls.Clear() ' Clear existing controls in the panel
+        ' Iterate through each expense in the selected roommate's expense list
+        For Each selectedExpense As ExpenseClass In selectedRoommate.getExpenseList()
+            If selectedExpense.getSplit() Then
+                ' Iterate through each roommate in the list
+                For Each otherRoommate As RoommateClass In getRoommateList()
+                    ' Check if the roommate is not the selected roommate
+                    If otherRoommate.GetName() <> selectedRoommateName Then
+                        ' Iterate through each expense in the other roommate's expense list
+                        For Each otherExpense As ExpenseClass In otherRoommate.getExpenseList()
+                            ' Check if the expense names match
+                            If otherExpense.getName() = selectedExpense.getName() Then
+                                ' Create a label with roommate's name and expense amount
+                                Dim label As New Label()
+                                label.Width = 250
+                                label.Text = $"{otherRoommate.GetName()}: {otherExpense.getName()} : {otherExpense.getAmount()}"
+                                ESharedExpensesPanel.Controls.Add(label)
+                            End If
+                        Next
+                    End If
+                Next
+            End If
+        Next
+    End Sub
+    Private Sub GeneratePersonalExpenses()
+        Dim selectedRoommateName As String = TabControl1.SelectedTab.Text
+        Dim selectedRoommate As RoommateClass
+        For Each roommate As RoommateClass In RoommateList
+            If roommate.GetName() = selectedRoommateName Then
+                selectedRoommate = roommate
+                Exit For
+            End If
+        Next
+        EPersonalExpensesPanel.Controls.Clear() ' Clear existing controls in the panel
         If selectedRoommate IsNot Nothing Then
             ' Iterate through each expense in the selected roommate's expense list
             For Each selectedExpense As ExpenseClass In selectedRoommate.getExpenseList()
-                If selectedExpense.getSplit() Then
-                    ' Iterate through each roommate in the list
-                    For Each otherRoommate As RoommateClass In getRoommateList()
-                        ' Check if the roommate is not the selected roommate
-                        If otherRoommate.GetName() <> selectedRoommateName Then
-                            ' Iterate through each expense in the other roommate's expense list
-                            For Each otherExpense As ExpenseClass In otherRoommate.getExpenseList()
-                                ' Check if the expense names match
-                                If otherExpense.getName() = selectedExpense.getName() Then
-                                    ' Create a label with roommate's name and expense amount
-                                    Dim label As New Label()
-                                    label.Text = $"{otherRoommate.GetName()}: {otherExpense.getName()} : {otherExpense.getAmount()}"
-                                    ESharedExpensesPanel.Controls.Add(label)
-                                End If
-                            Next
-                        End If
-                    Next
-                End If
+                Dim label As New Label()
+                label.Width = 250
+                label.Text = $"{selectedExpense.getName()} : {selectedExpense.getAmount()}"
+                EPersonalExpensesPanel.Controls.Add(label)
             Next
         End If
     End Sub
-    Private Sub GeneratePersonalExpenses()
-
-    End Sub
-
-
-
-
-
     Private Sub EButton_Click(sender As Object, e As EventArgs) Handles EButton.Click, Button1.Click
+
         Dim expensesComponentForm As New Form()
-
-        ' Create an instance of ExpensesComponent
         Dim expensesComponent As New ExpensesComponent()
-
-        ' Set the ExpensesComponent as the content of the new form
         expensesComponentForm.Controls.Add(expensesComponent)
-
-        ' Set form properties as needed
         expensesComponentForm.Text = "Expenses Form"
-        expensesComponentForm.Size = New Size(500, 400) ' Adjust the size accordingly
-
-        ' Show the form
+        expensesComponentForm.Size = New Size(500, 400)
         expensesComponentForm.ShowDialog()
     End Sub
 
