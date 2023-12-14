@@ -19,13 +19,10 @@ Public Class ExpenseClass
             ' If there is a decimal point and only one decimal place, add a "0"
             If input.Contains(".") AndAlso input.IndexOf(".") = input.Length - 2 Then
                 input += "0"
-            End If
-
-            ' If there is no decimal point, add ".00" to the end
-            If Not input.Contains(".") Then
+                ' If there is no decimal point, add ".00" to the end
+            Else
                 input += ".00"
             End If
-
             ' The input is valid
             Return True
         Else
