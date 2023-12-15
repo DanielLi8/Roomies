@@ -67,11 +67,6 @@ Partial Class Roomies
         ToDoBtnAlice = New Button()
         AliceMasterPanel = New Panel()
         CompletedPerspective2 = New Panel()
-        CompletedChoreAlicePanel = New Panel()
-        Label1 = New Label()
-        Label3 = New Label()
-        CompletedDateLabelAlice = New Label()
-        ExpensesPanel2 = New Panel()
         ToDoViewPanelAlice = New Panel()
         AliceAddChoreBtn = New Button()
         AliceAddHouseholdBtn = New Button()
@@ -81,6 +76,11 @@ Partial Class Roomies
         Label2 = New Label()
         AliceHouseLabel = New Label()
         AliceDateLabel = New Label()
+        CompletedChoreAlicePanel = New Panel()
+        Label1 = New Label()
+        Label3 = New Label()
+        CompletedDateLabelAlice = New Label()
+        ExpensesPanel2 = New Panel()
         Label5 = New Label()
         AlicePersonalExpensePanel = New Panel()
         Label9 = New Label()
@@ -115,8 +115,8 @@ Partial Class Roomies
         AliceMenuPanel.SuspendLayout()
         AliceMasterPanel.SuspendLayout()
         CompletedPerspective2.SuspendLayout()
-        ExpensesPanel2.SuspendLayout()
         ToDoViewPanelAlice.SuspendLayout()
+        ExpensesPanel2.SuspendLayout()
         CompletedBobPerspective.SuspendLayout()
         ExpensesEditPanel.SuspendLayout()
         SuspendLayout()
@@ -658,66 +658,6 @@ Partial Class Roomies
         CompletedPerspective2.Size = New Size(330, 520)
         CompletedPerspective2.TabIndex = 7
         ' 
-        ' CompletedChoreAlicePanel
-        ' 
-        CompletedChoreAlicePanel.Enabled = False
-        CompletedChoreAlicePanel.Location = New Point(12, 85)
-        CompletedChoreAlicePanel.Margin = New Padding(3, 2, 3, 2)
-        CompletedChoreAlicePanel.Name = "CompletedChoreAlicePanel"
-        CompletedChoreAlicePanel.Size = New Size(293, 417)
-        CompletedChoreAlicePanel.TabIndex = 8
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label1.Location = New Point(12, 65)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(196, 18)
-        Label1.TabIndex = 7
-        Label1.Text = "Completed Chores History:"
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Font = New Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        Label3.Location = New Point(12, 14)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(46, 15)
-        Label3.TabIndex = 5
-        Label3.Text = "LeSpot"
-        ' 
-        ' CompletedDateLabelAlice
-        ' 
-        CompletedDateLabelAlice.AutoSize = True
-        CompletedDateLabelAlice.BackColor = Color.Transparent
-        CompletedDateLabelAlice.Font = New Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
-        CompletedDateLabelAlice.ForeColor = Color.Black
-        CompletedDateLabelAlice.Location = New Point(12, 29)
-        CompletedDateLabelAlice.Margin = New Padding(0)
-        CompletedDateLabelAlice.Name = "CompletedDateLabelAlice"
-        CompletedDateLabelAlice.Size = New Size(179, 24)
-        CompletedDateLabelAlice.TabIndex = 0
-        CompletedDateLabelAlice.Text = "Today: Tue, Nov 7"
-        CompletedDateLabelAlice.TextAlign = ContentAlignment.MiddleLeft
-        ' 
-        ' ExpensesPanel2
-        ' 
-        ExpensesPanel2.Controls.Add(Label5)
-        ExpensesPanel2.Controls.Add(AlicePersonalExpensePanel)
-        ExpensesPanel2.Controls.Add(Label9)
-        ExpensesPanel2.Controls.Add(AliceSharedPanel)
-        ExpensesPanel2.Controls.Add(Label10)
-        ExpensesPanel2.Controls.Add(Button1)
-        ExpensesPanel2.Controls.Add(Label11)
-        ExpensesPanel2.Controls.Add(Label12)
-        ExpensesPanel2.Location = New Point(638, 100)
-        ExpensesPanel2.Margin = New Padding(3, 2, 3, 2)
-        ExpensesPanel2.Name = "ExpensesPanel2"
-        ExpensesPanel2.Size = New Size(330, 519)
-        ExpensesPanel2.TabIndex = 10
-        ExpensesPanel2.Visible = False
-        ' 
         ' ToDoViewPanelAlice
         ' 
         ToDoViewPanelAlice.BackColor = Color.Transparent
@@ -828,6 +768,66 @@ Partial Class Roomies
         AliceDateLabel.TabIndex = 0
         AliceDateLabel.Text = "Today: Tue, Nov 7"
         AliceDateLabel.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' CompletedChoreAlicePanel
+        ' 
+        CompletedChoreAlicePanel.Enabled = False
+        CompletedChoreAlicePanel.Location = New Point(12, 85)
+        CompletedChoreAlicePanel.Margin = New Padding(3, 2, 3, 2)
+        CompletedChoreAlicePanel.Name = "CompletedChoreAlicePanel"
+        CompletedChoreAlicePanel.Size = New Size(293, 417)
+        CompletedChoreAlicePanel.TabIndex = 8
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label1.Location = New Point(12, 65)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(196, 18)
+        Label1.TabIndex = 7
+        Label1.Text = "Completed Chores History:"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        Label3.Location = New Point(12, 14)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(46, 15)
+        Label3.TabIndex = 5
+        Label3.Text = "LeSpot"
+        ' 
+        ' CompletedDateLabelAlice
+        ' 
+        CompletedDateLabelAlice.AutoSize = True
+        CompletedDateLabelAlice.BackColor = Color.Transparent
+        CompletedDateLabelAlice.Font = New Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
+        CompletedDateLabelAlice.ForeColor = Color.Black
+        CompletedDateLabelAlice.Location = New Point(12, 29)
+        CompletedDateLabelAlice.Margin = New Padding(0)
+        CompletedDateLabelAlice.Name = "CompletedDateLabelAlice"
+        CompletedDateLabelAlice.Size = New Size(179, 24)
+        CompletedDateLabelAlice.TabIndex = 0
+        CompletedDateLabelAlice.Text = "Today: Tue, Nov 7"
+        CompletedDateLabelAlice.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' ExpensesPanel2
+        ' 
+        ExpensesPanel2.Controls.Add(Label5)
+        ExpensesPanel2.Controls.Add(AlicePersonalExpensePanel)
+        ExpensesPanel2.Controls.Add(Label9)
+        ExpensesPanel2.Controls.Add(AliceSharedPanel)
+        ExpensesPanel2.Controls.Add(Label10)
+        ExpensesPanel2.Controls.Add(Button1)
+        ExpensesPanel2.Controls.Add(Label11)
+        ExpensesPanel2.Controls.Add(Label12)
+        ExpensesPanel2.Location = New Point(618, 118)
+        ExpensesPanel2.Margin = New Padding(3, 2, 3, 2)
+        ExpensesPanel2.Name = "ExpensesPanel2"
+        ExpensesPanel2.Size = New Size(330, 519)
+        ExpensesPanel2.TabIndex = 10
+        ExpensesPanel2.Visible = False
         ' 
         ' Label5
         ' 
@@ -1080,10 +1080,10 @@ Partial Class Roomies
         AliceMasterPanel.ResumeLayout(False)
         CompletedPerspective2.ResumeLayout(False)
         CompletedPerspective2.PerformLayout()
-        ExpensesPanel2.ResumeLayout(False)
-        ExpensesPanel2.PerformLayout()
         ToDoViewPanelAlice.ResumeLayout(False)
         ToDoViewPanelAlice.PerformLayout()
+        ExpensesPanel2.ResumeLayout(False)
+        ExpensesPanel2.PerformLayout()
         CompletedBobPerspective.ResumeLayout(False)
         CompletedBobPerspective.PerformLayout()
         ExpensesEditPanel.ResumeLayout(False)

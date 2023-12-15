@@ -462,17 +462,20 @@ Public Class Roomies
         Dim selectedRoommateName As String = TabControl1.SelectedTab.Text
         Dim selectedRoommate As RoommateClass
         Dim labelTop As Integer = 0
-        For Each roommate As RoommateClass In RoommateList
-            If roommate.GetName() = selectedRoommateName Then
-                selectedRoommate = roommate
-                Exit For
-            End If
-        Next
+        Dim labelTop2 As Integer = 0
+        'For Each roommate As RoommateClass In RoommateList
+        '    If roommate.GetName() = selectedRoommateName Then
+        '        selectedRoommate = roommate
+        '        Exit For
+        '    End If
+        'Next
         EPersonalExpensesPanel.Controls.Clear() ' Clear existing controls in the panel
-        If selectedRoommate IsNot Nothing Then
-            ' Iterate through each expense in the selected roommate's expense list
-            For Each selectedExpense As ExpenseClass In selectedRoommate.getExpenseList()
-                If TabControl1.SelectedTab Is BobTab Then
+        AlicePersonalExpensePanel.Controls.Clear()
+        'If selectedRoommate IsNot Nothing Then
+        ' Iterate through each expense in the selected roommate's expense list
+        For Each roommate As RoommateClass In RoommateList
+            For Each selectedExpense As ExpenseClass In roommate.getExpenseList()
+                If roommate.GetName = "Bob" Then
                     Dim label As New Label()
                     label.Width = 250
                     label.Text = $"{selectedExpense.getName()} : ${selectedExpense.getAmount()}"
@@ -480,18 +483,19 @@ Public Class Roomies
                     label.Top = labelTop
                     EPersonalExpensesPanel.Controls.Add(label)
                     labelTop += label.Height
-                ElseIf TabControl1.SelectedTab Is AliceTab Then
+                ElseIf roommate.GetName = "Alice" Then
                     Dim label As New Label()
                     label.Width = 250
                     label.Text = $"{selectedExpense.getName()} : ${selectedExpense.getAmount()}"
                     label.Font = New Font("Arial", 12)
-                    label.Top = labelTop
+                    label.Top = labelTop2
                     AlicePersonalExpensePanel.Controls.Add(label)
-                    labelTop += label.Height
+                    labelTop2 += label.Height
                 End If
 
             Next
-        End If
+        Next
+        '  End If
     End Sub
     Private Sub EButton_Click(sender As Object, e As EventArgs) Handles EButton.Click, Button1.Click
 
