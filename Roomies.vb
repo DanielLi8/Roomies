@@ -381,7 +381,7 @@ Public Class Roomies
             EButton.Visible = False
             ESummaryLabel.Visible = True
         Else
-            ETitleLabel.Text = "Balence Sheet"
+            ETitleLabel.Text = "Balance Sheet"
             EButton.Visible = True
             ESummaryLabel.Visible = False
         End If
