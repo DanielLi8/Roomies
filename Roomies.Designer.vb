@@ -1163,7 +1163,6 @@ Partial Class Roomies
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
-    Friend WithEvents ExpensesComponent1 As ExpensesComponent
     Friend WithEvents AlicePersonalExpensePanel As Panel
     Friend WithEvents Label9 As Label
     Friend WithEvents AliceSharedPanel As Panel

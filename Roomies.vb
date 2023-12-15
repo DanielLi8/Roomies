@@ -516,14 +516,6 @@ Public Class Roomies
         '  End If
     End Sub
     Private Sub EButton_Click(sender As Object, e As EventArgs) Handles EButton.Click, AliceEbutton.Click
-
-        'Dim expensesComponentForm As New Form()
-        'Dim expensesComponent As New ExpensesComponent()
-        'expensesComponentForm.Controls.Add(expensesComponent)
-        'expensesComponentForm.Size = New Size(365, 595)
-        'expensesComponentForm.StartPosition = FormStartPosition.CenterScreen
-        'expensesComponentForm.ShowDialog()
-
         Dim expenseAdd As New AddExpense()
         expenseAdd.ShowDialog()
 
