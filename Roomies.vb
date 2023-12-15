@@ -353,7 +353,7 @@ Public Class Roomies
         ExpensesPanel.Parent = BobMasterPanel
         ExpensesPanel.Location = New Point(0, 0)
 
-        'setting panel locations for bob view
+        'setting panel locations for Alice view
         ToDoViewPanelAlice.Parent = AliceMasterPanel
         ToDoViewPanelAlice.Location = New Point(0, 0)
         CompletedPerspective2.Parent = AliceMasterPanel
@@ -437,8 +437,15 @@ Public Class Roomies
                                     Dim label As New Label()
                                     label.Width = 250
                                     label.Text = $"{otherRoommate.GetName()}: {otherExpense.getName()} : ${otherExpense.getAmount()}"
+                                    label.Font = New Font("Arial", 12)
                                     label.Top = labelTop
                                     ESharedExpensesPanel.Controls.Add(label)
+                                    Dim CopyLabel As New Label()
+                                    CopyLabel.Width = label.Width
+                                    CopyLabel.Text = $"{selectedRoommate.GetName()}: {otherExpense.getName()} : ${otherExpense.getAmount()}"
+                                    CopyLabel.Top = labelTop
+                                    CopyLabel.Font = label.Font
+                                    AliceSharedPanel.Controls.Add(CopyLabel)
 
                                     ' Increment the top position for the next label
                                     labelTop += label.Height ' You can adjust this value as needed
@@ -465,12 +472,24 @@ Public Class Roomies
         If selectedRoommate IsNot Nothing Then
             ' Iterate through each expense in the selected roommate's expense list
             For Each selectedExpense As ExpenseClass In selectedRoommate.getExpenseList()
-                Dim label As New Label()
-                label.Width = 250
-                label.Text = $"{selectedExpense.getName()} : ${selectedExpense.getAmount()}"
-                label.Top = labelTop
-                EPersonalExpensesPanel.Controls.Add(label)
-                labelTop += label.Height
+                If TabControl1.SelectedTab Is BobTab Then
+                    Dim label As New Label()
+                    label.Width = 250
+                    label.Text = $"{selectedExpense.getName()} : ${selectedExpense.getAmount()}"
+                    label.Font = New Font("Arial", 12)
+                    label.Top = labelTop
+                    EPersonalExpensesPanel.Controls.Add(label)
+                    labelTop += label.Height
+                ElseIf TabControl1.SelectedTab Is AliceTab Then
+                    Dim label As New Label()
+                    label.Width = 250
+                    label.Text = $"{selectedExpense.getName()} : ${selectedExpense.getAmount()}"
+                    label.Font = New Font("Arial", 12)
+                    label.Top = labelTop
+                    AlicePersonalExpensePanel.Controls.Add(label)
+                    labelTop += label.Height
+                End If
+
             Next
         End If
     End Sub
