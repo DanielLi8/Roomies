@@ -400,8 +400,9 @@ Partial Class AddChore
         Controls.Add(ChoreInput)
         Controls.Add(PictureBox1)
         Controls.Add(Chore)
+        Location = New Point(783, 242)
         Name = "AddChore"
-        StartPosition = FormStartPosition.CenterScreen
+        StartPosition = FormStartPosition.Manual
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()

@@ -157,8 +157,9 @@ Partial Class AddExpense
         Controls.Add(ExpenseTextbox)
         Controls.Add(AmountLabel)
         Controls.Add(ExpenseLabel)
+        Location = New Point(783, 242)
         Name = "AddExpense"
-        StartPosition = FormStartPosition.CenterScreen
+        StartPosition = FormStartPosition.Manual
         Text = "AddExpense"
         ExpenseRadioGroup.ResumeLayout(False)
         ExpenseRadioGroup.PerformLayout()

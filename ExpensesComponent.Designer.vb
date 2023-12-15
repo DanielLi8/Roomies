@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class ExpensesComponent
-    Inherits System.Windows.Forms.UserControl
+    Inherits System.Windows.Forms.Form
 
     'UserControl overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -135,6 +135,7 @@ Partial Class ExpensesComponent
         ' ExpensesComponent
         ' 
         AutoScaleMode = AutoScaleMode.None
+        ClientSize = New Size(349, 556)
         Controls.Add(ExpenseCButton)
         Controls.Add(RoommateExpensePanel)
         Controls.Add(ExpenseRadioGroup)
@@ -143,9 +144,10 @@ Partial Class ExpensesComponent
         Controls.Add(ExpenseTextbox)
         Controls.Add(AmountLabel)
         Controls.Add(ExpenseLabel)
+        Location = New Point(783, 242)
         Margin = New Padding(3, 2, 3, 2)
         Name = "ExpensesComponent"
-        Size = New Size(365, 595)
+        StartPosition = FormStartPosition.Manual
         ExpenseRadioGroup.ResumeLayout(False)
         ExpenseRadioGroup.PerformLayout()
         ResumeLayout(False)

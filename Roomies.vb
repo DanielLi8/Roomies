@@ -204,6 +204,7 @@ Public Class Roomies
         End If
 
         Dim choreAdd As New AddChore(BobChoreCount, AliceChoreCount, userNum)
+        ' choreAdd.Location = New Point(0, 0)
         choreAdd.ShowDialog()
 
         AddTodoboxToPanel()
@@ -380,10 +381,17 @@ Public Class Roomies
             ETitleLabel.Text = "Summary"
             EButton.Visible = False
             ESummaryLabel.Visible = True
+            AliceETitleLabel.Text = "Summary"
+            AliceEbutton.Visible = False
+            AliceSummaryLabel.Visible = True
         Else
             ETitleLabel.Text = "Balance Sheet"
             EButton.Visible = True
             ESummaryLabel.Visible = False
+
+            AliceETitleLabel.Text = "Balance Sheet"
+            AliceEbutton.Visible = True
+            AliceSummaryLabel.Visible = False
         End If
         CalculateTotalExpense()
         GenerateSharedExpenses()
@@ -392,18 +400,28 @@ Public Class Roomies
 #Region "Calculating subs for Expense Features"
     Private Sub CalculateTotalExpense()
         Dim selectedRoommateName As String = TabControl1.SelectedTab.Text
-        Dim totalExpense As Decimal = 0
         ' Loop through all roommates
         For Each roommate As RoommateClass In RoommateList
             ' Check if the roommate's name matches the selected tab text
-            If roommate.GetName() = selectedRoommateName Then
+            Dim totalExpense As Decimal = 0
+
+            If roommate.GetName() = "Bob" Then
                 ' Loop through the ExpenseList of the selected roommate
                 For Each expense As ExpenseClass In roommate.getExpenseList()
                     totalExpense += Decimal.Parse(expense.getAmount())
                 Next
+                ESummaryLabel.Text = ($"Total: ${totalExpense}")
+            Else
+
+                For Each expense As ExpenseClass In roommate.getExpenseList()
+                    totalExpense += Decimal.Parse(expense.getAmount())
+                Next
+                AliceSummaryLabel.Text = ($"Total: ${totalExpense}")
             End If
+
         Next
-        ESummaryLabel.Text = ($"Total: ${totalExpense}")
+
+
     End Sub
     Private Sub GenerateSharedExpenses()
         Dim selectedRoommateName As String = TabControl1.SelectedTab.Text
@@ -497,7 +515,7 @@ Public Class Roomies
         Next
         '  End If
     End Sub
-    Private Sub EButton_Click(sender As Object, e As EventArgs) Handles EButton.Click, Button1.Click
+    Private Sub EButton_Click(sender As Object, e As EventArgs) Handles EButton.Click, AliceEbutton.Click
 
         'Dim expensesComponentForm As New Form()
         'Dim expensesComponent As New ExpensesComponent()
@@ -549,6 +567,7 @@ Public Class Roomies
         End If
 
     End Sub
+
 
 #End Region
 End Class
